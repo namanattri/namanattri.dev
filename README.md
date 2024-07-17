@@ -1,3 +1,5 @@
+# Quick Start Commands
+
 Start hugo development server
 
 ```sh
@@ -15,4 +17,10 @@ Including Draft Content
 ```sh
 hugo server --buildDrafts
 hugo server -D
+```
+
+Publish the site
+
+```sh
+hugo
 ```
