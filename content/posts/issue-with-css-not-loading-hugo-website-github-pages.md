@@ -2,7 +2,7 @@
 title = 'Issue with CSS Not Loading for a Hugo Website Deployed with GitHub Pages'
 date = 2024-07-18T15:38:30+05:30
 description = 'Learn how to resolve the common issue of CSS not loading for Hugo websites deployed on GitHub Pages. Follow this step-by-step guide to fix the base URL configuration and ensure your Hugo site looks great.'
-draft = true
+draft = false
 keywords = 'Hugo website CSS not loading, GitHub Pages CSS issue, Hugo deployment GitHub Pages, Hugo CSS 404 error, fix Hugo CSS not loading, Hugo GitHub Pages deployment, Hugo baseURL configuration, web development troubleshooting, Hugo theme CSS path issue, Hugo GitHub Pages workflow'
 +++
 Deploying a Hugo website on GitHub Pages is a seamless process, thanks to the comprehensive documentation provided [here](https://gohugo.io/hosting-and-deployment/hosting-on-github/). However, I recently encountered an issue where my Hugo website launched successfully but failed to load the CSS.
