@@ -2,9 +2,11 @@
 title = 'Why Blockchains Are Designed to Be Deterministic?'
 date = 2024-07-18T20:58:30+05:30
 description = 'Discover why determinism is crucial for blockchain technology, ensuring consistency, security, and trust in decentralized systems. Learn about the role of determinism in consensus algorithms and smart contracts.'
-draft = true
+draft = false
 keywords = 'blockchain technology, determinism in blockchain, decentralized systems, blockchain security, blockchain consistency, smart contracts, consensus algorithms, Proof of Work, Proof of Stake, blockchain trust'
 +++
+![Chain of Blocks](blockchain.webp)
+
 Blockchain technology has revolutionized the way we think about digital transactions and data security. By providing a decentralized, transparent, and secure method for recording transactions, blockchains have found applications in various industries, from finance to supply chain management. One of the fundamental principles that make blockchain technology reliable and trustworthy is determinism.
 
 #### What is a blockchain?
