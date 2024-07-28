@@ -1,4 +1,5 @@
 baseURL = 'https://namanattri.dev/'
+enableRobotsTXT = true
 languageCode = 'en-us'
 title = 'Naman Attri'
 theme = 'ananke'
