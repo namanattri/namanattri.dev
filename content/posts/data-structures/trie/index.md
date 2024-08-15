@@ -43,7 +43,8 @@ The following Trie stores words: bag, ball, bar, bark & bat
 ```
 
 ### Operations on a Trie (with code examples)
-- **Creation**: Creation of an empty Trie with root node representing empty string.
+#### Creation
+Creation of an empty Trie with root node representing empty string.
 ```go
 package main
 
@@ -67,7 +68,8 @@ func main() {
 }
 ```
 
-- **Insertion**: Adding a word involves creating new nodes for each character if they don’t already exist and marking the last character node as the end of the word.
+#### Insertion
+Adding a word involves creating new nodes for each character if they don’t already exist and marking the last character node as the end of the word.
 ```go
 func (t *Trie) Insert(word string) {
 	node := t.root
@@ -90,8 +92,32 @@ func main() {
   }
 }
 ```
+##### How the above code works:
+- Set the current node pointer to root node (empty string).
+- For each character in the given word "bat" check if it's one of the children.
+- Starting with 'b'. Since the trie is empty current node (root) as no children, we create a new node for 'b' and set it as one of the children of current node (root).
+- Set the current node pointer to the child ('b') node.
+- Moving on to 'a'. Since current node ('b') has no children, we create a new node for 'a' and set it as one of the children of current node ('b').
+- Set the current node pointer to the child ('a') node.
+- Moving on to 't'. Since current node ('a') has no children, we create a new node for 't' and set it as one of the children of current node ('a').
+- Set the current node pointer to the child ('t') node.
+- Since all characters of the word are finished we set the current node ('t') end flag to true as it's a complete word "bat" path in the trie.
+- Now the trie is non empty for the next word we want to insert.
+- Set the current node pointer to root node (empty string) again.
+- For each character in the given word "ball" check if it's one of the children.
+- Starting with 'b'. The current node (root) already has 'b' node as one of it's children. We skip creating a new node.
+- Set the current node pointer to the child ('b') node.
+- Moving on to 'a'. The current node ('b') already has 'a' node as one of it's children. We skip creating a new node.
+- Set the current node pointer to the child ('a') node.
+- Moving on to 'l'. Since current node ('a') doesn't have 't' node as a child, we create a new node for 't' and set it as one of the children of current node ('a').
+- Set the current node pointer to the child ('l') node.
+- Moving on to 'l'. Since current node ('l') has no children, we create a new node for 'l' and set it as one of the children of current node ('l'). Note that 'l' is recreated even though we already have an 'l' node in the trie because we have two 'l' in the work 'ball'.
+- Set the current node pointer to the child ('l') node.
+- Repeated until all words are inserted.
 
-- **Search**: To search for a word, traverse the Trie following the sequence of characters in the word. If you reach the end and the end of word marker is present, the word exists in the Trie.
+
+#### Search
+To search for a word, traverse the Trie following the sequence of characters in the word. If you reach the end and the end of word marker is present, the word exists in the Trie.
 ```go
 func (t *Trie) Search(word string) bool {
 	node := t.root
@@ -128,7 +154,8 @@ Word 'call' found?: true
 Word 'called' found?: true
 ```
 
-- **Prefix Search**: Useful for auto-complete systems. The code below checks if the words matching the given prefix exist in a Trie.
+#### Prefix Search
+Useful for auto-complete systems. The code below checks if the words matching the given prefix exist in a Trie.
 ```go
 func (t *Trie) StartsWith(prefix string) bool {
 	node := t.root
@@ -152,7 +179,8 @@ Output:
 Words starting with 'ba' found?: true
 ```
 
-- **Autocomplete**: Find all words with a given prefix by traversing the Trie to the end of the prefix and then listing all descendants.
+#### Autocomplete
+Find all words with a given prefix by traversing the Trie to the end of the prefix and then listing all descendants.
 ```go
 func (t *Trie) GetWordsWithPrefix(prefix string) []string {
 	node := t.root
@@ -210,7 +238,9 @@ cart
 call
 called
 ```
-- **Deletion**: Deleting a word involves removing the end of word marker and pruning the Trie if the nodes are not part of another word.
+
+#### Deletion
+Deleting a word involves removing the end of word marker and pruning the Trie if the nodes are not part of another word.
 ```go
 func (t *Trie) Delete(word string) bool {
 	return t.deleteHelper(t.root, word, 0)
