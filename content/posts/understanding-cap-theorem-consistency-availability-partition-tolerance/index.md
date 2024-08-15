@@ -6,7 +6,6 @@ draft = false
 keywords = 'CAP theorem, Brewer’s theorem, Consistency, Availability, Partition Tolerance, distributed systems, network partition, trade-offs, CA, CP, AP, database, distributed database, network issues'
 [params]
 	author = 'Naman Attri'
-	about = 'Professional coder & tech blogger'
 slug = 'understanding-cap-theorem-consistency-availability-partition-tolerance'
 +++
 ## What is CAP Theorem?
