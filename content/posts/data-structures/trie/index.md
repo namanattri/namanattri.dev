@@ -113,6 +113,7 @@ func main() {
 - Set the current node pointer to the child ('l') node.
 - Moving on to 'l'. Since current node ('l') has no children, we create a new node for 'l' and set it as one of the children of current node ('l'). Note that 'l' is recreated even though we already have an 'l' node in the trie because we have two 'l' in the work 'ball'.
 - Set the current node pointer to the child ('l') node.
+- Since all characters of the word are finished we set the current node ('l') end flag to true as it's a complete word "ball" path in the trie.
 - Repeated until all words are inserted.
 
 
