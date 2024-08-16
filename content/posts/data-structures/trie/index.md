@@ -23,7 +23,8 @@ A Trie, also known as a prefix tree or digital tree, is a tree-like data structu
 The following Trie stores words: bag, ball, bar, bark & bat
 
 ```goat
-                          (nil)                         
+                           root
+                            +                         
                             |                         
                             .                         
                             b                         
@@ -116,6 +117,47 @@ func main() {
 - Since all characters of the word are finished we set the current node ('l') end flag to true as it's a complete word "ball" path in the trie.
 - Repeated until all words are inserted.
 
+The diagram below repsents how the trie will look like after all words ("bat", "ball", "bark", "belt", "better", "bet", "betting", "car", "cart", "call", "called") are inserted. Here minus (-) represent a valid end of word.
+
+```goat
+                     root
+                      +                      
+                     / \
+                    /   \
+                   /     \
+                  /       \                         
+                 /         \                         
+                /           \                         
+               /             \                         
+              .               .
+              b               c        
+              +               +                                 
+             / \              |     
+            /   \             |     
+           /     \            |     
+          /       \           |                              
+         .         .          .
+         a         e          a
+         +         +          +
+        /|\       / \        / \
+       / | \     /   \      /   \
+      .  .  .   .     .    .     .
+      t- l  r   l     t-   r-    l
+         |  |   |     |    |     |
+         .  .   .     .    .     .
+         l- k-  t-    t    t-    l-
+                      +          |
+                     / \         |
+                    .   .        .
+                    e   i        e
+                    |   |        |
+                    .   .        .
+                    r-  n        d-
+                        |    
+                        .    
+                        g-    
+```
+
 
 #### Search
 To search for a word, traverse the Trie following the sequence of characters in the word. If you reach the end and the end of word marker is present, the word exists in the Trie.
@@ -154,6 +196,20 @@ Word 'cart' found?: true
 Word 'call' found?: true
 Word 'called' found?: true
 ```
+##### How the above code works:
+- Let's assume we are searching for the word "bat".
+- Set the current node pointer to the root node.
+- Starting with 'b'. Since 'b' is one of the children of current node (root). We set current node as node 'b'.
+- Moving on to 'a'. Since 'a' is one of the children of current node ('b'). We set the current node as node 'a'.
+- Moving on to 't'. Since 't' is one of the children of current node ('a'). We set the current node as node 't'.
+- We have compared all the characters.
+- Since the the node 't' has end flag set to true, it means that the word path points to a complete word i.e. "bat". Hence the search result returns true.
+- Now, let's assume we are searching for the word "best".
+- Set the current node pointer to the root node.
+- Starting with 'b'. Since 'b' is one of the children of current node (root). We set current node as node 'b'.
+- Moving on to 'e'. Since 'e' is one of the children of current node ('b'). We set the current node as node 'a'.
+- Moving on to 's'. Since 's' is not one of the children of current node ('e'). We return false as the word is not present in the Trie.
+- Let's assume we inserted the word "better" but didn't insert "bet". Note that "better" has "bet" as prefix. However since the *end* flag for the node 't' is false so the word "bet" is not found.
 
 #### Prefix Search
 Useful for auto-complete systems. The code below checks if the words matching the given prefix exist in a Trie.
@@ -179,6 +235,9 @@ Output:
 ```shell
 Words starting with 'ba' found?: true
 ```
+##### How the above code works:
+- Code follows the same strategy as the search however it doesn't check for the end flag since we are just checking for prefix.
+- If all characters in the prefix are found in the successive children nodes, the for loop ends successfully and true is returned at the end.
 
 #### Autocomplete
 Find all words with a given prefix by traversing the Trie to the end of the prefix and then listing all descendants.
@@ -239,6 +298,13 @@ cart
 call
 called
 ```
+##### How the above code works:
+- Let's assume we are searching for prefix "ba".
+- The GetWordsWithPrefix function will start at the root and traverse through nodes for ‘b’ and ‘a’.
+- After this traversal, the node will be pointing to the node representing ‘a’ in the Trie.
+- The collectWords function will be called starting from the node representing ‘a’ with the prefix “ba”.
+- The function will recursively explore nodes for ‘t’, ‘l’, and ‘r’ (the children of ‘a’).
+- It will collect and return the words: ["bat", "ball", "bark"].
 
 #### Deletion
 Deleting a word involves removing the end of word marker and pruning the Trie if the nodes are not part of another word.
@@ -310,6 +376,276 @@ Word 'car' found?: true
 Word 'cart' found?: true
 Word 'call' found?: false
 Word 'called' found?: true
+```
+##### How the above code works:
+
+Deletion can be a bit hard to understand so we'll walkthrough each step for each word we are going to delete.
+
+Here's the initial state of the trie.
+
+```goat
+                     root
+                      +                      
+                     / \
+                    /   \
+                   /     \
+                  /       \                         
+                 /         \                         
+                /           \                         
+               /             \                         
+              .               .
+              b               c        
+              +               +                                 
+             / \              |     
+            /   \             |     
+           /     \            |     
+          /       \           |                              
+         .         .          .
+         a         e          a
+         +         +          +
+        /|\       / \        / \
+       / | \     /   \      /   \
+      .  .  .   .     .    .     .
+      t- l  r   l     t-   r-    l
+         |  |   |     |    |     |
+         .  .   .     .    .     .
+         l- k-  t-    t    t-    l-
+                      +          |
+                     / \         |
+                    .   .        .
+                    e   i        e
+                    |   |        |
+                    .   .        .
+                    r-  n        d-
+                        |    
+                        .    
+                        g-    
+```
+Deleting "bet"
+- We start with the root node and depth 0 and recursively pass the word down the trie.
+- Root node is not nil and the depth [0] != len('bet') [3]
+- We extract the child node at depth = 0 i.e. 'b', increment the depth by 1 and call the deleteHelper function for node 'b'.
+- Node 'b' is not nil and the depth [1] != len('bet') [3]
+- We extract the child node at depth = 1 i.e. 'e', increment the depth by 1 and call the deleteHelper function for node 'e'.
+- Node 'e' is not nil and the depth[2] != len('bet') [3]
+- We extract the child node at depth = 2 i.e. 't', increment the depth by 1 and call the deleteHelper function for node 't'.
+- Node 't' is not nil and the depth[3] == len('bet') [3] which means that we have found all the characters matching the word in the trie.
+- Node 't' has endOfWord flag set to true which means the word "bet" exists in the trie.
+- We set the endOfWord flag to false.
+- Node 't' has children which means there are other words that start with prefix "bet". So we return false, so that the calling function doesn't delete node 't'.
+- False is returned recursively so each calling chain doesn't delete the node.
+
+State of Trie after "bet" has been deleted.
+```goat
+                     root
+                      +                      
+                     / \
+                    /   \
+                   /     \
+                  /       \                         
+                 /         \                         
+                /           \                         
+               /             \                         
+              .               .
+              b               c        
+              +               +                                 
+             / \              |     
+            /   \             |     
+           /     \            |     
+          /       \           |                              
+         .         .          .
+         a         e          a
+         +         +          +
+        /|\       / \        / \
+       / | \     /   \      /   \
+      .  .  .   .     .    .     .
+      t- l  r   l     t    r-    l
+         |  |   |     |    |     |
+         .  .   .     .    .     .
+         l- k-  t-    t    t-    l-
+                      +          |
+                     / \         |
+                    .   .        .
+                    e   i        e
+                    |   |        |
+                    .   .        .
+                    r-  n        d-
+                        |    
+                        .    
+                        g-    
+```
+
+Deleting "belt"
+- We start with the root node and depth 0 and recursively pass the word down the trie.
+- Root node is not nil and the depth [0] != len('belt') [4]
+- We extract the child node at depth = 0 i.e. 'b', increment the depth by 1 and call the deleteHelper function for node 'b'.
+- Node 'b' is not nil and the depth [1] != len('belt') [4]
+- We extract the child node at depth = 1 i.e. 'e', increment the depth by 1 and call the deleteHelper function for node 'e'.
+- Node 'e' is not nil and the depth[2] != len('belt') [4]
+- We extract the child node at depth = 2 i.e. 'l', increment the depth by 1 and call the deleteHelper function for node 'l'.
+- Node 'l' is not nil and the depth[3] != len('belt') [4]
+- We extract the child node at depth = 3 i.e. 't', increment the depth by 1 and call the deleteHelper function for node 't'.
+- Node 't' is not nil and the depth[4] == len('belt') [4] which means that we have found all the characters matching the word in the trie.
+- Node 't' has endOfWord flag set to true which means the word "belt" exists in the trie.
+- We set the endOfWord flag to false.
+```goat
+                     root
+                      +                      
+                     / \
+                    /   \
+                   /     \
+                  /       \                         
+                 /         \                         
+                /           \                         
+               /             \                         
+              .               .
+              b               c        
+              +               +                                 
+             / \              |     
+            /   \             |     
+           /     \            |     
+          /       \           |                              
+         .         .          .
+         a         e          a
+         +         +          +
+        /|\       / \        / \
+       / | \     /   \      /   \
+      .  .  .   .     .    .     .
+      t- l  r   l     t    r-    l
+         |  |   |     |    |     |
+         .  .   .     .    .     .
+         l- k-  t     t    t-    l-
+                      +          |
+                     / \         |
+                    .   .        .
+                    e   i        e
+                    |   |        |
+                    .   .        .
+                    r-  n        d-
+                        |    
+                        .    
+                        g-    
+```
+
+- Node 't' has no children which means there are no other words that start with prefix "belt". So we return true.
+- The calling function then deletes node 't'
+```goat
+                     root
+                      +                      
+                     / \
+                    /   \
+                   /     \
+                  /       \                         
+                 /         \                         
+                /           \                         
+               /             \                         
+              .               .
+              b               c        
+              +               +                                 
+             / \              |     
+            /   \             |     
+           /     \            |     
+          /       \           |                              
+         .         .          .
+         a         e          a
+         +         +          +
+        /|\       / \        / \
+       / | \     /   \      /   \
+      .  .  .   .     .    .     .
+      t- l  r   l     t    r-    l
+         |  |         |    |     |
+         .  .         .    .     .
+         l- k-        t    t-    l-
+                      +          |
+                     / \         |
+                    .   .        .
+                    e   i        e
+                    |   |        |
+                    .   .        .
+                    r-  n        d-
+                        |    
+                        .    
+                        g-    
+```
+- Current node 'l' doesn't have endOfWord flag set to true which means there is no word "bel" stored in the trie. Also it is a leaf node after deletion of it's only child 't'. True is returned to the calling function.
+- The calling function then deletes node 'l'
+```goat
+                   root
+                    +                      
+                   / \
+                  /   \
+                 /     \
+                /       \                         
+               /         \                         
+              /           \                         
+             /             \                         
+            .               .
+            b               c        
+            +               +                                 
+           / \              |     
+          /   \             |                
+         .     .            .
+         a     e            a
+         +     +            +
+        /|\    |           / \
+       / | \   |          /   \
+      .  .  .  .         .     .
+      t- l  r  t         r-    l
+         |  |  |         |     |
+         .  .  .         .     .
+         l- k- t         t-    l-
+               +               |
+              / \              |
+             .   .             .
+             e   i             e
+             |   |             |
+             .   .             .
+             r-  n             d-
+                 |       
+                 .       
+                 g-       
+```
+- Current node 'e' doesn't have endOfWord flag set to true which means there is no word "be" stored in the trie. Also it is not a leaf node since the words "better" and "betting" are still present in the trie. False is returned to the calling function.
+- The calling function then doesn't delete 'e' node and also recursively return false to the calling function till root and no other node is delete on the path.
+
+Deleting "call"
+- Similar to deleting "bet". The endOfWord flag for the 2nd l is set to false and no nodes on the path deleted because the word "called" is still in the trie.
+
+```goat
+                   root
+                    +                      
+                   / \
+                  /   \
+                 /     \
+                /       \                         
+               /         \                         
+              /           \                         
+             /             \                         
+            .               .
+            b               c        
+            +               +                                 
+           / \              |     
+          /   \             |                
+         .     .            .
+         a     e            a
+         +     +            +
+        /|\    |           / \
+       / | \   |          /   \
+      .  .  .  .         .     .
+      t- l  r  t         r-    l
+         |  |  |         |     |
+         .  .  .         .     .
+         l- k- t         t-    l
+               +               |
+              / \              |
+             .   .             .
+             e   i             e
+             |   |             |
+             .   .             .
+             r-  n             d-
+                 |       
+                 .       
+                 g-       
 ```
 
 ## Conclusion
