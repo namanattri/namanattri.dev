@@ -8,7 +8,6 @@ keywords = 'Trie data structure, prefix tree, digital tree, string handling, aut
 	author = 'Naman Attri'
 slug = 'trie-data-structure-guide'
 +++
-
 ## What is a Trie?
 
 A Trie, also known as a prefix tree or digital tree, is a tree-like data structure that is used to efficiently store and retrieve keys in a dataset of strings. The Trie is especially useful when dealing with dynamic sets of strings and allows for fast searching, insertion, and deletion of keys.
