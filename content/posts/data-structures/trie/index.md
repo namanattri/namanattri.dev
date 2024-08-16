@@ -102,7 +102,7 @@ func main() {
 - Set the current node pointer to the child ('a') node.
 - Moving on to 't'. Since current node ('a') has no children, we create a new node for 't' and set it as one of the children of current node ('a').
 - Set the current node pointer to the child ('t') node.
-- Since all characters of the word are finished, we set the current node's ('t') end flag to true as it's a complete path for the word "bat" in the trie.
+- Since all characters of the word are finished, we set the current node's ('t') endOfWord flag to true as it's a complete path for the word "bat" in the trie.
 - Now the trie is no longer empty for the next word to be inserted.
 - Set the current node pointer to root node again.
 - For each character in the given word "ball" check if it's one of the children.
@@ -114,7 +114,7 @@ func main() {
 - Set the current node pointer to the child ('l') node.
 - Moving on to 'l'. Since current node ('l') has no children, we create a new node for 2nd 'l' and set it as one of the children of current node (1st 'l').
 - Set the current node pointer to the child (2nd 'l') node.
-- Since all characters of the word are finished we set the current node's (2nd 'l') end flag to true as it's a complete path for the word "ball" in the trie.
+- Since all characters of the word are finished we set the current node's (2nd 'l') endOfWord flag to true as it's a complete path for the word "ball" in the trie.
 - Same steps are repeated until all words are inserted.
 
 The diagram below repsents the state of the trie after all words ("bat", "ball", "bark", "belt", "better", "bet", "betting", "car", "cart", "call", "called") are inserted. Here minus (-) sign next to some characters represent an end of word.
@@ -159,7 +159,7 @@ The diagram below repsents the state of the trie after all words ("bat", "ball",
 ```
 
 #### Search
-To search for a word, traverse the Trie following the sequence of characters in the word. If you reach the end and the end of word marker is present, the word exists in the Trie.
+To search for a word, traverse the Trie following the sequence of characters in the word. If you reach the end and the endOfWord flag is present, the word exists in the Trie.
 ```go
 func (t *Trie) Search(word string) bool {
 	node := t.root
@@ -202,13 +202,13 @@ Word 'called' found?: true
 - Moving on to 'a'. Since 'a' is one of the children of current node ('b'). We set the current node as node 'a'.
 - Moving on to 't'. Since 't' is one of the children of current node ('a'). We set the current node as node 't'.
 - We have compared all the characters.
-- Since the the node 't' has end flag set to true, it means that the word path points to a complete word i.e. "bat". Hence the search result returns true.
+- Since the the node 't' has endOfWord flag set to true, it means that the word path points to a complete word i.e. "bat". Hence the search result returns true.
 - Now, let's assume we are searching for the word "best".
 - Set the current node pointer to the root node.
 - Starting with 'b'. Since 'b' is one of the children of current node (root). We set current node as node 'b'.
 - Moving on to 'e'. Since 'e' is one of the children of current node ('b'). We set the current node as node 'a'.
 - Moving on to 's'. Since 's' is not one of the children of current node ('e'). We return false as the word is not present in the Trie.
-- Let's assume we inserted the word "better" but didn't insert "bet". Note that "better" has "bet" as prefix. However since the *end* flag for the node 't' is false so the word "bet" is not found.
+- Let's assume we inserted the word "better" but didn't insert "bet". Note that "better" has "bet" as prefix. However since the endOfWord flag for the node 't' is false so the word "bet" is not found.
 
 #### Prefix Search
 Useful for auto-complete systems. The code below checks if the words matching the given prefix exist in a Trie.
@@ -235,7 +235,7 @@ Output:
 Words starting with 'ba' found?: true
 ```
 ##### How the above code works:
-- Code follows the same strategy as the search however it doesn't check for the end flag since we are just checking for prefix.
+- Code follows the same strategy as the search however it doesn't check for the endOfWord flag since we are just checking for prefix.
 - If all characters in the prefix are found in the successive children nodes, the for loop ends successfully and true is returned at the end.
 
 #### Autocomplete
@@ -268,7 +268,7 @@ func (t *Trie) collectWords(node *TrieNode, prefix string) []string {
 
 func main() {
   ...
-	prefix = "be"
+	prefix = "ba"
 	fmt.Printf("Words with prefix '%s':\n", prefix)
 	matchingWords := trie.GetWordsWithPrefix(prefix)
 	for _, word := range matchingWords {
@@ -285,11 +285,10 @@ func main() {
 ```
 Output:
 ```shell
-Words with prefix 'be':
-belt
-bet
-better
-betting
+Words with prefix 'ba':
+bat
+ball
+bark
 
 Words with prefix 'ca':
 car
@@ -301,9 +300,33 @@ called
 - Let's assume we are searching for prefix "ba".
 - The GetWordsWithPrefix function will start at the root and traverse through nodes for ‘b’ and ‘a’.
 - After this traversal, the node will be pointing to the node representing ‘a’ in the Trie.
+```goat
+                      root                            
+                       +                      
+                       |
+                       .           
+                       b           
+                       +           
+                       |
+                       .     
+                       a     
+                       +     
+                      /|\    
+                     / | \   
+                    .  .  .  
+                    t- l  r  
+                       |  |  
+                       .  .  
+                       l- k-           
+```
 - The collectWords function will be called starting from the node representing ‘a’ with the prefix “ba”.
 - The function will recursively explore nodes for ‘t’, ‘l’, and ‘r’ (the children of ‘a’).
-- It will collect and return the words: ["bat", "ball", "bark"].
+- Going down 't' the endOfWord flag is found to be true, the word "bat" is collected.
+- Going down 'l' the endOfWord flag is found to be false, we iterate over children of 'l'
+- Going down 2nd 'l' the endOfWord flag is found to be true, the word "ball" is collected.
+- Coming one level back up and going down 'r' the endOfWord flag is found to be false, we iterate over children of 'r'
+- Going down to 'k' the endOfWord flag is found to be true, the word "bark" is collected.
+- Going back up to the root all the collections are merged to the final result: ["bat", "ball", "bark"].
 
 #### Deletion
 Deleting a word involves removing the end of word marker and pruning the Trie if the nodes are not part of another word.
