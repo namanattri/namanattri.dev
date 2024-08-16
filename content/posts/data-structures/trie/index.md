@@ -96,28 +96,28 @@ func main() {
 ##### How the above code works:
 - Set the current node pointer to root node (empty string).
 - For each character in the given word "bat" check if it's one of the children.
-- Starting with 'b'. Since the trie is empty current node (root) as no children, we create a new node for 'b' and set it as one of the children of current node (root).
+- Starting with 'b'. Since the trie is empty, the current node (root) has no children, hence we create a new node for 'b' and set it as one of the children of current node (root).
 - Set the current node pointer to the child ('b') node.
 - Moving on to 'a'. Since current node ('b') has no children, we create a new node for 'a' and set it as one of the children of current node ('b').
 - Set the current node pointer to the child ('a') node.
 - Moving on to 't'. Since current node ('a') has no children, we create a new node for 't' and set it as one of the children of current node ('a').
 - Set the current node pointer to the child ('t') node.
-- Since all characters of the word are finished we set the current node ('t') end flag to true as it's a complete word "bat" path in the trie.
-- Now the trie is non empty for the next word we want to insert.
-- Set the current node pointer to root node (empty string) again.
+- Since all characters of the word are finished, we set the current node's ('t') end flag to true as it's a complete path for the word "bat" in the trie.
+- Now the trie is no longer empty for the next word to be inserted.
+- Set the current node pointer to root node again.
 - For each character in the given word "ball" check if it's one of the children.
 - Starting with 'b'. The current node (root) already has 'b' node as one of it's children. We skip creating a new node.
 - Set the current node pointer to the child ('b') node.
 - Moving on to 'a'. The current node ('b') already has 'a' node as one of it's children. We skip creating a new node.
 - Set the current node pointer to the child ('a') node.
-- Moving on to 'l'. Since current node ('a') doesn't have 't' node as a child, we create a new node for 't' and set it as one of the children of current node ('a').
+- Moving on to 'l'. Since current node ('a') doesn't have 'l' node as a child, we create a new node for 'l' and set it as one of the children of current node ('a').
 - Set the current node pointer to the child ('l') node.
-- Moving on to 'l'. Since current node ('l') has no children, we create a new node for 'l' and set it as one of the children of current node ('l'). Note that 'l' is recreated even though we already have an 'l' node in the trie because we have two 'l' in the work 'ball'.
-- Set the current node pointer to the child ('l') node.
-- Since all characters of the word are finished we set the current node ('l') end flag to true as it's a complete word "ball" path in the trie.
-- Repeated until all words are inserted.
+- Moving on to 'l'. Since current node ('l') has no children, we create a new node for 2nd 'l' and set it as one of the children of current node (1st 'l').
+- Set the current node pointer to the child (2nd 'l') node.
+- Since all characters of the word are finished we set the current node's (2nd 'l') end flag to true as it's a complete path for the word "ball" in the trie.
+- Same steps are repeated until all words are inserted.
 
-The diagram below repsents how the trie will look like after all words ("bat", "ball", "bark", "belt", "better", "bet", "betting", "car", "cart", "call", "called") are inserted. Here minus (-) represent a valid end of word.
+The diagram below repsents the state of the trie after all words ("bat", "ball", "bark", "belt", "better", "bet", "betting", "car", "cart", "call", "called") are inserted. Here minus (-) sign next to some characters represent an end of word.
 
 ```goat
                      root
@@ -157,7 +157,6 @@ The diagram below repsents how the trie will look like after all words ("bat", "
                         .    
                         g-    
 ```
-
 
 #### Search
 To search for a word, traverse the Trie following the sequence of characters in the word. If you reach the end and the end of word marker is present, the word exists in the Trie.
