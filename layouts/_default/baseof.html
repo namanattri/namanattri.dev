@@ -58,6 +58,10 @@
     {{ if .Param "math" }}
       {{ partialCached "math.html" . }}
     {{ end }}
+
+    {{ if .Param "googletag" }}
+      {{ partialCached "google-tag.html" . }}
+    {{ end }}
 	{{ block "head" . }}{{ partial "head-additions.html" . }}{{ end }}
   </head>
 
