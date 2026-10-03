@@ -85,12 +85,48 @@
   },
   "nodes": [
     {
+      "id": "themes_namanattri_assets_js_modules_experience_clock_elapsed",
+      "label": "elapsed()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "experience-clock.js",
+      "file_type": "code",
+      "norm_label": "elapsed()",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L5"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_experience_clock_initexperienceclock",
+      "label": "initExperienceClock()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "experience-clock.js",
+      "file_type": "code",
+      "norm_label": "initexperienceclock()",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L38"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_experience_clock_initexperienceclock_render",
+      "label": "render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "experience-clock.js",
+      "file_type": "code",
+      "norm_label": "render()",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L47"
+    },
+    {
       "id": "themes_namanattri_assets_js_modules_fetch_document_fetchdocument",
       "label": "fetchDocument()",
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "fetchdocument()",
       "source_file": "themes/namanattri/assets/js/modules/fetch-document.js",
@@ -102,7 +138,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "resolverelativeurls()",
       "source_file": "themes/namanattri/assets/js/modules/fetch-document.js",
@@ -114,7 +150,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "initinfinitelist()",
       "source_file": "themes/namanattri/assets/js/modules/infinite-list.js",
@@ -126,7 +162,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "loadnextpage()",
       "source_file": "themes/namanattri/assets/js/modules/infinite-list.js",
@@ -138,11 +174,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "initpoststream()",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L12"
+      "source_location": "L17"
     },
     {
       "id": "themes_namanattri_assets_js_modules_post_stream_initpoststream_edgepost",
@@ -150,11 +186,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "edgepost()",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L21"
+      "source_location": "L26"
     },
     {
       "id": "themes_namanattri_assets_js_modules_post_stream_initpoststream_insert",
@@ -162,11 +198,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "insert()",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L66"
+      "source_location": "L82"
     },
     {
       "id": "themes_namanattri_assets_js_modules_post_stream_initpoststream_load",
@@ -174,11 +210,23 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "load()",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L26"
+      "source_location": "L31"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_post_stream_initpoststream_prune",
+      "label": "prune()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "prune()",
+      "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
+      "source_location": "L70"
     },
     {
       "id": "themes_namanattri_assets_js_modules_post_stream_initpoststream_synclocation",
@@ -186,11 +234,83 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "synclocation()",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L116"
+      "source_location": "L126"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_post_stream_scrollbyinstant",
+      "label": "scrollByInstant()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "scrollbyinstant()",
+      "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
+      "source_location": "L5"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_sidebar_toggle_initsidebartoggle",
+      "label": "initSidebarToggle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "initsidebartoggle()",
+      "source_file": "themes/namanattri/assets/js/modules/sidebar-toggle.js",
+      "source_location": "L4"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_sidebar_toggle_initsidebartoggle_render",
+      "label": "render()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "render()",
+      "source_file": "themes/namanattri/assets/js/modules/sidebar-toggle.js",
+      "source_location": "L7"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_theme_toggle_initthemetoggle",
+      "label": "initThemeToggle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "initthemetoggle()",
+      "source_file": "themes/namanattri/assets/js/modules/theme-toggle.js",
+      "source_location": "L12"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_theme_toggle_initthemetoggle_apply",
+      "label": "apply()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "apply()",
+      "source_file": "themes/namanattri/assets/js/modules/theme-toggle.js",
+      "source_location": "L16"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_theme_toggle_storedtheme",
+      "label": "storedTheme()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "storedtheme()",
+      "source_file": "themes/namanattri/assets/js/modules/theme-toggle.js",
+      "source_location": "L3"
     },
     {
       "id": "themes_namanattri_assets_js_modules_typeset_typeset",
@@ -198,7 +318,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "typeset()",
       "source_file": "themes/namanattri/assets/js/modules/typeset.js",
@@ -419,16 +539,28 @@
       "source_location": "L1"
     },
     {
-      "id": "content_about_introduction",
-      "label": "Introduction",
+      "id": "content_about_newest_first_each_list_renders_as_a_timeline_in_the_order_written_here",
+      "label": "Newest first. Each list renders as a timeline in the order written here.",
       "_origin": "ast",
       "community": 26,
       "community_name": "about.md",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "introduction",
+      "norm_label": "newest first. each list renders as a timeline in the order written here.",
       "source_file": "content/about.md",
-      "source_location": "L7"
+      "source_location": "L8"
+    },
+    {
+      "id": "content_about_skills_render_as_icon_chips_in_the_order_written",
+      "label": "Skills render as icon chips in the order written.",
+      "_origin": "ast",
+      "community": 26,
+      "community_name": "about.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "skills render as icon chips in the order written.",
+      "source_file": "content/about.md",
+      "source_location": "L49"
     },
     {
       "id": "content_index",
@@ -464,6 +596,39 @@
       "node_kind": "page",
       "norm_label": "default.md",
       "source_file": "themes/namanattri/archetypes/default.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_experience_clock",
+      "label": "experience-clock.js",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "experience-clock.js",
+      "file_type": "code",
+      "norm_label": "experience-clock.js",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_experience_clock_padded",
+      "label": "PADDED",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "experience-clock.js",
+      "file_type": "code",
+      "norm_label": "padded",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L2"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_experience_clock_units",
+      "label": "UNITS",
+      "_origin": "ast",
+      "community": 30,
+      "community_name": "experience-clock.js",
+      "file_type": "code",
+      "norm_label": "units",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
       "source_location": "L1"
     },
     {
@@ -527,29 +692,18 @@
       "label": "main.js",
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "main.js",
       "source_file": "themes/namanattri/assets/js/main.js",
       "source_location": "L1"
     },
     {
-      "id": "themes_namanattri_assets_js_main_scroller",
-      "label": "scroller",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "initPostStream",
-      "file_type": "code",
-      "norm_label": "scroller",
-      "source_file": "themes/namanattri/assets/js/main.js",
-      "source_location": "L4"
-    },
-    {
       "id": "themes_namanattri_assets_js_modules_fetch_document",
       "label": "fetch-document.js",
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "fetch-document.js",
       "source_file": "themes/namanattri/assets/js/modules/fetch-document.js",
@@ -560,7 +714,7 @@
       "label": "URL_ATTRIBUTES",
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "url_attributes",
       "source_file": "themes/namanattri/assets/js/modules/fetch-document.js",
@@ -571,7 +725,7 @@
       "label": "infinite-list.js",
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "infinite-list.js",
       "source_file": "themes/namanattri/assets/js/modules/infinite-list.js",
@@ -582,7 +736,7 @@
       "label": "post-stream.js",
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "post-stream.js",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
@@ -593,18 +747,40 @@
       "label": "USER_INPUT_EVENTS",
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "user_input_events",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L4"
+      "source_location": "L9"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_sidebar_toggle",
+      "label": "sidebar-toggle.js",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "sidebar-toggle.js",
+      "source_file": "themes/namanattri/assets/js/modules/sidebar-toggle.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "themes_namanattri_assets_js_modules_theme_toggle",
+      "label": "theme-toggle.js",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "main.js",
+      "file_type": "code",
+      "norm_label": "theme-toggle.js",
+      "source_file": "themes/namanattri/assets/js/modules/theme-toggle.js",
+      "source_location": "L1"
     },
     {
       "id": "themes_namanattri_assets_js_modules_typeset",
       "label": "typeset.js",
       "_origin": "ast",
       "community": 8,
-      "community_name": "initPostStream",
+      "community_name": "main.js",
       "file_type": "code",
       "norm_label": "typeset.js",
       "source_file": "themes/namanattri/assets/js/modules/typeset.js",
@@ -1181,6 +1357,51 @@
       "source_url": null
     },
     {
+      "id": "claude_skills_graphify_references_transcribe_transcribe_all_fn",
+      "label": "graphify.transcribe.transcribe_all()",
+      "_origin": "semantic",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Query/Path/Explain Reference",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "graphify.transcribe.transcribe_all()",
+      "source_file": ".claude/skills/graphify/references/transcribe.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "claude_skills_graphify_references_update_graph_diff_fn",
+      "label": "graphify.analyze.graph_diff()",
+      "_origin": "semantic",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Query/Path/Explain Reference",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "graphify.analyze.graph_diff()",
+      "source_file": ".claude/skills/graphify/references/update.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "claude_skills_graphify_skill_graphify_analyze_module",
+      "label": "graphify.analyze Module",
+      "_origin": "semantic",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Query/Path/Explain Reference",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "graphify.analyze module",
+      "source_file": ".claude/skills/graphify/SKILL.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
       "id": "claude_skills_graphify_references_hooks_claude_md_integration",
       "label": "Native CLAUDE.md Integration (graphify claude install)",
       "_origin": "semantic",
@@ -1267,6 +1488,21 @@
       "file_type": "concept",
       "norm_label": "token budget cap (--budget)",
       "source_file": ".claude/skills/graphify/references/query.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "claude_skills_graphify_references_transcribe_whisper_model",
+      "label": "Whisper Model (GRAPHIFY_WHISPER_MODEL)",
+      "_origin": "semantic",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Query/Path/Explain Reference",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "whisper model (graphify_whisper_model)",
+      "source_file": ".claude/skills/graphify/references/transcribe.md",
       "source_location": null,
       "source_url": null
     },
@@ -1451,6 +1687,21 @@
       "source_url": null
     },
     {
+      "id": "claude_skills_graphify_references_transcribe_doc",
+      "label": "Transcribe Reference",
+      "_origin": "semantic",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Query/Path/Explain Reference",
+      "contributor": null,
+      "file_type": "document",
+      "norm_label": "transcribe reference",
+      "source_file": ".claude/skills/graphify/references/transcribe.md",
+      "source_location": null,
+      "source_url": null
+    },
+    {
       "id": "claude_skills_graphify_references_update_doc",
       "label": "Update & Cluster-Only Reference",
       "_origin": "semantic",
@@ -1496,16 +1747,16 @@
       "source_url": null
     },
     {
-      "id": "claude_skills_graphify_references_transcribe_transcribe_all_fn",
-      "label": "graphify.transcribe.transcribe_all()",
+      "id": "claude_skills_graphify_references_transcribe_whisper_prompt",
+      "label": "Domain Hint Prompt (GRAPHIFY_WHISPER_PROMPT)",
       "_origin": "semantic",
       "author": null,
       "captured_at": null,
-      "community": 1,
-      "community_name": "GitHub Clone & Merge Reference",
+      "community": 0,
+      "community_name": "Query/Path/Explain Reference",
       "contributor": null,
-      "file_type": "code",
-      "norm_label": "graphify.transcribe.transcribe_all()",
+      "file_type": "rationale",
+      "norm_label": "domain hint prompt (graphify_whisper_prompt)",
       "source_file": ".claude/skills/graphify/references/transcribe.md",
       "source_location": null,
       "source_url": null
@@ -1522,36 +1773,6 @@
       "file_type": "code",
       "norm_label": "graphify.detect.detect_incremental()",
       "source_file": ".claude/skills/graphify/references/update.md",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "claude_skills_graphify_references_update_graph_diff_fn",
-      "label": "graphify.analyze.graph_diff()",
-      "_origin": "semantic",
-      "author": null,
-      "captured_at": null,
-      "community": 1,
-      "community_name": "GitHub Clone & Merge Reference",
-      "contributor": null,
-      "file_type": "code",
-      "norm_label": "graphify.analyze.graph_diff()",
-      "source_file": ".claude/skills/graphify/references/update.md",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "claude_skills_graphify_skill_graphify_analyze_module",
-      "label": "graphify.analyze Module",
-      "_origin": "semantic",
-      "author": null,
-      "captured_at": null,
-      "community": 1,
-      "community_name": "GitHub Clone & Merge Reference",
-      "contributor": null,
-      "file_type": "code",
-      "norm_label": "graphify.analyze module",
-      "source_file": ".claude/skills/graphify/SKILL.md",
       "source_location": null,
       "source_url": null
     },
@@ -1612,21 +1833,6 @@
       "file_type": "concept",
       "norm_label": "repo attribute on merged nodes",
       "source_file": ".claude/skills/graphify/references/github-and-merge.md",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "claude_skills_graphify_references_transcribe_whisper_model",
-      "label": "Whisper Model (GRAPHIFY_WHISPER_MODEL)",
-      "_origin": "semantic",
-      "author": null,
-      "captured_at": null,
-      "community": 1,
-      "community_name": "GitHub Clone & Merge Reference",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "whisper model (graphify_whisper_model)",
-      "source_file": ".claude/skills/graphify/references/transcribe.md",
       "source_location": null,
       "source_url": null
     },
@@ -1702,36 +1908,6 @@
       "file_type": "document",
       "norm_label": "github clone & merge reference",
       "source_file": ".claude/skills/graphify/references/github-and-merge.md",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "claude_skills_graphify_references_transcribe_doc",
-      "label": "Transcribe Reference",
-      "_origin": "semantic",
-      "author": null,
-      "captured_at": null,
-      "community": 1,
-      "community_name": "GitHub Clone & Merge Reference",
-      "contributor": null,
-      "file_type": "document",
-      "norm_label": "transcribe reference",
-      "source_file": ".claude/skills/graphify/references/transcribe.md",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "claude_skills_graphify_references_transcribe_whisper_prompt",
-      "label": "Domain Hint Prompt (GRAPHIFY_WHISPER_PROMPT)",
-      "_origin": "semantic",
-      "author": null,
-      "captured_at": null,
-      "community": 1,
-      "community_name": "GitHub Clone & Merge Reference",
-      "contributor": null,
-      "file_type": "rationale",
-      "norm_label": "domain hint prompt (graphify_whisper_prompt)",
-      "source_file": ".claude/skills/graphify/references/transcribe.md",
       "source_location": null,
       "source_url": null
     },
@@ -3388,6 +3564,18 @@
   ],
   "links": [
     {
+      "source": "themes_namanattri_assets_js_modules_experience_clock_initexperienceclock_render",
+      "target": "themes_namanattri_assets_js_modules_experience_clock_elapsed",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
       "source": "themes_namanattri_assets_js_modules_infinite_list_initinfinitelist",
       "target": "themes_namanattri_assets_js_modules_fetch_document_fetchdocument",
       "relation": "calls",
@@ -3420,7 +3608,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L37",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -3432,7 +3620,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L42",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -3444,7 +3632,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L45",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_post_stream_initpoststream_insert",
+      "target": "themes_namanattri_assets_js_modules_post_stream_scrollbyinstant",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -3456,7 +3656,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L28",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -3468,7 +3668,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L37",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -3480,7 +3680,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L42",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -3492,7 +3692,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L44",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -3504,7 +3704,55 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L45",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_post_stream_initpoststream_prune",
+      "target": "themes_namanattri_assets_js_modules_post_stream_scrollbyinstant",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_post_stream_initpoststream_synclocation",
+      "target": "themes_namanattri_assets_js_modules_post_stream_initpoststream_prune",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_theme_toggle_initthemetoggle",
+      "target": "themes_namanattri_assets_js_modules_theme_toggle_storedtheme",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "themes/namanattri/assets/js/modules/theme-toggle.js",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_experience_clock_initexperienceclock",
+      "target": "themes_namanattri_assets_js_modules_experience_clock_initexperienceclock_render",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -3528,31 +3776,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L26",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_sidebar_toggle_initsidebartoggle",
+      "target": "themes_namanattri_assets_js_modules_sidebar_toggle_initsidebartoggle_render",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "themes/namanattri/assets/js/modules/sidebar-toggle.js",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_theme_toggle_initthemetoggle",
+      "target": "themes_namanattri_assets_js_modules_theme_toggle_initthemetoggle_apply",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "themes/namanattri/assets/js/modules/theme-toggle.js",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
       "source": "themes_namanattri_assets_js_main",
-      "target": "themes_namanattri_assets_js_modules_infinite_list_initinfinitelist",
+      "target": "themes_namanattri_assets_js_modules_sidebar_toggle_initsidebartoggle",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "themes/namanattri/assets/js/main.js",
-      "source_location": "L1",
-      "weight": 1.0
-    },
-    {
-      "source": "themes_namanattri_assets_js_main",
-      "target": "themes_namanattri_assets_js_modules_post_stream_initpoststream",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "themes/namanattri/assets/js/main.js",
-      "source_location": "L2",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -3625,6 +3885,42 @@
       "context": "import",
       "source_file": "themes/namanattri/assets/js/main.js",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_main",
+      "target": "themes_namanattri_assets_js_modules_theme_toggle",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "themes/namanattri/assets/js/main.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_main",
+      "target": "themes_namanattri_assets_js_modules_sidebar_toggle",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "themes/namanattri/assets/js/main.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_main",
+      "target": "themes_namanattri_assets_js_modules_experience_clock",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "themes/namanattri/assets/js/main.js",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -3731,13 +4027,24 @@
     },
     {
       "source": "content_about",
-      "target": "content_about_introduction",
+      "target": "content_about_skills_render_as_icon_chips_in_the_order_written",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "content/about.md",
-      "source_location": "L7",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "content_about",
+      "target": "content_about_newest_first_each_list_renders_as_a_timeline_in_the_order_written_here",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "content/about.md",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -3752,14 +4059,47 @@
       "weight": 1.0
     },
     {
-      "source": "themes_namanattri_assets_js_main",
-      "target": "themes_namanattri_assets_js_main_scroller",
+      "source": "themes_namanattri_assets_js_modules_experience_clock",
+      "target": "themes_namanattri_assets_js_modules_experience_clock_units",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "themes/namanattri/assets/js/main.js",
-      "source_location": "L4",
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_experience_clock",
+      "target": "themes_namanattri_assets_js_modules_experience_clock_padded",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_experience_clock",
+      "target": "themes_namanattri_assets_js_modules_experience_clock_initexperienceclock",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_experience_clock",
+      "target": "themes_namanattri_assets_js_modules_experience_clock_elapsed",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "themes/namanattri/assets/js/modules/experience-clock.js",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -3814,7 +4154,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L12",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_post_stream",
+      "target": "themes_namanattri_assets_js_modules_post_stream_scrollbyinstant",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -3825,7 +4176,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L4",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -3836,7 +4187,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L21",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_post_stream_initpoststream",
+      "target": "themes_namanattri_assets_js_modules_post_stream_initpoststream_prune",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -3847,7 +4209,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L66",
+      "source_location": "L82",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_sidebar_toggle",
+      "target": "themes_namanattri_assets_js_modules_sidebar_toggle_initsidebartoggle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "themes/namanattri/assets/js/modules/sidebar-toggle.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_theme_toggle",
+      "target": "themes_namanattri_assets_js_modules_theme_toggle_initthemetoggle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "themes/namanattri/assets/js/modules/theme-toggle.js",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_modules_theme_toggle",
+      "target": "themes_namanattri_assets_js_modules_theme_toggle_storedtheme",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "themes/namanattri/assets/js/modules/theme-toggle.js",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -3928,6 +4323,54 @@
       "weight": 1.0
     },
     {
+      "source": "themes_namanattri_assets_js_main",
+      "target": "themes_namanattri_assets_js_modules_infinite_list_initinfinitelist",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "themes/namanattri/assets/js/main.js",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_main",
+      "target": "themes_namanattri_assets_js_modules_post_stream_initpoststream",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "themes/namanattri/assets/js/main.js",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_main",
+      "target": "themes_namanattri_assets_js_modules_theme_toggle_initthemetoggle",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "themes/namanattri/assets/js/main.js",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "themes_namanattri_assets_js_main",
+      "target": "themes_namanattri_assets_js_modules_experience_clock_initexperienceclock",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "themes/namanattri/assets/js/main.js",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "themes_namanattri_assets_js_modules_post_stream_initpoststream",
       "target": "themes_namanattri_assets_js_modules_post_stream_initpoststream_synclocation",
       "relation": "indirect_call",
@@ -3936,7 +4379,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "themes/namanattri/assets/js/modules/post-stream.js",
-      "source_location": "L137",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -6803,5 +7246,5 @@
       "source_file": "archetypes/default.md"
     }
   ],
-  "built_at_commit": "8a348fff3e7aae8b51b0d9518c449ac037b95494"
+  "built_at_commit": "6eadcb1b66930ae98bb62bda8b91be9d7e44f418"
 }

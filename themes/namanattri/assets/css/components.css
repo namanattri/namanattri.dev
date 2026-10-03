@@ -1,28 +1,28 @@
 /* Sidebar */
 .sidebar__intro {
   display: flex;
-  flex: 1;
   flex-direction: column;
   align-items: center;
   min-height: 0;
-  text-align: center;
 }
 
 .sidebar__photo-link {
   display: block;
-  min-height: 0;
+  flex: none;
+  max-width: 100%;
   line-height: 0;
 }
 
+/* The portrait is transparent, so it blends into the sidebar. */
 .sidebar__photo {
+  display: block;
   width: auto;
-  max-width: min(100%, 15rem);
-  max-height: 34vh;
-  object-fit: contain;
+  max-width: 100%;
+  height: min(38vh, 19rem);
 }
 
 .sidebar__name {
-  margin: 1.25rem 0 0.5rem;
+  margin: 1rem 0 0.5rem;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.2;
@@ -34,15 +34,18 @@
 }
 
 .sidebar__description {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   color: var(--color-muted);
   font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 .sidebar__nav ul {
   display: flex;
-  gap: 1.5rem;
-  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0 1.25rem;
   padding: 0;
   list-style: none;
 }
@@ -61,7 +64,181 @@
   border-block-end-color: var(--color-accent);
 }
 
+/* Live experience clock: same type as the description so it stays quiet. */
+.clock {
+  width: 100%;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.clock__label {
+  margin: 0;
+}
+
+.clock__units {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.5rem;
+  margin: 0;
+}
+
+.clock__unit {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.clock__unit dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.clock__unit dt {
+  margin: 0;
+}
+
+/* Theme switcher */
+.theme-toggle {
+  position: fixed;
+  top: 0.75rem;
+  right: var(--gutter);
+  z-index: 5;
+  display: none;
+  padding: 2px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+.js .theme-toggle {
+  display: flex;
+}
+
+.theme-toggle button {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  color: var(--color-muted);
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.theme-toggle button:hover {
+  color: var(--color-text);
+}
+
+.theme-toggle button[aria-pressed="true"] {
+  color: var(--color-bg);
+  background: var(--color-accent);
+}
+
+.theme-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Sidebar collapse / expand */
+.sidebar-toggle {
+  display: none;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  color: var(--color-muted);
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+  color: var(--color-text);
+  background: var(--color-border);
+}
+
+.sidebar-toggle svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.js .sidebar-toggle--collapse {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: grid;
+}
+
+/* The expand button only exists while the sidebar is collapsed. */
+:root.js[data-sidebar="collapsed"] .sidebar-toggle--expand {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 5;
+  display: grid;
+}
+
+/* Socials and footer */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials a {
+  display: block;
+  color: var(--brand, var(--color-text));
+  transition: transform 150ms ease;
+}
+
+.socials a:hover {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.socials svg {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: currentColor;
+}
+
+.socials__link--linkedin {
+  --brand: #0a66c2;
+}
+
+.socials__link--instagram {
+  --brand: #e4405f;
+}
+
+.socials__link--youtube {
+  --brand: #ff0000;
+}
+
 .sidebar__footer {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
   color: var(--color-muted);
   font-size: 0.85rem;
   text-align: center;
@@ -71,31 +248,40 @@
   margin: 0;
 }
 
-@media (max-width: 48rem) {
-  .sidebar__intro {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.5rem 1rem;
-  }
-
-  .sidebar__photo {
-    max-width: 3rem;
-    max-height: 3rem;
-  }
-
-  .sidebar__name {
-    margin: 0;
-    font-size: 1.1rem;
-  }
-
-  .sidebar__description,
-  .sidebar__footer {
+@media (max-height: 44rem) {
+  .sidebar__description {
     display: none;
   }
+}
 
-  .sidebar__nav {
-    margin-inline-start: auto;
+@media (max-width: 48rem) {
+  .sidebar__photo {
+    height: min(45vw, 11rem);
+  }
+
+  .sidebar__nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem 1.5rem;
+    margin: 0 0 1.25rem;
+  }
+
+  .sidebar__nav a {
+    padding-block: 0.5rem;
+  }
+
+  .socials svg {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .theme-toggle {
+    position: absolute;
+  }
+
+  .sidebar-toggle {
+    display: none !important;
   }
 }
 

@@ -17,7 +17,7 @@ theme = 'namanattri'
           inline = [['\(', '\)']]
 
 [params]
-  description = 'Engineering lead and lifelong learner. I write about problem-solving, system design and the things I learn along the way.'
+  description = "Backend engineer who turns hard problems into simple, dependable systems. My work spans blockchain, DevOps, cloud and Gen & Agentic AI, and I write down what I learn along the way."
   mainSections = ['posts']
   math = true
   googleTag = 'G-K12F1YKP9F'
@@ -25,6 +25,16 @@ theme = 'namanattri'
     name = 'Naman Attri'
     # Resolved from the site's assets directory.
     image = 'images/author.png'
+    # Drives the live "building software for" clock in the sidebar.
+    careerStart = '2013-02-01'
+
+  # All four icons always show; unset ones link to the network's home page.
+  [params.social]
+    github = 'https://github.com/namanattri'
+    # linkedin = ''
+    # x = ''
+    # instagram = ''
+    # youtube = ''
 
 [[menus.main]]
   name = 'About'

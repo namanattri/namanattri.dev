@@ -1,0 +1,15 @@
+{{- with site.Params.author.careerStart -}}
+  {{- $start := time.AsTime . -}}
+<div class="clock" data-experience-clock data-since="{{ $start.Format "2006-01-02T15:04:05" }}" role="timer" aria-live="off">
+  <p class="clock__label">{{ i18n "experienceLabel" }}</p>
+  <dl class="clock__units">
+    {{- range slice "years" "months" "days" "hours" "minutes" "seconds" }}
+    <div class="clock__unit">
+      <dd data-unit="{{ . }}">--</dd>
+      <dt>{{ i18n (printf "unit_%s" .) }}</dt>
+    </div>
+    {{- end }}
+  </dl>
+
+</div>
+{{- end -}}

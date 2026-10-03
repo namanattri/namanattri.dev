@@ -5,7 +5,7 @@ import { fetchDocument } from './fetch-document.js';
  * the list scrolls into view. Each page is a real URL, so the list works
  * without JavaScript through the plain pagination links.
  */
-export function initInfiniteList(list, scroller) {
+export function initInfiniteList(list) {
   const items = list.querySelector('[data-list-items]');
   const sentinel = list.querySelector('[data-sentinel]');
   if (!items || !sentinel) {
@@ -22,7 +22,7 @@ export function initInfiniteList(list, scroller) {
         loadNextPage();
       }
     },
-    { root: scroller, rootMargin: '0px 0px 200px 0px' },
+    { rootMargin: '0px 0px 200px 0px' },
   );
 
   async function loadNextPage() {

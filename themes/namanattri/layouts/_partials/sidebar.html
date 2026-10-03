@@ -1,6 +1,8 @@
 {{- $page := . -}}
 {{- $author := site.Params.author -}}
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
+  {{ partial "sidebar-toggle.html" (dict "kind" "collapse") }}
+  <div class="sidebar__main">
   <div class="sidebar__intro">
     {{- with $author.image -}}
       {{- with resources.Get . -}}
@@ -28,8 +30,11 @@
         {{- end }}
       </ul>
     </nav>
+    {{ partial "experience-clock.html" . }}
+  </div>
   </div>
   <footer class="sidebar__footer">
+    {{ partial "socials.html" . }}
     <p>{{ i18n "madeWith" (dict "Name" ($author.name | default site.Title)) }}</p>
   </footer>
 </aside>

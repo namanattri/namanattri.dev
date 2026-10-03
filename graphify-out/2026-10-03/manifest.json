@@ -89,12 +89,6 @@
     "ast_hash": "1afc97957961765df80e2fb5ac4187c9",
     "semantic_hash": "1afc97957961765df80e2fb5ac4187c9"
   },
-  "content/posts/about-naman.md": {
-    "mtime": 1789285348.142665,
-    "seen": 1789288381.417193,
-    "ast_hash": "aeb9b84d1311087e2f345f78e4bb0d42",
-    "semantic_hash": "aeb9b84d1311087e2f345f78e4bb0d42"
-  },
   "content/posts/algorithms/bit-manipulation/bitwise-operators-in-golang/index.md": {
     "mtime": 1789285348.14292,
     "seen": 1789288381.417194,
@@ -227,52 +221,190 @@
     "ast_hash": "0351e6f595b36847ed0d19f0bc1520fc",
     "semantic_hash": ""
   },
-  "layouts/_partials/google-tag.html": {
-    "mtime": 1789285348.1543534,
-    "seen": 1791044372.648009,
-    "ast_hash": "78990999f91fbfa48b5ad8b04db2675b",
+  "themes/namanattri/assets/js/main.js": {
+    "mtime": 1791045186.939526,
+    "seen": 1791045430.370077,
+    "ast_hash": "0f9cb483a9e1e4e1c333ba4d9b91448e",
     "semantic_hash": ""
   },
-  "layouts/_partials/head.html": {
-    "mtime": 1791044190.2215583,
-    "seen": 1791044372.64801,
-    "ast_hash": "8d04a6e403cea00a74cedef0d9473971",
+  "themes/namanattri/assets/js/modules/fetch-document.js": {
+    "mtime": 1791045300.5554907,
+    "seen": 1791045430.3700778,
+    "ast_hash": "85999db496ff53143ef53ed6bfe47b98",
     "semantic_hash": ""
   },
-  "layouts/_partials/math.html": {
-    "mtime": 1789285348.1544235,
-    "seen": 1791044372.648011,
-    "ast_hash": "cf381bf2b1a1fa869898c5cb8929183f",
+  "themes/namanattri/assets/js/modules/infinite-list.js": {
+    "mtime": 1791045186.9448125,
+    "seen": 1791045430.370079,
+    "ast_hash": "3c4c369e5d3aed481cd12650ae5d9c7e",
     "semantic_hash": ""
   },
-  "layouts/_partials/post-list.html": {
-    "mtime": 1791044190.2283697,
-    "seen": 1791044372.648012,
-    "ast_hash": "d6a1ce2a8ae6eb820773861957368060",
+  "themes/namanattri/assets/js/modules/post-stream.js": {
+    "mtime": 1791045300.5854082,
+    "seen": 1791045430.37008,
+    "ast_hash": "f602067890a6c7d2d9b9a66675e44376",
     "semantic_hash": ""
   },
-  "layouts/baseof.html": {
-    "mtime": 1791044349.6465201,
-    "seen": 1791044372.648012,
-    "ast_hash": "6ab11aed07f4d7b6af717032851785b8",
+  "themes/namanattri/assets/js/modules/typeset.js": {
+    "mtime": 1791045186.9430807,
+    "seen": 1791045430.37008,
+    "ast_hash": "d8acb622adf4d7486f220a2197e70093",
     "semantic_hash": ""
   },
-  "layouts/home.html": {
-    "mtime": 1791044190.22337,
-    "seen": 1791044372.648014,
-    "ast_hash": "de1e3d87272b5ad647702e6044fd3345",
+  "content/_index.md": {
+    "mtime": 1791045198.3242126,
+    "seen": 1791045430.3701,
+    "ast_hash": "11e5a030d1b322be38f4b257e3a35260",
     "semantic_hash": ""
   },
-  "layouts/list.html": {
-    "mtime": 1791044190.2250707,
-    "seen": 1791044372.648014,
-    "ast_hash": "7df196b47f7b6f93b7175b774e1133de",
+  "content/about.md": {
+    "mtime": 1791045198.3189216,
+    "seen": 1791045430.370101,
+    "ast_hash": "eefd3238eb784ce850cb9ca82eee1d7e",
     "semantic_hash": ""
   },
-  "layouts/single.html": {
-    "mtime": 1791044190.2267623,
-    "seen": 1791044372.648015,
-    "ast_hash": "28066dfbad593d883bc7a1c3f1e300d7",
+  "content/posts/_index.md": {
+    "mtime": 1791045198.3259938,
+    "seen": 1791045430.370102,
+    "ast_hash": "9bb3c4cef071dfce12c50147d269152d",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/README.md": {
+    "mtime": 1791045326.8489747,
+    "seen": 1791045430.37011,
+    "ast_hash": "8f27c707665de14193711a430ef0c787",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/archetypes/default.md": {
+    "mtime": 1791045115.9290793,
+    "seen": 1791045430.370111,
+    "ast_hash": "e5fac10cd358831dbd39d46802c1f919",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/404.html": {
+    "mtime": 1791045146.863288,
+    "seen": 1791045430.370112,
+    "ast_hash": "1e9b0c91f677e465c6a4ad57d25a0339",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/breadcrumb.html": {
+    "mtime": 1791045146.8852615,
+    "seen": 1791045430.370112,
+    "ast_hash": "fff7dbbeabe2449e3d87e39722e6e72a",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/func/document-title.html": {
+    "mtime": 1791045146.8693345,
+    "seen": 1791045430.3701131,
+    "ast_hash": "931a4c2fc4c98fb36e4302b7818149b2",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/func/post-neighbors.html": {
+    "mtime": 1791045236.3845932,
+    "seen": 1791045430.370114,
+    "ast_hash": "5bce3861c48778f0d78347eda2acb8cd",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/head.html": {
+    "mtime": 1791045146.867509,
+    "seen": 1791045430.370115,
+    "ast_hash": "c842e60807e1951bd0ed46ede081b70b",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/head/analytics.html": {
+    "mtime": 1791045146.8784006,
+    "seen": 1791045430.370115,
+    "ast_hash": "f707855accdeacabc5322a0662a55f8c",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/head/css.html": {
+    "mtime": 1791045146.873171,
+    "seen": 1791045430.370116,
+    "ast_hash": "2ce2fba45dc3f25dcda03fbb78b7a48a",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/head/custom.html": {
+    "mtime": 1791045146.8801591,
+    "seen": 1791045430.3701172,
+    "ast_hash": "8a3ca736ddc8115b6abbd42024ae95ef",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/head/js.html": {
+    "mtime": 1791045146.8748806,
+    "seen": 1791045430.3701172,
+    "ast_hash": "273da4b48c9ea36d344c95e20f164f96",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/head/math.html": {
+    "mtime": 1791045146.876657,
+    "seen": 1791045430.370118,
+    "ast_hash": "278cb369dc476724e8c3aaad9739739b",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/head/seo.html": {
+    "mtime": 1791045146.8818316,
+    "seen": 1791045430.3701189,
+    "ast_hash": "049123d9fb836405dc6c3fceda163527",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/loader.html": {
+    "mtime": 1791045146.886906,
+    "seen": 1791045430.3701189,
+    "ast_hash": "79af3d5a9ec158b4922ff8e77dde5465",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/post-list.html": {
+    "mtime": 1791045146.8903213,
+    "seen": 1791045430.37012,
+    "ast_hash": "764c339efd0baacece4f36a993005450",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/post.html": {
+    "mtime": 1791045146.888606,
+    "seen": 1791045430.370121,
+    "ast_hash": "508531e7031b5747709a42941174be8f",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_partials/sidebar.html": {
+    "mtime": 1791045146.8835652,
+    "seen": 1791045430.370121,
+    "ast_hash": "11ea769f652d4c88b69671e34cf34c9d",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/baseof.html": {
+    "mtime": 1791045146.85488,
+    "seen": 1791045430.370122,
+    "ast_hash": "0163fe8163ae362125c1bde4d467c8e6",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/home.html": {
+    "mtime": 1791045146.8570526,
+    "seen": 1791045430.370123,
+    "ast_hash": "fc070fefaf1ef79222c3bcc8115949e4",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/list.html": {
+    "mtime": 1791045146.8592453,
+    "seen": 1791045430.370124,
+    "ast_hash": "f80ce8c51c0499512623285df8dd5c8d",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/posts/single.html": {
+    "mtime": 1791045146.8653932,
+    "seen": 1791045430.370124,
+    "ast_hash": "83343ae46faca9655f848064a90fdf42",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/single.html": {
+    "mtime": 1791045146.8612552,
+    "seen": 1791045430.370125,
+    "ast_hash": "2873c8e86ba8eedd0dcaa8e27744dcdb",
+    "semantic_hash": ""
+  },
+  "assets/images/author.png": {
+    "mtime": 1791045115.9200966,
+    "seen": 1791045430.370126,
+    "ast_hash": "08054c076cd2e1fc675a74a3df22c74c",
     "semantic_hash": ""
   }
 }

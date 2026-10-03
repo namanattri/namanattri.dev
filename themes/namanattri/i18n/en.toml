@@ -46,3 +46,69 @@ other = "The page you are looking for does not exist."
 
 [backToHome]
 other = "Back to home"
+
+[experienceLabel]
+other = "Building software for"
+
+[unit_years]
+other = "yrs"
+
+[unit_months]
+other = "mos"
+
+[unit_days]
+other = "days"
+
+[unit_hours]
+other = "hrs"
+
+[unit_minutes]
+other = "min"
+
+[unit_seconds]
+other = "sec"
+
+[social_linkedin]
+other = "LinkedIn"
+
+[social_github]
+other = "GitHub"
+
+[social_instagram]
+other = "Instagram"
+
+[social_youtube]
+other = "YouTube"
+
+[themeLabel]
+other = "Color theme"
+
+[themeLight]
+other = "Light"
+
+[themeDark]
+other = "Dark"
+
+[themeSystem]
+other = "System"
+
+[social_x]
+other = "X"
+
+[sidebarCollapse]
+other = "Collapse sidebar"
+
+[sidebarExpand]
+other = "Expand sidebar"
+
+[education]
+other = "Education"
+
+[workExperience]
+other = "Work Experience"
+
+[skills]
+other = "Skills"
+
+[skillsMore]
+other = "…and many more."

@@ -1,13 +1,11 @@
 import { initInfiniteList } from './modules/infinite-list.js';
 import { initPostStream } from './modules/post-stream.js';
+import { initThemeToggle } from './modules/theme-toggle.js';
+import { initSidebarToggle } from './modules/sidebar-toggle.js';
+import { initExperienceClock } from './modules/experience-clock.js';
 
-const scroller = document.querySelector('[data-scroller]');
-
-if (scroller) {
-  document
-    .querySelectorAll('[data-infinite-list]')
-    .forEach((list) => initInfiniteList(list, scroller));
-  document
-    .querySelectorAll('[data-post-stream]')
-    .forEach((stream) => initPostStream(stream, scroller));
-}
+document.querySelectorAll('[data-theme-toggle]').forEach(initThemeToggle);
+initSidebarToggle(document.querySelectorAll('[data-sidebar-toggle]'));
+document.querySelectorAll('[data-experience-clock]').forEach(initExperienceClock);
+document.querySelectorAll('[data-infinite-list]').forEach(initInfiniteList);
+document.querySelectorAll('[data-post-stream]').forEach(initPostStream);

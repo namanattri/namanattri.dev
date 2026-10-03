@@ -6,8 +6,10 @@
 <body>
   <a class="skip-link" href="#content">{{ i18n "skipToContent" }}</a>
   <div class="layout">
+    {{ partial "theme-toggle.html" . }}
+    {{ partial "sidebar-toggle.html" (dict "kind" "expand") }}
     {{ partial "sidebar.html" . }}
-    <main class="content" id="content" tabindex="-1" data-scroller>
+    <main class="content" id="content" tabindex="-1">
       {{ block "main" . }}{{ end }}
     </main>
   </div>

@@ -1,0 +1,11 @@
+{{/* Favicons are generated from the author image (params.author.image), cropped square around the head. */}}
+{{- with site.Params.author.image -}}
+  {{- with resources.Get . -}}
+    {{- with .Fill "32x32 top png" }}
+<link rel="icon" type="image/png" sizes="32x32" href="{{ .RelPermalink }}">
+    {{- end }}
+    {{- with .Fill "180x180 top png" }}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .RelPermalink }}">
+    {{- end }}
+  {{- end -}}
+{{- end -}}

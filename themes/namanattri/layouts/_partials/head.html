@@ -2,10 +2,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ partial "func/document-title.html" . }}</title>
 <script>document.documentElement.classList.add('js')</script>
+{{ partial "head/theme-init.html" . }}
 {{ partial "head/seo.html" . }}
 {{ range .AlternativeOutputFormats }}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ site.Title }}">
 {{ end }}
+{{ partial "head/favicon.html" . }}
 {{ partial "head/css.html" . }}
 {{ partial "head/js.html" . }}
 {{ if .Param "math" }}{{ partialCached "head/math.html" . }}{{ end }}

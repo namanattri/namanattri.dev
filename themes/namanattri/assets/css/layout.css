@@ -1,51 +1,108 @@
-/* Two panes: a locked 30% sidebar and a scrolling 70% content pane. */
+/*
+ * Two panes. The document is the only scroller: the sidebar is a sticky,
+ * viewport-high column (30%) and the content (70%) scrolls past it. On small
+ * screens the sidebar becomes a normal header above the content.
+ */
 .layout {
+  position: relative;
   display: grid;
-  grid-template-columns: var(--sidebar-width) var(--content-width);
-  height: 100vh;
-  height: 100dvh;
-  overflow: hidden;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  align-items: start;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .sidebar {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  height: 100vh;
+  height: 100dvh;
+  min-width: 0;
   overflow: hidden;
-  padding: 2.5rem 2rem 1.5rem;
+  padding: 0 var(--gutter) 1.25rem;
   background: var(--color-bg-sidebar);
   border-inline-end: 1px solid var(--color-border);
 }
 
+/* The intro sits centred between the top and the footer, so the sidebar stays
+   balanced however many menu links there are. */
+.sidebar__main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 0;
+  text-align: center;
+}
+
 .content {
   min-width: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  /* Scroll position is corrected manually when posts are prepended. */
-  overflow-anchor: none;
-  padding: 2.5rem clamp(1.25rem, 5vw, 4rem);
+  padding: 3.5rem var(--gutter) 2.5rem;
 }
 
 .content:focus {
   outline: none;
 }
 
-.page,
-.post-stream,
-.post-list {
-  max-width: var(--measure);
-  margin-inline: auto;
+/* Prepended posts are corrected manually (see post-stream.js). */
+.post-stream {
+  overflow-anchor: none;
+}
+
+@media (min-width: 48.0625rem) {
+  .layout {
+    transition: grid-template-columns 250ms ease;
+  }
+
+  :root[data-sidebar="collapsed"] .layout {
+    grid-template-columns: 0 minmax(0, 1fr);
+  }
+
+  :root[data-sidebar="collapsed"] .sidebar {
+    visibility: hidden;
+    padding-inline: 0;
+    border-inline-end: 0;
+    transition: visibility 0s 250ms;
+  }
 }
 
 @media (max-width: 48rem) {
-  .layout {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(0, 1fr);
+  :root {
+    --gutter: 1rem;
   }
 
+  .layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* The sidebar's parts become siblings of the content so the footer can go last. */
   .sidebar {
-    padding: 0.75rem 1rem;
-    border-inline-end: 0;
+    display: contents;
+  }
+
+  .sidebar__main {
+    order: 0;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem var(--gutter);
+    background: var(--color-bg-sidebar);
     border-block-end: 1px solid var(--color-border);
+  }
+
+  .content {
+    order: 1;
+    padding: 1.5rem var(--gutter) 2rem;
+  }
+
+  .sidebar__footer {
+    order: 2;
+    padding: 1.25rem var(--gutter);
+    background: var(--color-bg-sidebar);
+    border-block-start: 1px solid var(--color-border);
   }
 }

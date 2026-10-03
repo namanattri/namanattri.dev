@@ -1,17 +1,17 @@
 # Graph Report - namanattri.dev  (2026-10-03)
 
 ## Corpus Check
-- 39 files · ~193,148 words
+- 42 files · ~205,852 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 12 file(s) not represented in the graph (top: (none) 4, .toml 4, .css 4)
+- Unclassified: 13 file(s) not represented in the graph (top: .css 5, (none) 4, .toml 4)
 
 ## Summary
-- 227 nodes · 301 edges · 30 communities (19 shown, 8 thin omitted)
-- Extraction: 86% EXTRACTED · 11% INFERRED · 4% AMBIGUOUS · INFERRED: 32 edges (avg confidence: 0.84)
+- 242 nodes · 324 edges · 31 communities (20 shown, 8 thin omitted)
+- Extraction: 85% EXTRACTED · 11% INFERRED · 3% AMBIGUOUS · INFERRED: 36 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8a348fff`
+- Built from commit: `6eadcb1b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -24,7 +24,7 @@
 - .claude/skills/commit-n-push/SKILL.md
 - Mastering Bitwise Operators in Golang (post)
 - CA system diagram (hand-drawn distributed nodes)
-- initPostStream
+- main.js
 - AP System Diagram (hand-drawn, 5-node distributed cluster)
 - Trie (post)
 - Deploy Hugo site to Pages (GitHub Actions workflow)
@@ -43,30 +43,31 @@
 - namanattri
 - Logarithm
 - about.md
+- experience-clock.js
 
 ## God Nodes (most connected - your core abstractions)
-1. `/graphify Command` - 10 edges
-2. `Query/Path/Explain Reference` - 10 edges
-3. `Step 4: Build Graph, Cluster, Analyze` - 10 edges
-4. `initPostStream()` - 9 edges
+1. `initPostStream()` - 10 edges
+2. `/graphify Command` - 10 edges
+3. `Query/Path/Explain Reference` - 10 edges
+4. `Step 4: Build Graph, Cluster, Analyze` - 10 edges
 5. `CA system diagram (hand-drawn distributed nodes)` - 9 edges
 6. `Exports & Benchmark Reference` - 8 edges
 7. `fetchDocument()` - 7 edges
 8. `Trie struct (Go)` - 7 edges
 9. `Understanding the CAP Theorem (post)` - 7 edges
-10. `Determinism` - 7 edges
+10. `Update & Cluster-Only Reference` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Hugo Quick Start Commands` --conceptually_related_to--> `Deploy Hugo site to Pages (GitHub Actions workflow)`  [INFERRED]
   README.md → .github/workflows/hugo.yaml
 - `Hugo Quick Start Commands` --conceptually_related_to--> `Default Post Archetype Template`  [INFERRED]
   README.md → archetypes/default.md
-- `Domain Hint Prompt (GRAPHIFY_WHISPER_PROMPT)` --semantically_similar_to--> `Constrained Query Vocabulary Expansion`  [INFERRED] [semantically similar]
-  .claude/skills/graphify/references/transcribe.md → .claude/skills/graphify/references/query.md
 - `Incorrect --baseURL flag causes CSS 404 (root cause and fix)` --rationale_for--> `Deploy Hugo site to Pages (GitHub Actions workflow)`  [EXTRACTED]
   content/posts/issue-with-css-not-loading-hugo-website-github-pages.md → .github/workflows/hugo.yaml
 - `Issue with CSS Not Loading for a Hugo Website on GitHub Pages (post)` --references--> `Deploy Hugo site to Pages (GitHub Actions workflow)`  [EXTRACTED]
   content/posts/issue-with-css-not-loading-hugo-website-github-pages.md → .github/workflows/hugo.yaml
+- `Consistency (CAP theorem)` --semantically_similar_to--> `Consistency (blockchain determinism)`  [INFERRED] [semantically similar]
+  content/posts/understanding-cap-theorem-consistency-availability-partition-tolerance/index.md → content/posts/why-blockchains-are-designed-to-be-deterministic/index.md
 
 ## Import Cycles
 - None detected.
@@ -78,15 +79,15 @@
 - **Distributed consistency and determinism theme** — content_posts_understanding_cap_theorem_consistency_availability_partition_tolerance_index_consistency_concept, content_posts_why_blockchains_are_designed_to_be_deterministic_index_consistency_concept, content_posts_why_blockchains_are_designed_to_be_deterministic_index_determinism_concept [INFERRED 0.75]
 - **Posts following default archetype frontmatter template** — archetypes_default_template, content_posts_algorithms_bit_manipulation_bitwise_operators_in_golang_index_post, content_posts_algorithms_bit_manipulation_checking_if_nth_bit_is_set_index_post, content_posts_data_structures_monotonic_stack_index_post, content_posts_data_structures_trie_index_post, content_posts_understanding_cap_theorem_consistency_availability_partition_tolerance_index_post [INFERRED 0.85]
 
-## Communities (30 total, 8 thin omitted)
+## Communities (31 total, 8 thin omitted)
 
 ### Community 0 - "Query/Path/Explain Reference"
-Cohesion: 0.14
-Nodes (21): graphify Skill Directive (.claude/CLAUDE.md), Native CLAUDE.md Integration (graphify claude install), Hooks & CLAUDE.md Integration Reference, Post-Commit Auto-Rebuild Hook, BFS Traversal Mode, DFS Traversal Mode, Query/Path/Explain Reference, graphify reflect / LESSONS.md (+13 more)
+Cohesion: 0.11
+Nodes (27): graphify Skill Directive (.claude/CLAUDE.md), Native CLAUDE.md Integration (graphify claude install), Hooks & CLAUDE.md Integration Reference, Post-Commit Auto-Rebuild Hook, BFS Traversal Mode, DFS Traversal Mode, Query/Path/Explain Reference, graphify reflect / LESSONS.md (+19 more)
 
 ### Community 1 - "GitHub Clone & Merge Reference"
-Cohesion: 0.15
-Nodes (16): graphify clone Command, GitHub Clone & Merge Reference, graphify merge-graphs Command, repo Attribute on Merged Nodes, Transcribe Reference, graphify.transcribe.transcribe_all(), Whisper Model (GRAPHIFY_WHISPER_MODEL), Domain Hint Prompt (GRAPHIFY_WHISPER_PROMPT) (+8 more)
+Cohesion: 0.24
+Nodes (10): graphify clone Command, GitHub Clone & Merge Reference, graphify merge-graphs Command, repo Attribute on Merged Nodes, graphify.detect.detect_incremental(), graphify.detect Module, Step 0: GitHub Repos & Multi-Path Merge, Step 1: Ensure graphify Installed (+2 more)
 
 ### Community 2 - "Understanding the CAP Theorem (post)"
 Cohesion: 0.19
@@ -108,9 +109,9 @@ Nodes (9): Bitwise AND operator (&), Left Shift operator (<<), Bitwise NOT opera
 Cohesion: 0.33
 Nodes (13): CAP theorem, Cape Town node, CA (Consistency + Availability), CA system diagram (hand-drawn distributed nodes), Unlabeled green node (bottom-middle of cluster), Unlabeled green node (top-middle of cluster), Mumbai node, Network partition (comms OK / comms NOT OK legend) (+5 more)
 
-### Community 8 - "initPostStream"
-Cohesion: 0.22
-Nodes (12): scroller, fetchDocument(), resolveRelativeUrls(), URL_ATTRIBUTES, initInfiniteList(), loadNextPage(), initPostStream(), edgePost() (+4 more)
+### Community 8 - "main.js"
+Cohesion: 0.15
+Nodes (17): fetchDocument(), resolveRelativeUrls(), URL_ATTRIBUTES, initInfiniteList(), loadNextPage(), initPostStream(), edgePost(), insert() (+9 more)
 
 ### Community 9 - "AP System Diagram (hand-drawn, 5-node distributed cluster)"
 Cohesion: 0.29
@@ -156,6 +157,10 @@ Nodes (4): Customising, namanattri, Structure, Usage
 Cohesion: 0.50
 Nodes (4): Big-O complexity O(log n), Logarithm Properties (product, quotient, power, change of base), Logarithm, Crash Course on Logarithms (post)
 
+### Community 30 - "experience-clock.js"
+Cohesion: 0.40
+Nodes (5): elapsed(), initExperienceClock(), render(), PADDED, UNITS
+
 ## Ambiguous Edges - Review These
 - `Determinism (concept)` → `blockchain.webp (hero image)`  [AMBIGUOUS]
   content/posts/why-blockchains-are-designed-to-be-deterministic/blockchain.webp · relation: conceptually_related_to
@@ -181,8 +186,8 @@ Nodes (4): Big-O complexity O(log n), Logarithm Properties (product, quotient, p
   content/posts/understanding-cap-theorem-consistency-availability-partition-tolerance/img/ap.jpeg · relation: references
 
 ## Knowledge Gaps
-- **53 isolated node(s):** `scroller`, `URL_ATTRIBUTES`, `USER_INPUT_EVENTS`, `Commit and push`, `Commit` (+48 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 65 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **55 isolated node(s):** `UNITS`, `PADDED`, `URL_ATTRIBUTES`, `USER_INPUT_EVENTS`, `Commit and push` (+50 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 67 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
