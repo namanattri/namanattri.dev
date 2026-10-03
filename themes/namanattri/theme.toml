@@ -1,0 +1,12 @@
+name = "namanattri"
+license = "MIT"
+licenselink = "https://github.com/namanattri/namanattri.dev/blob/main/themes/namanattri/LICENSE"
+description = "A two-pane personal blog theme: a fixed intro sidebar and a scrolling content pane with infinite lists and infinite post scrolling."
+homepage = "https://github.com/namanattri/namanattri.dev"
+tags = ["blog", "personal", "responsive", "dark mode", "minimal"]
+features = ["infinite scroll", "dark mode", "breadcrumbs", "mathjax", "seo", "i18n"]
+min_version = "0.158.0"
+
+[author]
+  name = "Naman Attri"
+  homepage = "https://namanattri.dev"

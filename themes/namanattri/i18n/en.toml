@@ -1,0 +1,48 @@
+[home]
+other = "Home"
+
+[skipToContent]
+other = "Skip to content"
+
+[breadcrumb]
+other = "Breadcrumb"
+
+[mainNavigation]
+other = "Main"
+
+[loading]
+other = "Loading…"
+
+[madeWith]
+other = "Made with ♥ by {{ .Name }}"
+
+[readingTime]
+one = "1 min read"
+other = "{{ .Count }} min read"
+
+[olderPosts]
+other = "Older posts"
+
+[newerPosts]
+other = "Newer posts"
+
+[olderPost]
+other = "Older post"
+
+[newerPost]
+other = "Newer post"
+
+[pagination]
+other = "Pagination"
+
+[postNavigation]
+other = "Post navigation"
+
+[notFoundTitle]
+other = "Page not found"
+
+[notFoundText]
+other = "The page you are looking for does not exist."
+
+[backToHome]
+other = "Back to home"

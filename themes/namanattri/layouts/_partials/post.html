@@ -1,0 +1,18 @@
+{{- $neighbors := partial "func/post-neighbors.html" . -}}
+<article class="post"
+  data-post
+  data-url="{{ .RelPermalink }}"
+  data-title="{{ partial "func/document-title.html" . }}"
+  {{- with $neighbors.newer }} data-newer="{{ .RelPermalink }}"{{ end }}
+  {{- with $neighbors.older }} data-older="{{ .RelPermalink }}"{{ end }}>
+  <header class="post__header">
+    {{ partial "breadcrumb.html" . }}
+    <h1 class="post__title">{{ .Title }}</h1>
+    <p class="post__meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ i18n "readingTime" .ReadingTime }}</span>
+    </p>
+  </header>
+  <div class="prose">{{ .Content }}</div>
+</article>

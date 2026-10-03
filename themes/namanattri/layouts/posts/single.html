@@ -1,0 +1,20 @@
+{{ define "main" }}
+  {{ $neighbors := partial "func/post-neighbors.html" . }}
+  <div class="post-stream" data-post-stream>
+    {{ with $neighbors.newer }}
+      <div class="post-stream__sentinel" data-sentinel="newer">{{ partial "loader.html" . }}</div>
+    {{ end }}
+
+    {{ partial "post.html" . }}
+
+    {{ with $neighbors.older }}
+      <div class="post-stream__sentinel" data-sentinel="older">{{ partial "loader.html" . }}</div>
+    {{ end }}
+
+    {{/* Plain links keep the post sequence crawlable and usable without JavaScript. */}}
+    <nav class="post-pager" aria-label="{{ i18n "postNavigation" }}" data-pager>
+      {{ with $neighbors.newer }}<a rel="prev" href="{{ .RelPermalink }}">&larr; {{ i18n "newerPost" }}: {{ .LinkTitle }}</a>{{ end }}
+      {{ with $neighbors.older }}<a rel="next" href="{{ .RelPermalink }}">{{ i18n "olderPost" }}: {{ .LinkTitle }} &rarr;</a>{{ end }}
+    </nav>
+  </div>
+{{ end }}

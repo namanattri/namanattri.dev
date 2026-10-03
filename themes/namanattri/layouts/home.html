@@ -1,0 +1,10 @@
+{{ define "main" }}
+  <div class="page">
+    <header class="page__header">
+      <h1>{{ .Title }}</h1>
+    </header>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    {{ $sections := site.Params.mainSections }}
+    {{ partial "post-list.html" (dict "page" . "pages" (where site.RegularPages "Section" "in" $sections)) }}
+  </div>
+{{ end }}

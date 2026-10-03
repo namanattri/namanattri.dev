@@ -1,17 +1,17 @@
 # Graph Report - namanattri.dev  (2026-10-03)
 
 ## Corpus Check
-- 30 files · ~141,820 words
+- 30 files · ~141,762 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: (none) 3, .toml 1)
 
 ## Summary
-- 204 nodes · 274 edges · 23 communities (16 shown, 7 thin omitted)
-- Extraction: 81% EXTRACTED · 15% INFERRED · 4% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.86)
+- 201 nodes · 270 edges · 23 communities (16 shown, 7 thin omitted)
+- Extraction: 82% EXTRACTED · 14% INFERRED · 4% AMBIGUOUS · INFERRED: 38 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1a78a2e1`
+- Built from commit: `0688e78a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -28,7 +28,7 @@
 - AP System Diagram (hand-drawn, 5-node distributed cluster)
 - Trie (post)
 - Deploy Hugo site to Pages (GitHub Actions workflow)
-- Add & Watch Reference
+- Monotonic Stack (post)
 - Single server (green circle)
 - blockchain.webp (hero image)
 - CP (Consistency + Partition Tolerance)
@@ -59,10 +59,10 @@
   README.md → .github/workflows/hugo.yaml
 - `Hugo Quick Start Commands` --conceptually_related_to--> `Default Post Archetype Template`  [INFERRED]
   README.md → archetypes/default.md
-- `MathJax Math Rendering Partial` --conceptually_related_to--> `Crash Course on Logarithms (post)`  [INFERRED]
-  layouts/partials/math.html → content/posts/data-structures/logarithms/index.md
-- `MathJax Math Rendering Partial` --conceptually_related_to--> `Monotonic Stack (post)`  [INFERRED]
-  layouts/partials/math.html → content/posts/data-structures/monotonic-stack/index.md
+- `Domain Hint Prompt (GRAPHIFY_WHISPER_PROMPT)` --semantically_similar_to--> `Constrained Query Vocabulary Expansion`  [INFERRED] [semantically similar]
+  .claude/skills/graphify/references/transcribe.md → .claude/skills/graphify/references/query.md
+- `Incorrect --baseURL flag causes CSS 404 (root cause and fix)` --rationale_for--> `Deploy Hugo site to Pages (GitHub Actions workflow)`  [EXTRACTED]
+  content/posts/issue-with-css-not-loading-hugo-website-github-pages.md → .github/workflows/hugo.yaml
 
 ## Import Cycles
 - None detected.
@@ -72,18 +72,17 @@
 - **graphify Full Build Pipeline (Steps 0-9)** — claude_skills_graphify_skill_step0_github, claude_skills_graphify_skill_step1_install, claude_skills_graphify_skill_step2_detect, claude_skills_graphify_skill_step2_5_transcribe, claude_skills_graphify_skill_step3_extract, claude_skills_graphify_skill_step4_build_graph, claude_skills_graphify_skill_step4_5_health_check, claude_skills_graphify_skill_step5_label_communities, claude_skills_graphify_skill_step6_obsidian_html, claude_skills_graphify_skill_steps_6b_8_optional_exports, claude_skills_graphify_skill_step9_cleanup [EXTRACTED 1.00]
 - **Query / Path / Explain Command Family** — claude_skills_graphify_skill_graphify_query_command, claude_skills_graphify_skill_graphify_path_command, claude_skills_graphify_skill_graphify_explain_command, claude_skills_graphify_references_query_doc [EXTRACTED 1.00]
 - **Distributed consistency and determinism theme** — content_posts_understanding_cap_theorem_consistency_availability_partition_tolerance_index_consistency_concept, content_posts_why_blockchains_are_designed_to_be_deterministic_index_consistency_concept, content_posts_why_blockchains_are_designed_to_be_deterministic_index_determinism_concept [INFERRED 0.75]
-- **LaTeX math notation rendered via MathJax partial** — layouts_partials_math_mathjax, content_posts_data_structures_logarithms_index_post, content_posts_data_structures_monotonic_stack_index_post [INFERRED 0.75]
 - **Posts following default archetype frontmatter template** — archetypes_default_template, content_posts_algorithms_bit_manipulation_bitwise_operators_in_golang_index_post, content_posts_algorithms_bit_manipulation_checking_if_nth_bit_is_set_index_post, content_posts_data_structures_monotonic_stack_index_post, content_posts_data_structures_trie_index_post, content_posts_understanding_cap_theorem_consistency_availability_partition_tolerance_index_post [INFERRED 0.85]
 
 ## Communities (23 total, 7 thin omitted)
 
 ### Community 0 - "Query/Path/Explain Reference"
-Cohesion: 0.14
-Nodes (21): graphify Skill Directive (.claude/CLAUDE.md), Native CLAUDE.md Integration (graphify claude install), Hooks & CLAUDE.md Integration Reference, Post-Commit Auto-Rebuild Hook, BFS Traversal Mode, DFS Traversal Mode, Query/Path/Explain Reference, graphify reflect / LESSONS.md (+13 more)
+Cohesion: 0.12
+Nodes (24): graphify Skill Directive (.claude/CLAUDE.md), Debounce Mechanism, Add & Watch Reference, graphify.ingest.ingest(), Supported URL Types (YouTube, Twitter/X, arXiv, PDF, Images, Webpage), graphify.watch Module, Native CLAUDE.md Integration (graphify claude install), Hooks & CLAUDE.md Integration Reference (+16 more)
 
 ### Community 1 - "GitHub Clone & Merge Reference"
-Cohesion: 0.15
-Nodes (16): graphify clone Command, GitHub Clone & Merge Reference, graphify merge-graphs Command, repo Attribute on Merged Nodes, Transcribe Reference, graphify.transcribe.transcribe_all(), Whisper Model (GRAPHIFY_WHISPER_MODEL), Domain Hint Prompt (GRAPHIFY_WHISPER_PROMPT) (+8 more)
+Cohesion: 0.18
+Nodes (14): graphify clone Command, GitHub Clone & Merge Reference, graphify merge-graphs Command, repo Attribute on Merged Nodes, Transcribe Reference, graphify.transcribe.transcribe_all(), Whisper Model (GRAPHIFY_WHISPER_MODEL), Domain Hint Prompt (GRAPHIFY_WHISPER_PROMPT) (+6 more)
 
 ### Community 2 - "Understanding the CAP Theorem (post)"
 Cohesion: 0.19
@@ -98,16 +97,16 @@ Cohesion: 0.15
 Nodes (14): Token Reduction Benchmark, Exports & Benchmark Reference, FalkorDB Export, GraphML Export, Neo4j Export, SVG Export, --wiki Export, graphify.cli Module (+6 more)
 
 ### Community 6 - "Naman Attri (author/blogger)"
-Cohesion: 0.10
-Nodes (25): Naman Attri (author/blogger), About Naman (post), Bitwise AND operator (&), Left Shift operator (<<), Bitwise NOT operator (^), Bitwise OR operator (|), Mastering Bitwise Operators in Golang (post), Right Shift operator (>>) (+17 more)
+Cohesion: 0.16
+Nodes (15): Naman Attri (author/blogger), About Naman (post), Bitwise AND operator (&), Left Shift operator (<<), Bitwise NOT operator (^), Bitwise OR operator (|), Mastering Bitwise Operators in Golang (post), Right Shift operator (>>) (+7 more)
 
 ### Community 7 - "CA system diagram (hand-drawn distributed nodes)"
 Cohesion: 0.33
 Nodes (13): CAP theorem, Cape Town node, CA (Consistency + Availability), CA system diagram (hand-drawn distributed nodes), Unlabeled green node (bottom-middle of cluster), Unlabeled green node (top-middle of cluster), Mumbai node, Network partition (comms OK / comms NOT OK legend) (+5 more)
 
 ### Community 8 - "Step 4: Build Graph, Cluster, Analyze"
-Cohesion: 0.16
-Nodes (14): graphify.serve MCP Server, Confidence Taxonomy (EXTRACTED/INFERRED/AMBIGUOUS), graphify extract CLI (per-subfolder), NetworkX Inline Traversal Fallback, graphify.build.build_merge(), graphify-out/graph.json, graphify-out/GRAPH_REPORT.md, graphify.build Module (+6 more)
+Cohesion: 0.12
+Nodes (20): graphify.serve MCP Server, Confidence Taxonomy (EXTRACTED/INFERRED/AMBIGUOUS), graphify extract CLI (per-subfolder), NetworkX Inline Traversal Fallback, graphify.build.build_merge(), graphify cluster-only Command, Update & Cluster-Only Reference, graphify.analyze.graph_diff() (+12 more)
 
 ### Community 9 - "AP System Diagram (hand-drawn, 5-node distributed cluster)"
 Cohesion: 0.29
@@ -121,9 +120,9 @@ Nodes (9): Delete method, deleteHelper method, GetWordsWithPrefix (autocomplete)
 Cohesion: 0.38
 Nodes (7): Default Post Archetype Template, Incorrect --baseURL flag causes CSS 404 (root cause and fix), Issue with CSS Not Loading for a Hugo Website on GitHub Pages (post), build job, deploy job, Deploy Hugo site to Pages (GitHub Actions workflow), Hugo Quick Start Commands
 
-### Community 12 - "Add & Watch Reference"
-Cohesion: 0.38
-Nodes (7): Debounce Mechanism, Add & Watch Reference, graphify.ingest.ingest(), Supported URL Types (YouTube, Twitter/X, arXiv, PDF, Images, Webpage), graphify.watch Module, /graphify add Command, --watch Flag
+### Community 12 - "Monotonic Stack (post)"
+Cohesion: 0.43
+Nodes (7): Monotonic Function, Monotonic Stack (data structure), MonotonicStack struct (Go), Pop method, Monotonic Stack (post), processMonotonicStack function, Push method
 
 ### Community 13 - "Single server (green circle)"
 Cohesion: 0.60
@@ -166,8 +165,8 @@ Nodes (3): Blockchain consensus (independent nodes arriving at identical state),
   content/posts/understanding-cap-theorem-consistency-availability-partition-tolerance/img/ap.jpeg · relation: references
 
 ## Knowledge Gaps
-- **46 isolated node(s):** `Commit and push`, `Commit`, `Suggest commit`, `Commit and push`, `Commit` (+41 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 52 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **45 isolated node(s):** `Commit and push`, `Commit`, `Suggest commit`, `Commit and push`, `Commit` (+40 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 51 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions

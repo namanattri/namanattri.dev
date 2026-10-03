@@ -1,0 +1,28 @@
+{{- $pager := .page.Paginate .pages -}}
+<div class="post-list" data-infinite-list data-next-url="{{ with $pager.Next }}{{ .URL }}{{ end }}">
+  <ol class="post-list__items" data-list-items>
+    {{- range $pager.Pages }}
+    <li class="post-card">
+      <article>
+        <h2 class="post-card__title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        <p class="post-card__meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
+          <span aria-hidden="true">·</span>
+          <span>{{ i18n "readingTime" .ReadingTime }}</span>
+        </p>
+        <p class="post-card__summary">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 180 }}{{ end }}</p>
+      </article>
+    </li>
+    {{- end }}
+  </ol>
+  {{ with $pager.Next }}
+  <div class="post-list__sentinel" data-sentinel>{{ partial "loader.html" . }}</div>
+  {{ end }}
+  {{/* Plain links keep every page crawlable and usable without JavaScript. */}}
+  {{ if or $pager.HasPrev $pager.HasNext }}
+  <nav class="pagination" aria-label="{{ i18n "pagination" }}" data-pager>
+    {{ with $pager.Prev }}<a rel="prev" href="{{ .URL }}">&larr; {{ i18n "newerPosts" }}</a>{{ end }}
+    {{ with $pager.Next }}<a rel="next" href="{{ .URL }}">{{ i18n "olderPosts" }} &rarr;</a>{{ end }}
+  </nav>
+  {{ end }}
+</div>

@@ -1,0 +1,5 @@
+{{- if .IsHome -}}
+  {{- return site.Title -}}
+{{- else -}}
+  {{- return printf "%s | %s" .Title site.Title -}}
+{{- end -}}

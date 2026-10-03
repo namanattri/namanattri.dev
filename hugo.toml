@@ -2,14 +2,36 @@ baseURL = 'https://namanattri.dev/'
 enableRobotsTXT = true
 locale = 'en-US'
 title = 'Naman Attri'
+theme = 'namanattri'
+
 [markup]
   [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Posts embed their own HTML and <style> blocks.
+      unsafe = true
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
         enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+
 [params]
+  description = 'Engineering lead and lifelong learner. I write about problem-solving, system design and the things I learn along the way.'
+  mainSections = ['posts']
   math = true
-  googletag = true
+  googleTag = 'G-K12F1YKP9F'
+  [params.author]
+    name = 'Naman Attri'
+    # Resolved from the site's assets directory.
+    image = 'images/author.png'
+
+[[menus.main]]
+  name = 'About'
+  pageRef = '/about'
+  weight = 10
+
+[[menus.main]]
+  name = 'Blog'
+  pageRef = '/posts'
+  weight = 20
