@@ -72,10 +72,10 @@
     "semantic_hash": "f9466e50c1070442c5494a205fcd0fe6"
   },
   "CLAUDE.md": {
-    "mtime": 1789285355.9532228,
-    "seen": 1789288381.417191,
-    "ast_hash": "82efb97a359f5c7290bf2513d14686be",
-    "semantic_hash": "82efb97a359f5c7290bf2513d14686be"
+    "mtime": 1791043713.0582216,
+    "seen": 1791043736.782345,
+    "ast_hash": "5be9441fb5090d2787a8a8ff62cdf7de",
+    "semantic_hash": ""
   },
   "README.md": {
     "mtime": 1791042877.988252,
@@ -237,6 +237,12 @@
     "mtime": 1791041509.8567598,
     "seen": 1791041539.083581,
     "ast_hash": "2ff34f826e8b4641356f31aa56a3420a",
+    "semantic_hash": ""
+  },
+  "Taskfile.yml": {
+    "mtime": 1791043389.7049255,
+    "seen": 1791043736.782347,
+    "ast_hash": "0351e6f595b36847ed0d19f0bc1520fc",
     "semantic_hash": ""
   }
 }

@@ -1,0 +1,7 @@
+version: '3'
+
+tasks:
+  dev:
+    desc: Launch site locally with drafts (http://localhost:1313)
+    cmds:
+      - hugo server --buildDrafts
