@@ -1,5 +1,17 @@
 # Quick Start Commands
 
+## Commit workflow
+
+The project-local Codex skills `$suggest-commit`, `$commit`, and `$commit-n-push` (also available in Claude as slash skills) use Commitizen messages. Install the command-line tools if needed, then enable the tracked pre-commit hook once per clone:
+
+```sh
+uv tool install commitizen
+uv tool install graphifyy
+git config core.hooksPath .githooks
+```
+
+The hook runs `graphify update .` before every commit and stops the commit if the update fails. Graphify output remains in the working tree for review; stage it explicitly if it belongs in the commit.
+
 Start hugo development server
 
 ```sh

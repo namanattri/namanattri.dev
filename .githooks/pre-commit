@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+
+if ! command -v graphify >/dev/null 2>&1; then
+  echo 'graphify is required before committing; install graphifyy and retry.' >&2
+  exit 1
+fi
+
+graphify update .
