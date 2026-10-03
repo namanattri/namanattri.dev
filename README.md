@@ -10,7 +10,7 @@ uv tool install graphifyy
 git config core.hooksPath .githooks
 ```
 
-The commit skills run `graphify update .` before staging so relevant Graphify output can be reviewed and committed with the other changes. The hook runs it again before every commit, including direct Git commits, and stops the commit if the update fails.
+The commit skills run `graphify update .` before staging, then review and stage intended tracked and untracked files, including Graphify output. The hook runs it again before every commit, including direct Git commits, and stops the commit if the update fails.
 
 Start hugo development server
 
