@@ -1,12 +1,12 @@
 # Graph Report - namanattri.dev  (2026-10-03)
 
 ## Corpus Check
-- 27 files · ~141,380 words
+- 30 files · ~141,820 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: (none) 3, .toml 1)
 
 ## Summary
-- 198 nodes · 269 edges · 21 communities (15 shown, 6 thin omitted)
+- 204 nodes · 274 edges · 23 communities (16 shown, 7 thin omitted)
 - Extraction: 81% EXTRACTED · 15% INFERRED · 4% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.86)
 - Token cost: 0 input · 0 output
 
@@ -20,11 +20,11 @@
 - GitHub Clone & Merge Reference
 - Understanding the CAP Theorem (post)
 - Extraction Spec Reference
-- Step 4: Build Graph, Cluster, Analyze
-- commit-n-push/SKILL.md
+- Exports & Benchmark Reference
+- .claude/skills/commit-n-push/SKILL.md
 - Naman Attri (author/blogger)
 - CA system diagram (hand-drawn distributed nodes)
-- commit/SKILL.md
+- Step 4: Build Graph, Cluster, Analyze
 - AP System Diagram (hand-drawn, 5-node distributed cluster)
 - Trie (post)
 - Deploy Hugo site to Pages (GitHub Actions workflow)
@@ -37,6 +37,8 @@
 - Interpreter Guard for Subcommands
 - suggest-commit/SKILL.md
 - pre-commit
+- .agents/skills/commit-n-push/SKILL.md
+- .agents/skills/suggest-commit/SKILL.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `/graphify Command` - 10 edges
@@ -73,7 +75,7 @@
 - **LaTeX math notation rendered via MathJax partial** — layouts_partials_math_mathjax, content_posts_data_structures_logarithms_index_post, content_posts_data_structures_monotonic_stack_index_post [INFERRED 0.75]
 - **Posts following default archetype frontmatter template** — archetypes_default_template, content_posts_algorithms_bit_manipulation_bitwise_operators_in_golang_index_post, content_posts_algorithms_bit_manipulation_checking_if_nth_bit_is_set_index_post, content_posts_data_structures_monotonic_stack_index_post, content_posts_data_structures_trie_index_post, content_posts_understanding_cap_theorem_consistency_availability_partition_tolerance_index_post [INFERRED 0.85]
 
-## Communities (21 total, 6 thin omitted)
+## Communities (23 total, 7 thin omitted)
 
 ### Community 0 - "Query/Path/Explain Reference"
 Cohesion: 0.14
@@ -91,9 +93,9 @@ Nodes (16): AP (Availability + Partition Tolerance) trade-off, Availability (CAP
 Cohesion: 0.15
 Nodes (15): DEEP_MODE, Extraction Spec Reference, Hyperedges, Node ID Format Spec, Semantic Similarity Edges (semantically_similar_to), Extraction Subagent Prompt Template, Parallel Subagent Dispatch (general-purpose), GEMINI_API_KEY / GOOGLE_API_KEY (+7 more)
 
-### Community 4 - "Step 4: Build Graph, Cluster, Analyze"
-Cohesion: 0.08
-Nodes (28): Token Reduction Benchmark, Exports & Benchmark Reference, FalkorDB Export, GraphML Export, graphify.serve MCP Server, Neo4j Export, SVG Export, --wiki Export (+20 more)
+### Community 4 - "Exports & Benchmark Reference"
+Cohesion: 0.15
+Nodes (14): Token Reduction Benchmark, Exports & Benchmark Reference, FalkorDB Export, GraphML Export, Neo4j Export, SVG Export, --wiki Export, graphify.cli Module (+6 more)
 
 ### Community 6 - "Naman Attri (author/blogger)"
 Cohesion: 0.10
@@ -102,6 +104,10 @@ Nodes (25): Naman Attri (author/blogger), About Naman (post), Bitwise AND operat
 ### Community 7 - "CA system diagram (hand-drawn distributed nodes)"
 Cohesion: 0.33
 Nodes (13): CAP theorem, Cape Town node, CA (Consistency + Availability), CA system diagram (hand-drawn distributed nodes), Unlabeled green node (bottom-middle of cluster), Unlabeled green node (top-middle of cluster), Mumbai node, Network partition (comms OK / comms NOT OK legend) (+5 more)
+
+### Community 8 - "Step 4: Build Graph, Cluster, Analyze"
+Cohesion: 0.16
+Nodes (14): graphify.serve MCP Server, Confidence Taxonomy (EXTRACTED/INFERRED/AMBIGUOUS), graphify extract CLI (per-subfolder), NetworkX Inline Traversal Fallback, graphify.build.build_merge(), graphify-out/graph.json, graphify-out/GRAPH_REPORT.md, graphify.build Module (+6 more)
 
 ### Community 9 - "AP System Diagram (hand-drawn, 5-node distributed cluster)"
 Cohesion: 0.29
@@ -160,9 +166,9 @@ Nodes (3): Blockchain consensus (independent nodes arriving at identical state),
   content/posts/understanding-cap-theorem-consistency-availability-partition-tolerance/img/ap.jpeg · relation: references
 
 ## Knowledge Gaps
-- **43 isolated node(s):** `Commit and push`, `Commit`, `Suggest commit`, `Big-O complexity O(log n)`, `Logarithm Properties (product, quotient, power, change of base)` (+38 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 50 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **46 isolated node(s):** `Commit and push`, `Commit`, `Suggest commit`, `Commit and push`, `Commit` (+41 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 52 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_

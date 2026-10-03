@@ -66,10 +66,10 @@
     "semantic_hash": "9378bd03d56baaf78bd738ab3848f142"
   },
   ".github/workflows/hugo.yaml": {
-    "mtime": 1789285348.1419418,
-    "seen": 1789288381.4171898,
-    "ast_hash": "f9466e50c1070442c5494a205fcd0fe6",
-    "semantic_hash": "f9466e50c1070442c5494a205fcd0fe6"
+    "mtime": 1791044190.2319682,
+    "seen": 1791044372.647996,
+    "ast_hash": "0b6b0ddfd7d0798d01f1cde40bd406f2",
+    "semantic_hash": ""
   },
   "CLAUDE.md": {
     "mtime": 1791043713.0582216,
@@ -142,24 +142,6 @@
     "seen": 1789288381.4171991,
     "ast_hash": "b913d166abab73d78f326e50c5ddd8e9",
     "semantic_hash": "b913d166abab73d78f326e50c5ddd8e9"
-  },
-  "layouts/_default/baseof.html": {
-    "mtime": 1789285348.1542456,
-    "seen": 1789288381.4172,
-    "ast_hash": "2bb9faa3f693ae6362493de70ffb4188",
-    "semantic_hash": "2bb9faa3f693ae6362493de70ffb4188"
-  },
-  "layouts/partials/google-tag.html": {
-    "mtime": 1789285348.1543534,
-    "seen": 1789288381.4172008,
-    "ast_hash": "78990999f91fbfa48b5ad8b04db2675b",
-    "semantic_hash": "78990999f91fbfa48b5ad8b04db2675b"
-  },
-  "layouts/partials/math.html": {
-    "mtime": 1789285348.1544235,
-    "seen": 1789288381.4172008,
-    "ast_hash": "cf381bf2b1a1fa869898c5cb8929183f",
-    "semantic_hash": "cf381bf2b1a1fa869898c5cb8929183f"
   },
   "content/posts/understanding-cap-theorem-consistency-availability-partition-tolerance/img/ap.jpeg": {
     "mtime": 1789285348.146247,
@@ -243,6 +225,54 @@
     "mtime": 1791043389.7049255,
     "seen": 1791043736.782347,
     "ast_hash": "0351e6f595b36847ed0d19f0bc1520fc",
+    "semantic_hash": ""
+  },
+  "layouts/_partials/google-tag.html": {
+    "mtime": 1789285348.1543534,
+    "seen": 1791044372.648009,
+    "ast_hash": "78990999f91fbfa48b5ad8b04db2675b",
+    "semantic_hash": ""
+  },
+  "layouts/_partials/head.html": {
+    "mtime": 1791044190.2215583,
+    "seen": 1791044372.64801,
+    "ast_hash": "8d04a6e403cea00a74cedef0d9473971",
+    "semantic_hash": ""
+  },
+  "layouts/_partials/math.html": {
+    "mtime": 1789285348.1544235,
+    "seen": 1791044372.648011,
+    "ast_hash": "cf381bf2b1a1fa869898c5cb8929183f",
+    "semantic_hash": ""
+  },
+  "layouts/_partials/post-list.html": {
+    "mtime": 1791044190.2283697,
+    "seen": 1791044372.648012,
+    "ast_hash": "d6a1ce2a8ae6eb820773861957368060",
+    "semantic_hash": ""
+  },
+  "layouts/baseof.html": {
+    "mtime": 1791044349.6465201,
+    "seen": 1791044372.648012,
+    "ast_hash": "6ab11aed07f4d7b6af717032851785b8",
+    "semantic_hash": ""
+  },
+  "layouts/home.html": {
+    "mtime": 1791044190.22337,
+    "seen": 1791044372.648014,
+    "ast_hash": "de1e3d87272b5ad647702e6044fd3345",
+    "semantic_hash": ""
+  },
+  "layouts/list.html": {
+    "mtime": 1791044190.2250707,
+    "seen": 1791044372.648014,
+    "ast_hash": "7df196b47f7b6f93b7175b774e1133de",
+    "semantic_hash": ""
+  },
+  "layouts/single.html": {
+    "mtime": 1791044190.2267623,
+    "seen": 1791044372.648015,
+    "ast_hash": "28066dfbad593d883bc7a1c3f1e300d7",
     "semantic_hash": ""
   }
 }

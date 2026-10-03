@@ -3,11 +3,11 @@
   "1": "GitHub Clone & Merge Reference",
   "2": "Understanding the CAP Theorem (post)",
   "3": "Extraction Spec Reference",
-  "4": "Step 4: Build Graph, Cluster, Analyze",
-  "5": "commit-n-push/SKILL.md",
+  "4": "Exports & Benchmark Reference",
+  "5": ".claude/skills/commit-n-push/SKILL.md",
   "6": "Naman Attri (author/blogger)",
   "7": "CA system diagram (hand-drawn distributed nodes)",
-  "8": "commit/SKILL.md",
+  "8": "Step 4: Build Graph, Cluster, Analyze",
   "9": "AP System Diagram (hand-drawn, 5-node distributed cluster)",
   "10": "Trie (post)",
   "11": "Deploy Hugo site to Pages (GitHub Actions workflow)",
@@ -19,5 +19,7 @@
   "17": "graphify knowledge graph tool",
   "18": "Interpreter Guard for Subcommands",
   "19": "suggest-commit/SKILL.md",
-  "20": "pre-commit"
+  "20": "pre-commit",
+  "21": ".agents/skills/commit-n-push/SKILL.md",
+  "22": ".agents/skills/suggest-commit/SKILL.md"
 }

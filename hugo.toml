@@ -1,8 +1,7 @@
 baseURL = 'https://namanattri.dev/'
 enableRobotsTXT = true
-languageCode = 'en-us'
+locale = 'en-US'
 title = 'Naman Attri'
-theme = 'ananke'
 [markup]
   [markup.goldmark]
     [markup.goldmark.extensions]
