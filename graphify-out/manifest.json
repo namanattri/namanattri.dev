@@ -78,9 +78,9 @@
     "semantic_hash": "82efb97a359f5c7290bf2513d14686be"
   },
   "README.md": {
-    "mtime": 1791041515.8855503,
-    "seen": 1791041539.083596,
-    "ast_hash": "0c69cd9a3524c1d5e7a38dde333b4e2c",
+    "mtime": 1791042510.040998,
+    "seen": 1791042530.78854,
+    "ast_hash": "51c4035c0c63b7d5de665344b459e8d2",
     "semantic_hash": ""
   },
   "archetypes/default.md": {
@@ -204,15 +204,15 @@
     "semantic_hash": ""
   },
   ".claude/skills/commit-n-push/SKILL.md": {
-    "mtime": 1791034812.7345262,
-    "seen": 1791041539.0835829,
-    "ast_hash": "6a3b2f2179b5c2f465260c0f1aa3dea9",
+    "mtime": 1791042510.021221,
+    "seen": 1791042530.788527,
+    "ast_hash": "644a261092e2705faa27e1777eac2e8d",
     "semantic_hash": ""
   },
   ".claude/skills/commit/SKILL.md": {
-    "mtime": 1791034703.4034941,
-    "seen": 1791034778.866025,
-    "ast_hash": "b74744d1070c13fa9b9fab8669145c5b",
+    "mtime": 1791042509.983512,
+    "seen": 1791042530.7885282,
+    "ast_hash": "c692644274711e7d22192f3eeaca2b79",
     "semantic_hash": ""
   },
   ".claude/skills/suggest-commit/SKILL.md": {
@@ -222,15 +222,15 @@
     "semantic_hash": ""
   },
   ".agents/skills/commit-n-push/SKILL.md": {
-    "mtime": 1791041509.8580787,
-    "seen": 1791041539.0835788,
-    "ast_hash": "6a3b2f2179b5c2f465260c0f1aa3dea9",
+    "mtime": 1791042510.0029657,
+    "seen": 1791042530.788523,
+    "ast_hash": "644a261092e2705faa27e1777eac2e8d",
     "semantic_hash": ""
   },
   ".agents/skills/commit/SKILL.md": {
-    "mtime": 1791041509.857473,
-    "seen": 1791041539.08358,
-    "ast_hash": "b74744d1070c13fa9b9fab8669145c5b",
+    "mtime": 1791042509.9613574,
+    "seen": 1791042530.7885242,
+    "ast_hash": "c692644274711e7d22192f3eeaca2b79",
     "semantic_hash": ""
   },
   ".agents/skills/suggest-commit/SKILL.md": {
