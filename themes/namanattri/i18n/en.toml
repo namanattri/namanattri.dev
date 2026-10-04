@@ -26,11 +26,11 @@ other = "Older posts"
 [newerPosts]
 other = "Newer posts"
 
-[olderPost]
-other = "Older post"
+[previousPost]
+other = "Previous"
 
-[newerPost]
-other = "Newer post"
+[nextPost]
+other = "Next"
 
 [pagination]
 other = "Pagination"

@@ -272,7 +272,8 @@
   margin: 0;
 }
 
-@media (max-height: 44rem) {
+/* Short desktop windows drop the description so the locked sidebar still fits. */
+@media (min-width: 48.0625rem) and (max-height: 44rem) {
   .sidebar__description {
     display: none;
   }
@@ -399,9 +400,8 @@
   margin: 0;
 }
 
-/* Pagination links are the no-JavaScript fallback. */
-.pagination,
-.post-pager {
+/* List pagination links are the no-JavaScript fallback for the infinite list. */
+.pagination {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -409,31 +409,49 @@
   margin-block: 2rem;
 }
 
-.js .pagination:not(.is-error),
-.js .post-pager {
+.js .pagination:not(.is-error) {
   display: none;
 }
 
-/* Posts */
-/* The divider hangs below a post, never above it, so a post added above the
-   reader cannot push the post being read. */
-.post {
-  padding-block-end: 3rem;
+/* Previous / next post buttons: previous on the left, next on the right. */
+.post-pager {
+  display: flex;
+  gap: 1rem;
+  margin-block: 2rem 1rem;
 }
 
-.post:not(:last-of-type) {
-  margin-block-end: 3rem;
-  border-block-end: 1px solid var(--color-border);
+.post-pager__link {
+  display: grid;
+  gap: 0.15rem;
+  max-width: 48%;
+  padding: 0.75rem 1rem;
+  color: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  text-decoration: none;
 }
 
-.post--enter {
-  animation: post-enter 400ms ease-out;
+.post-pager__link:hover {
+  border-color: var(--color-accent);
 }
 
-@keyframes post-enter {
-  from {
-    opacity: 0;
-  }
+.post-pager__link--next {
+  margin-inline-start: auto;
+  text-align: end;
+}
+
+.post-pager__label {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.post-pager__link:hover .post-pager__label {
+  color: var(--color-accent);
+}
+
+.post-pager__title {
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 /* Loader */
@@ -466,9 +484,6 @@
     animation: none;
   }
 
-  .post--enter {
-    animation: none;
-  }
 }
 
 /* Feed and sitemap links in the sidebar footer */
