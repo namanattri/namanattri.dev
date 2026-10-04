@@ -1,5 +1,5 @@
 import { initInfiniteList } from './modules/infinite-list.js';
-import { initPostStream } from './modules/post-stream.js';
+import { initPostPager } from './modules/post-pager.js';
 import { initTagFilter } from './modules/tag-filter.js';
 import { initThemeToggle } from './modules/theme-toggle.js';
 import { initSidebarToggle } from './modules/sidebar-toggle.js';
@@ -20,4 +20,4 @@ if (filterBar) {
 if (!filterBar || selectedTags().length === 0) {
   document.querySelectorAll('[data-infinite-list]').forEach(initInfiniteList);
 }
-document.querySelectorAll('[data-post-stream]').forEach(initPostStream);
+document.querySelectorAll('[data-post-pager]').forEach(initPostPager);

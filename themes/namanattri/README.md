@@ -5,7 +5,7 @@ A two-pane personal blog theme for Hugo.
 - **Fixed intro sidebar (30%)** with photo, name, description, menu and footer.
 - **Scrolling content pane (70%)** with the page content.
 - **Infinite post list**: paginated lists load the next page as you scroll.
-- **Infinite post stream**: single posts load the next older/newer post as you scroll, and the URL and title follow the post in view.
+- **Previous/next buttons** at the end of each post, which follow the active tag filter.
 - **SEO friendly**: every post and list page is a real, server-rendered URL with canonical, Open Graph and JSON-LD metadata. Plain pagination and prev/next links work without JavaScript.
 - Dark mode, breadcrumbs, optional MathJax and Google tag, i18n strings.
 
@@ -36,7 +36,7 @@ theme = 'namanattri'
   weight = 20
 ```
 
-Posts live in the `posts` section (`layouts/posts/single.html` provides the infinite post stream). Page size comes from Hugo's `pagination.pagerSize` (default 10).
+Posts live in the `posts` section (`layouts/posts/single.html` provides the previous/next post buttons). Page size comes from Hugo's `pagination.pagerSize` (default 10).
 
 ## Structure
 
@@ -44,7 +44,7 @@ Posts live in the `posts` section (`layouts/posts/single.html` provides the infi
 | --- | --- |
 | `layouts/baseof.html` | Page shell: sidebar and scrolling content pane |
 | `layouts/home.html`, `list.html`, `single.html`, `404.html` | Page kinds |
-| `layouts/posts/single.html` | Post page with the infinite post stream |
+| `layouts/posts/single.html` | Post page with the previous/next post buttons |
 | `layouts/_partials/` | Reusable partials; `head/custom.html` is an empty hook for sites |
 | `layouts/_partials/func/` | Partials that return values |
 | `assets/css/` | Stylesheets, concatenated in `head/css.html` |

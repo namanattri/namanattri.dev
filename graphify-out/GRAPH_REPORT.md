@@ -1,17 +1,17 @@
 # Graph Report - namanattri.dev  (2026-10-04)
 
 ## Corpus Check
-- 44 files · ~211,034 words
+- 43 files · ~210,484 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 15 file(s) not represented in the graph (top: .css 7, (none) 4, .toml 4)
 
 ## Summary
-- 262 nodes · 400 edges · 30 communities (21 shown, 7 thin omitted)
-- Extraction: 88% EXTRACTED · 9% INFERRED · 3% AMBIGUOUS · INFERRED: 37 edges (avg confidence: 0.84)
+- 246 nodes · 354 edges · 30 communities (21 shown, 7 thin omitted)
+- Extraction: 87% EXTRACTED · 10% INFERRED · 3% AMBIGUOUS · INFERRED: 36 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1fa9d686`
+- Built from commit: `351490b9`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -42,20 +42,20 @@
 - theme-toggle.js
 - namanattri
 - Logarithm
-- initPostStream
+- fetchDocument
 - content/_index.md
 
 ## God Nodes (most connected - your core abstractions)
-1. `initPostStream()` - 20 edges
-2. `initTagFilter()` - 12 edges
-3. `decorateTags()` - 11 edges
-4. `/graphify Command` - 10 edges
-5. `Query/Path/Explain Reference` - 10 edges
-6. `Step 4: Build Graph, Cluster, Analyze` - 10 edges
-7. `ensureNewer()` - 9 edges
-8. `CA system diagram (hand-drawn distributed nodes)` - 9 edges
-9. `render()` - 8 edges
-10. `withTags()` - 8 edges
+1. `initTagFilter()` - 12 edges
+2. `/graphify Command` - 10 edges
+3. `Query/Path/Explain Reference` - 10 edges
+4. `Step 4: Build Graph, Cluster, Analyze` - 10 edges
+5. `CA system diagram (hand-drawn distributed nodes)` - 9 edges
+6. `render()` - 8 edges
+7. `Exports & Benchmark Reference` - 8 edges
+8. `selectedTags()` - 7 edges
+9. `withTags()` - 7 edges
+10. `decorateTags()` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Hugo Quick Start Commands` --conceptually_related_to--> `Deploy Hugo site to Pages (GitHub Actions workflow)`  [INFERRED]
@@ -111,7 +111,7 @@ Nodes (13): CAP theorem, Cape Town node, CA (Consistency + Availability), CA sys
 
 ### Community 8 - "main.js"
 Cohesion: 0.21
-Nodes (18): filterBar, initCodeWrap(), ACTIVITY_EVENTS, initSidebarToggle(), element(), initTagFilter(), card(), render() (+10 more)
+Nodes (19): filterBar, initCodeWrap(), initPostPager(), link(), initSidebarToggle(), element(), initTagFilter(), card() (+11 more)
 
 ### Community 9 - "AP System Diagram (hand-drawn, 5-node distributed cluster)"
 Cohesion: 0.29
@@ -157,9 +157,9 @@ Nodes (4): Customising, namanattri, Structure, Usage
 Cohesion: 0.50
 Nodes (4): Big-O complexity O(log n), Logarithm Properties (product, quotient, power, change of base), Logarithm, Crash Course on Logarithms (post)
 
-### Community 26 - "initPostStream"
-Cohesion: 0.18
-Nodes (19): fetchDocument(), resolveRelativeUrls(), URL_ATTRIBUTES, initInfiniteList(), loadNextPage(), initPostStream(), applyNeighbours(), ensureNewer() (+11 more)
+### Community 26 - "fetchDocument"
+Cohesion: 0.70
+Nodes (3): fetchDocument(), initInfiniteList(), loadNextPage()
 
 ### Community 27 - "content/_index.md"
 Cohesion: 0.50
@@ -190,8 +190,8 @@ Nodes (3): Newest first. Each list renders as a timeline in the order written he
   content/posts/understanding-cap-theorem-consistency-availability-partition-tolerance/img/ap.jpeg · relation: references
 
 ## Knowledge Gaps
-- **56 isolated node(s):** `filterBar`, `URL_ATTRIBUTES`, `ACTIVITY_EVENTS`, `CYCLE`, `Commit and push` (+51 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 67 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **54 isolated node(s):** `filterBar`, `CYCLE`, `Commit and push`, `Commit`, `Suggest commit` (+49 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 65 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions

@@ -1,17 +1,21 @@
 {{ define "main" }}
   {{ $neighbors := partial "func/post-neighbors.html" . }}
-  <div class="post-stream" data-post-stream>
-    {{/* Both markers always exist: posts that scroll far out of view are removed and must stay reloadable. */}}
-    <div class="post-stream__sentinel" data-sentinel="newer"></div>
+  {{ partial "post.html" . }}
 
-    {{ partial "post.html" . }}
-
-    <div class="post-stream__sentinel" data-sentinel="older">{{ partial "loader.html" . }}</div>
-
-    {{/* Plain links keep the post sequence crawlable and usable without JavaScript. */}}
-    <nav class="post-pager" aria-label="{{ i18n "postNavigation" }}" data-pager>
-      {{ with $neighbors.newer }}<a rel="prev" href="{{ .RelPermalink }}">&larr; {{ i18n "newerPost" }}: {{ .LinkTitle }}</a>{{ end }}
-      {{ with $neighbors.older }}<a rel="next" href="{{ .RelPermalink }}">{{ i18n "olderPost" }}: {{ .LinkTitle }} &rarr;</a>{{ end }}
-    </nav>
-  </div>
+  {{/* Previous (newer) on the left, next (older) on the right. Plain links, so they work without JavaScript. */}}
+  <nav class="post-pager" aria-label="{{ i18n "postNavigation" }}" data-post-pager data-current="{{ .RelPermalink }}"
+    data-prev-label="{{ i18n "previousPost" }}" data-next-label="{{ i18n "nextPost" }}">
+    {{ with $neighbors.newer }}
+    <a class="post-pager__link post-pager__link--prev" rel="prev" href="{{ .RelPermalink }}">
+      <span class="post-pager__label">&larr; {{ i18n "previousPost" }}</span>
+      <span class="post-pager__title">{{ .LinkTitle }}</span>
+    </a>
+    {{ end }}
+    {{ with $neighbors.older }}
+    <a class="post-pager__link post-pager__link--next" rel="next" href="{{ .RelPermalink }}">
+      <span class="post-pager__label">{{ i18n "nextPost" }} &rarr;</span>
+      <span class="post-pager__title">{{ .LinkTitle }}</span>
+    </a>
+    {{ end }}
+  </nav>
 {{ end }}

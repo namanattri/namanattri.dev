@@ -75,29 +75,29 @@
     align-items: stretch;
   }
 
-  /* The sidebar's parts become siblings of the content so the footer can go last. */
+  /* The whole sidebar (intro, links, socials and footer) becomes one header
+     above the content and scrolls away with the page. */
   .sidebar {
-    display: contents;
-  }
-
-  .sidebar__main {
-    order: 0;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    padding: 1.5rem var(--gutter);
-    background: var(--color-bg-sidebar);
+    position: static;
+    height: auto;
+    overflow: visible;
+    padding: 1.5rem var(--gutter) 1.25rem;
+    border-inline-end: 0;
     border-block-end: 1px solid var(--color-border);
   }
 
-  .content {
-    order: 1;
-    padding: 1.5rem var(--gutter) 2rem;
+  .sidebar__main {
+    flex: none;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding-block-end: 1.5rem;
   }
 
   .sidebar__footer {
-    order: 2;
-    padding: 1.25rem var(--gutter);
-    background: var(--color-bg-sidebar);
-    border-block-start: 1px solid var(--color-border);
+    padding-block-start: 0.25rem;
+  }
+
+  .content {
+    padding: 1.5rem var(--gutter) 2rem;
   }
 }
