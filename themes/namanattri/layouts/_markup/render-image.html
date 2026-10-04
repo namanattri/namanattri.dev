@@ -2,7 +2,7 @@
   Images lazy-load and, for page-bundle images, carry their size so the page
   does not shift while they load.
 */ -}}
-{{- $alt := .PlainText | safeHTML -}}
+{{- $alt := .PlainText -}}
 {{- $image := .Page.Resources.Get .Destination -}}
 {{- if $image -}}
 <img src="{{ $image.RelPermalink }}" alt="{{ $alt }}" width="{{ $image.Width }}" height="{{ $image.Height }}" loading="lazy" decoding="async"

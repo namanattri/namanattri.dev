@@ -47,27 +47,6 @@ other = "The page you are looking for does not exist."
 [backToHome]
 other = "Back to home"
 
-[experienceLabel]
-other = "Building software for"
-
-[unit_years]
-other = "yrs"
-
-[unit_months]
-other = "mos"
-
-[unit_days]
-other = "days"
-
-[unit_hours]
-other = "hrs"
-
-[unit_minutes]
-other = "min"
-
-[unit_seconds]
-other = "sec"
-
 [social_linkedin]
 other = "LinkedIn"
 

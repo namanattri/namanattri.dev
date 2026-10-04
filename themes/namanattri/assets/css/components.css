@@ -127,40 +127,6 @@
   }
 }
 
-/* Live experience clock: same type as the description so it stays quiet. */
-.clock {
-  width: 100%;
-  color: var(--color-muted);
-  font-size: 0.95rem;
-  line-height: 1.55;
-}
-
-.clock__label {
-  margin: 0;
-}
-
-.clock__units {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0 0.5rem;
-  margin: 0;
-}
-
-.clock__unit {
-  display: flex;
-  gap: 0.2rem;
-}
-
-.clock__unit dd {
-  margin: 0;
-  font-variant-numeric: tabular-nums;
-}
-
-.clock__unit dt {
-  margin: 0;
-}
-
 /* Theme switcher: one button that cycles system, light and dark. */
 .theme-toggle {
   position: fixed;

@@ -4,12 +4,10 @@ import { initTagFilter } from './modules/tag-filter.js';
 import { initThemeToggle } from './modules/theme-toggle.js';
 import { initSidebarToggle } from './modules/sidebar-toggle.js';
 import { initCodeWrap } from './modules/code-wrap.js';
-import { initExperienceClock } from './modules/experience-clock.js';
 import { decorateTags, selectedTags } from './modules/tags.js';
 
 document.querySelectorAll('[data-theme-toggle]').forEach(initThemeToggle);
 initSidebarToggle(document.querySelectorAll('[data-sidebar-toggle]'));
-document.querySelectorAll('[data-experience-clock]').forEach(initExperienceClock);
 
 initCodeWrap();
 decorateTags(document);

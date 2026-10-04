@@ -49,7 +49,7 @@ enableGitInfo = true
     name = 'Naman Attri'
     # Resolved from the site's assets directory.
     image = 'images/author.png'
-    # Drives the live "building software for" clock in the sidebar.
+    # Start of the career. Drives the "13+ years" figure in the intro, which updates at each build.
     careerStart = '2013-02-01'
 
   # All four icons always show; unset ones link to the network's home page.

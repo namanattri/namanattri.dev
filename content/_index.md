@@ -1,6 +1,6 @@
 +++
 title = 'Naman Attri'
-description = 'Senior software engineer with 13+ years building backend systems, distributed services, cloud platforms and blockchain infrastructure. Notes on problem-solving, system design and software engineering.'
+description = 'Senior software engineer building backend systems, distributed services, cloud platforms and blockchain infrastructure. Notes on problem-solving, system design and software engineering.'
 aliases = ['/about/', '/posts/about-naman/']
 
 # Newest first. Each list renders as a timeline in the order written here.
@@ -218,7 +218,7 @@ aliases = ['/about/', '/posts/about-naman/']
   name = 'Ollama'
   icon = 'icons/skills/ollama.svg'
 +++
-I’m Naman, a senior software engineer with 13+ years of experience building backend systems, distributed services, cloud platforms, and blockchain infrastructure.
+I’m Naman, a senior software engineer with {{< experience-years >}} years of experience building backend systems, distributed services, cloud platforms, and blockchain infrastructure.
 
 I’m at my best when a problem is ambiguous or technically difficult. I like understanding how a system works, bringing structure to the problem, and finding a practical solution without over-engineering it. My work has taken me across APIs, microservices, data pipelines, RPC infrastructure, Kubernetes, cloud platforms, observability, smart contracts, governance systems, and production blockchain networks.
 

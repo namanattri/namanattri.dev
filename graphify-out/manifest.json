@@ -66,9 +66,9 @@
     "semantic_hash": "9378bd03d56baaf78bd738ab3848f142"
   },
   ".github/workflows/hugo.yaml": {
-    "mtime": 1791044190.2319682,
-    "seen": 1791044372.647996,
-    "ast_hash": "0b6b0ddfd7d0798d01f1cde40bd406f2",
+    "mtime": 1791097282.1817071,
+    "seen": 1791097354.6765592,
+    "ast_hash": "cefd1c6bd96b9ae0ba85dae83d21ebb4",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -222,9 +222,9 @@
     "semantic_hash": ""
   },
   "themes/namanattri/assets/js/main.js": {
-    "mtime": 1791095825.8771846,
-    "seen": 1791096116.59219,
-    "ast_hash": "09e083a472f6ffec6db3080d35dabeee",
+    "mtime": 1791097091.0459886,
+    "seen": 1791097354.676533,
+    "ast_hash": "313d7dfef55d7094f7cf63294536d15b",
     "semantic_hash": ""
   },
   "themes/namanattri/assets/js/modules/fetch-document.js": {
@@ -252,9 +252,9 @@
     "semantic_hash": ""
   },
   "content/_index.md": {
-    "mtime": 1791096085.1710072,
-    "seen": 1791096116.592221,
-    "ast_hash": "5354a36a7701ff8002ad76a759c410d2",
+    "mtime": 1791097282.1813872,
+    "seen": 1791097354.676563,
+    "ast_hash": "37f265e05ae1194dd423de8d64f84fa3",
     "semantic_hash": ""
   },
   "content/posts/_index.md": {
@@ -330,9 +330,9 @@
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_partials/head/math.html": {
-    "mtime": 1791045146.876657,
-    "seen": 1791045430.370118,
-    "ast_hash": "278cb369dc476724e8c3aaad9739739b",
+    "mtime": 1791096895.7439427,
+    "seen": 1791097354.676586,
+    "ast_hash": "57d8c332d2499ad885f74bec6ff4db67",
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_partials/head/seo.html": {
@@ -360,9 +360,9 @@
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_partials/sidebar.html": {
-    "mtime": 1791096307.254152,
-    "seen": 1791096457.239857,
-    "ast_hash": "718996a07cc39422697f7937cfea1bf9",
+    "mtime": 1791097091.0457537,
+    "seen": 1791097354.6765928,
+    "ast_hash": "f89327fc77a9cf27eb69c619ff38f8bd",
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/baseof.html": {
@@ -401,12 +401,6 @@
     "ast_hash": "08054c076cd2e1fc675a74a3df22c74c",
     "semantic_hash": ""
   },
-  "themes/namanattri/assets/js/modules/experience-clock.js": {
-    "mtime": 1791046293.2090342,
-    "seen": 1791048796.830316,
-    "ast_hash": "18751579943089660052f7f7bca8bbb0",
-    "semantic_hash": ""
-  },
   "themes/namanattri/assets/js/modules/sidebar-toggle.js": {
     "mtime": 1791047382.9181364,
     "seen": 1791048796.8303192,
@@ -417,12 +411,6 @@
     "mtime": 1791092851.3768961,
     "seen": 1791094742.17573,
     "ast_hash": "94243ce5dc4014edf743a5a25a785315",
-    "semantic_hash": ""
-  },
-  "themes/namanattri/layouts/_partials/experience-clock.html": {
-    "mtime": 1791046616.7555854,
-    "seen": 1791048796.830354,
-    "ast_hash": "00c8b44a4893721279dd8c7f2eae3e0c",
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_partials/head/favicon.html": {
@@ -786,9 +774,9 @@
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_markup/render-image.html": {
-    "mtime": 1791095237.6946623,
-    "seen": 1791096116.592233,
-    "ast_hash": "7e9c2249ecba16b4c3f03b180832fd76",
+    "mtime": 1791096895.7441664,
+    "seen": 1791097354.676577,
+    "ast_hash": "4c87edafce69c544fe21411e638ee01a",
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_partials/post-footer.html": {
@@ -831,6 +819,12 @@
     "mtime": 1791095198.365971,
     "seen": 1791096116.5922618,
     "ast_hash": "da3f84920c92f7888b4c12514088ff33",
+    "semantic_hash": ""
+  },
+  "themes/namanattri/layouts/_shortcodes/experience-years.html": {
+    "mtime": 1791097282.153627,
+    "seen": 1791097354.676599,
+    "ast_hash": "5d93f8acb9428abc881b9e643563eefc",
     "semantic_hash": ""
   }
 }

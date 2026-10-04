@@ -47,9 +47,17 @@
 }
 
 /* The most recent entry is highlighted. */
+/* ...and pulses softly, like the active link in the sidebar (nav-pulse is in components.css). */
 .timeline__item:first-child::before {
   background: var(--color-accent);
   border-color: var(--color-accent);
+  animation: nav-pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline__item:first-child::before {
+    animation: none;
+  }
 }
 
 .timeline__body {

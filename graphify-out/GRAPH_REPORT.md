@@ -1,17 +1,17 @@
 # Graph Report - namanattri.dev  (2026-10-04)
 
 ## Corpus Check
-- 45 files · ~211,133 words
+- 44 files · ~211,034 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 15 file(s) not represented in the graph (top: .css 7, (none) 4, .toml 4)
 
 ## Summary
-- 268 nodes · 408 edges · 30 communities (21 shown, 7 thin omitted)
-- Extraction: 88% EXTRACTED · 9% INFERRED · 3% AMBIGUOUS · INFERRED: 38 edges (avg confidence: 0.84)
+- 262 nodes · 400 edges · 30 communities (21 shown, 7 thin omitted)
+- Extraction: 88% EXTRACTED · 9% INFERRED · 3% AMBIGUOUS · INFERRED: 37 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f96e3e6b`
+- Built from commit: `1fa9d686`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -24,7 +24,7 @@
 - .claude/skills/commit-n-push/SKILL.md
 - Mastering Bitwise Operators in Golang (post)
 - CA system diagram (hand-drawn distributed nodes)
-- initPostStream
+- main.js
 - AP System Diagram (hand-drawn, 5-node distributed cluster)
 - Trie (post)
 - Deploy Hugo site to Pages (GitHub Actions workflow)
@@ -42,8 +42,8 @@
 - theme-toggle.js
 - namanattri
 - Logarithm
+- initPostStream
 - content/_index.md
-- experience-clock.js
 
 ## God Nodes (most connected - your core abstractions)
 1. `initPostStream()` - 20 edges
@@ -109,9 +109,9 @@ Nodes (9): Bitwise AND operator (&), Left Shift operator (<<), Bitwise NOT opera
 Cohesion: 0.33
 Nodes (13): CAP theorem, Cape Town node, CA (Consistency + Availability), CA system diagram (hand-drawn distributed nodes), Unlabeled green node (bottom-middle of cluster), Unlabeled green node (top-middle of cluster), Mumbai node, Network partition (comms OK / comms NOT OK legend) (+5 more)
 
-### Community 8 - "initPostStream"
-Cohesion: 0.11
-Nodes (37): filterBar, initCodeWrap(), fetchDocument(), resolveRelativeUrls(), URL_ATTRIBUTES, initInfiniteList(), loadNextPage(), ACTIVITY_EVENTS (+29 more)
+### Community 8 - "main.js"
+Cohesion: 0.21
+Nodes (18): filterBar, initCodeWrap(), ACTIVITY_EVENTS, initSidebarToggle(), element(), initTagFilter(), card(), render() (+10 more)
 
 ### Community 9 - "AP System Diagram (hand-drawn, 5-node distributed cluster)"
 Cohesion: 0.29
@@ -157,13 +157,13 @@ Nodes (4): Customising, namanattri, Structure, Usage
 Cohesion: 0.50
 Nodes (4): Big-O complexity O(log n), Logarithm Properties (product, quotient, power, change of base), Logarithm, Crash Course on Logarithms (post)
 
+### Community 26 - "initPostStream"
+Cohesion: 0.18
+Nodes (19): fetchDocument(), resolveRelativeUrls(), URL_ATTRIBUTES, initInfiniteList(), loadNextPage(), initPostStream(), applyNeighbours(), ensureNewer() (+11 more)
+
 ### Community 27 - "content/_index.md"
 Cohesion: 0.50
 Nodes (3): Newest first. Each list renders as a timeline in the order written here., Related skills are kept together: blockchain, cloud, observability, databases, languages, practice., Skills render as icon chips in the order written.
-
-### Community 30 - "experience-clock.js"
-Cohesion: 0.40
-Nodes (5): elapsed(), initExperienceClock(), render(), PADDED, UNITS
 
 ## Ambiguous Edges - Review These
 - `Determinism (concept)` → `blockchain.webp (hero image)`  [AMBIGUOUS]
@@ -190,8 +190,8 @@ Nodes (5): elapsed(), initExperienceClock(), render(), PADDED, UNITS
   content/posts/understanding-cap-theorem-consistency-availability-partition-tolerance/img/ap.jpeg · relation: references
 
 ## Knowledge Gaps
-- **58 isolated node(s):** `filterBar`, `UNITS`, `PADDED`, `URL_ATTRIBUTES`, `ACTIVITY_EVENTS` (+53 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 69 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **56 isolated node(s):** `filterBar`, `URL_ATTRIBUTES`, `ACTIVITY_EVENTS`, `CYCLE`, `Commit and push` (+51 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 67 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
