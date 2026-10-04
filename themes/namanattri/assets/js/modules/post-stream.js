@@ -1,5 +1,6 @@
 import { fetchDocument, resolveRelativeUrls } from './fetch-document.js';
 import { typeset } from './typeset.js';
+import { decorateTags, loadIndex, matches, selectedTags, withTags } from './tags.js';
 
 /** Quiet period with no scrolling before a post is inserted above the reader. */
 const IDLE_MS = 150;
@@ -28,6 +29,28 @@ export function initPostStream(stream) {
   const nativeAnchoring = CSS.supports('overflow-anchor', 'auto');
 
   let activePost = posts()[0];
+  const tags = selectedTags();
+  let filtered = null;
+
+  /** With a tag filter, neighbours come from the filtered post list, not the full chronology. */
+  function applyNeighbours(post) {
+    if (!filtered) {
+      return;
+    }
+    const at = filtered.findIndex((entry) => entry.url === post.dataset.url);
+    post.dataset.newer = at > 0 ? filtered[at - 1].url : '';
+    post.dataset.older = at >= 0 && at < filtered.length - 1 ? filtered[at + 1].url : '';
+  }
+
+  const ready = tags.length
+    ? loadIndex()
+        .then((index) => {
+          const currentUrl = activePost.dataset.url;
+          filtered = index.filter((entry) => matches(entry, tags) || entry.url === currentUrl);
+          applyNeighbours(activePost);
+        })
+        .catch(console.error)
+    : Promise.resolve();
   let loadingOlder = false;
   let loadingNewer = false;
   let lastActivity = 0;
@@ -55,6 +78,7 @@ export function initPostStream(stream) {
   }
 
   async function loadOlder() {
+    await ready;
     const url = edgePost('older').dataset.older;
     if (!url || loadingOlder) {
       return;
@@ -64,6 +88,8 @@ export function initPostStream(stream) {
     try {
       const post = await fetchPost(url);
       post.classList.add('post--enter');
+      applyNeighbours(post);
+      decorateTags(post, tags);
       olderSentinel.before(post);
       typeset(post);
     } catch (error) {
@@ -86,6 +112,7 @@ export function initPostStream(stream) {
 
   /** Keeps a newer post loaded above the active one, ready before it is needed. */
   async function ensureNewer() {
+    await ready;
     const first = posts()[0];
     const url = first.dataset.newer;
     if (!url || first !== activePost || loadingNewer) {
@@ -95,6 +122,8 @@ export function initPostStream(stream) {
     try {
       const post = await fetchPost(url);
       await untilIdle();
+      applyNeighbours(post);
+      decorateTags(post, tags);
       prepend(post);
       typeset(post);
     } catch (error) {
@@ -165,7 +194,7 @@ export function initPostStream(stream) {
       if (rect.top <= probe && rect.bottom > probe) {
         if (post !== activePost) {
           activePost = post;
-          history.replaceState(history.state, '', post.dataset.url);
+          history.replaceState(history.state, '', withTags(post.dataset.url, tags));
           document.title = post.dataset.title;
           prune();
           ensureNewer();

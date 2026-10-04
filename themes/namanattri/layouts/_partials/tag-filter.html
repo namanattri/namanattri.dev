@@ -1,0 +1,13 @@
+{{/* Every tag with its post count. Without JS these link to the tag pages; with JS they toggle the ?tags= filter. */}}
+{{- with site.Taxonomies.tags -}}
+<div class="tag-filter" data-tag-filter data-tags-label="{{ i18n "tags" }}">
+  <template data-loader-template>{{ partial "loader.html" . }}</template>
+  <p class="tag-filter__label" id="tag-filter-label">{{ i18n "filterByTag" }}</p>
+  <ul class="tags" aria-labelledby="tag-filter-label">
+    {{- range .ByCount }}
+    <li><a class="tag" href="{{ .Page.RelPermalink }}" data-tag="{{ .Page.Data.Term }}">{{ .Page.Data.Term }} <span class="tag__count">{{ .Count }}</span></a></li>
+    {{- end }}
+  </ul>
+  <a class="tag-filter__clear" href="{{ "" | relURL }}" data-tag-clear hidden>{{ i18n "clearFilter" }}</a>
+</div>
+{{- end -}}

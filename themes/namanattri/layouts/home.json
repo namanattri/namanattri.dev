@@ -1,0 +1,17 @@
+{{- /* Post index for the client-side tag filter and tag-aware post stream. Newest first. */ -}}
+{{- $posts := slice -}}
+{{- range where site.RegularPages "Section" "in" site.Params.mainSections -}}
+  {{- $tags := slice -}}
+  {{- range .GetTerms "tags" -}}
+    {{- $tags = $tags | append .Data.Term -}}
+  {{- end -}}
+  {{- $posts = $posts | append (dict
+    "url" .RelPermalink
+    "title" .LinkTitle
+    "summary" (cond (ne .Description "") .Description (.Summary | plainify | truncate 180))
+    "date" (.Date.Format "2006-01-02")
+    "dateLabel" (.Date | time.Format ":date_medium")
+    "readingTime" (i18n "readingTime" .ReadingTime)
+    "tags" $tags) -}}
+{{- end -}}
+{{- $posts | jsonify -}}

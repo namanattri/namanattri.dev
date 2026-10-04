@@ -11,6 +11,7 @@
           <span>{{ i18n "readingTime" .ReadingTime }}</span>
         </p>
         <p class="post-card__summary">{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 180 }}{{ end }}</p>
+        {{ partial "tags.html" . }}
       </article>
     </li>
     {{- end }}

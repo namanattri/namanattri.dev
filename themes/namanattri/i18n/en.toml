@@ -112,3 +112,30 @@ other = "Skills"
 
 [recentPosts]
 other = "Recent Posts"
+
+[tags]
+other = "Tags"
+
+[filterByTag]
+other = "Filter by tag"
+
+[clearFilter]
+other = "Clear filter"
+
+[relatedPosts]
+other = "Related posts"
+
+[writtenBy]
+other = "Written by"
+
+[filterResultsOne]
+other = "1 post"
+
+[filterResultsMany]
+other = "%count% posts"
+
+[filterEmpty]
+other = "No posts match these tags."
+
+[wrapLines]
+other = "wrap"

@@ -1,5 +1,6 @@
 +++
 title = 'Why Blockchains Are Designed to Be Deterministic?'
+tags = ['blockchain', 'distributed-systems', 'smart-contracts']
 date = 2024-07-18T20:58:30+05:30
 description = 'Discover why determinism is crucial for blockchain technology, ensuring consistency, security, and trust in decentralized systems. Learn about the role of determinism in consensus algorithms and smart contracts.'
 draft = false

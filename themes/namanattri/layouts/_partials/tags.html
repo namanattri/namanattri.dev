@@ -1,0 +1,8 @@
+{{/* A page's tags as links to the tag pages. JS highlights the ones in the URL's ?tags= filter. */}}
+{{- with .GetTerms "tags" -}}
+<ul class="tags" aria-label="{{ i18n "tags" }}">
+  {{- range . }}
+  <li><a class="tag" href="{{ .RelPermalink }}" data-tag="{{ .Data.Term }}" rel="tag">{{ .Data.Term }}</a></li>
+  {{- end }}
+</ul>
+{{- end -}}

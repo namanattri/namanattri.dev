@@ -7,7 +7,7 @@
   "5": ".claude/skills/commit-n-push/SKILL.md",
   "6": "Mastering Bitwise Operators in Golang (post)",
   "7": "CA system diagram (hand-drawn distributed nodes)",
-  "8": "main.js",
+  "8": "initPostStream",
   "9": "AP System Diagram (hand-drawn, 5-node distributed cluster)",
   "10": "Trie (post)",
   "11": "Deploy Hugo site to Pages (GitHub Actions workflow)",
@@ -22,12 +22,10 @@
   "20": "pre-commit",
   "21": ".agents/skills/commit-n-push/SKILL.md",
   "22": ".agents/skills/suggest-commit/SKILL.md",
-  "23": "Add & Watch Reference",
   "24": "namanattri",
   "25": "Logarithm",
-  "26": "about.md",
   "27": "content/_index.md",
   "28": "posts/_index.md",
   "29": "default.md",
-  "30": "experience-clock.js"
+  "30": "main.js"
 }

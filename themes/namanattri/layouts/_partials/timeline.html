@@ -14,7 +14,7 @@
         {{- end }}
       {{- end }}
       <div class="timeline__text">
-        <h3 class="timeline__title">{{ with .url }}<a href="{{ . }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}</h3>
+        <h3 class="timeline__title">{{ with .url }}<a href="{{ . }}"{{ if hasPrefix . "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ $title }}</a>{{ else }}{{ $title }}{{ end }}</h3>
         {{- with .subtitle }}
         <p class="timeline__subtitle">{{ . }}</p>
         {{- end }}

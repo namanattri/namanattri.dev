@@ -1,5 +1,6 @@
 +++
 title = 'Checking if the nth bit is set'
+tags = ['golang', 'algorithms', 'bit-manipulation']
 date = 2024-08-16T00:00:00+05:30
 description = 'Learn how to check if the nth bit of an integer is set using bitwise operations in Golang. This guide provides a clear explanation, examples, and a code walkthrough to help you master bit manipulation in Go.'
 draft = false

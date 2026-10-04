@@ -6,18 +6,23 @@ aliases = ['/about/', '/posts/about-naman/']
 # Newest first. Each list renders as a timeline in the order written here.
 [[experience]]
   title = 'Redbelly Network'
+  url = 'https://redbelly.network/'
   logo = 'images/logos/redbelly.png'
   subtitle = 'Engineering Lead & Senior Software Engineer'
   period = 'January 2023 – Present'
+  location = 'Chandigarh, Punjab'
 
 [[experience]]
   title = 'Block8'
+  url = 'https://redbelly.network/'
   logo = 'images/logos/block8.png'
   subtitle = 'Engineering Lead & Senior Software Engineer'
   period = 'May 2019 – December 2022'
+  location = 'Chandigarh, Punjab'
 
 [[experience]]
-  title = 'Interbit Solutions Pvt. Ltd. (formerly IT7 Solutions Pvt. Ltd.)'
+  title = 'Interbit Solutions Pvt. Ltd.'
+  url = 'https://interbitsolutions.com/'
   logo = 'images/logos/interbit.png'
   subtitle = 'Senior Software Engineer'
   period = 'June 2015 – May 2019'
@@ -25,6 +30,7 @@ aliases = ['/about/', '/posts/about-naman/']
 
 [[experience]]
   title = 'smartData Enterprises Inc.'
+  url = 'https://www.smartdatainc.com/'
   logo = 'images/logos/smartdata.png'
   subtitle = 'Software Trainee to Software Engineer'
   period = 'February 2013 – May 2015'
@@ -32,6 +38,7 @@ aliases = ['/about/', '/posts/about-naman/']
 
 [[education]]
   title = 'Himachal Pradesh University'
+  url = 'https://www.hpuniv.ac.in/'
   logo = 'images/logos/hpu.png'
   subtitle = 'Master of Computer Applications (MCA)'
   period = 'August 2010 – July 2013'
@@ -39,6 +46,7 @@ aliases = ['/about/', '/posts/about-naman/']
 
 [[education]]
   title = 'Himachal Pradesh University'
+  url = 'https://www.hpuniv.ac.in/'
   logo = 'images/logos/hpu.png'
   subtitle = 'Bachelor of Computer Applications (BCA)'
   period = 'August 2007 – July 2010'

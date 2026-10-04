@@ -4,9 +4,10 @@
 <script>document.documentElement.classList.add('js')</script>
 {{ partial "head/theme-init.html" . }}
 {{ partial "head/seo.html" . }}
-{{ range .AlternativeOutputFormats }}
+{{ if eq .Kind "404" }}<meta name="robots" content="noindex">{{ end }}
+{{ range .AlternativeOutputFormats }}{{ if eq .Name "RSS" }}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ site.Title }}">
-{{ end }}
+{{ end }}{{ end }}
 {{ partial "head/favicon.html" . }}
 {{ partial "head/css.html" . }}
 {{ partial "head/js.html" . }}

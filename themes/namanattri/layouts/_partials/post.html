@@ -13,6 +13,9 @@
       <span aria-hidden="true">·</span>
       <span>{{ i18n "readingTime" .ReadingTime }}</span>
     </p>
+    {{ partial "tags.html" . }}
   </header>
   <div class="prose">{{ .Content }}</div>
+  {{ partial "post-footer.html" . }}
+  {{ partial "related-posts.html" . }}
 </article>

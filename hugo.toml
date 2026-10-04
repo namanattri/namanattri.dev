@@ -3,8 +3,32 @@ enableRobotsTXT = true
 locale = 'en-US'
 title = 'Naman Attri'
 theme = 'namanattri'
+# Last-modified dates for sitemap and structured data come from git history.
+enableGitInfo = true
+
+[frontmatter]
+  lastmod = [':git', 'lastmod', ':fileModTime', ':default']
+
+# Posts are related by shared tags (and a little by date).
+[related]
+  includeNewer = true
+  threshold = 30
+  toLower = true
+  [[related.indices]]
+    name = 'tags'
+    weight = 100
+  [[related.indices]]
+    name = 'date'
+    weight = 10
+
+# The home page also emits /index.json, a post index the tag filter uses.
+[outputs]
+  home = ['html', 'rss', 'json']
 
 [markup]
+  [markup.highlight]
+    # Class-based output so syntax colours can follow the light/dark theme (assets/css/syntax.css).
+    noClasses = false
   [markup.goldmark]
     [markup.goldmark.renderer]
       # Posts embed their own HTML and <style> blocks.
