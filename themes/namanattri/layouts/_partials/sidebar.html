@@ -35,6 +35,12 @@
   </div>
   <footer class="sidebar__footer">
     {{ partial "socials.html" . }}
+    <nav class="sidebar__links" aria-label="{{ i18n "siteFeeds" }}">
+      {{- with site.Home.OutputFormats.Get "RSS" }}
+      <a href="{{ .RelPermalink }}" type="{{ .MediaType.Type }}">{{ i18n "feed" }}</a>
+      {{- end }}
+      <a href="{{ "sitemap.xml" | relURL }}" type="application/xml">{{ i18n "sitemap" }}</a>
+    </nav>
     <p>{{ i18n "madeWith" (dict "Name" ($author.name | default site.Title)) }}</p>
   </footer>
 </aside>

@@ -139,3 +139,12 @@ other = "No posts match these tags."
 
 [wrapLines]
 other = "wrap"
+
+[feed]
+other = "feed"
+
+[sitemap]
+other = "sitemap"
+
+[siteFeeds]
+other = "Site feeds"

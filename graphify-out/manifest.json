@@ -300,9 +300,9 @@
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_partials/head.html": {
-    "mtime": 1791095237.6915886,
-    "seen": 1791096116.5922382,
-    "ast_hash": "d9064722036e1a70faec037ddfb022ce",
+    "mtime": 1791096335.670743,
+    "seen": 1791096457.239845,
+    "ast_hash": "8b94b0a09920d332803f5c73536c6a2e",
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_partials/head/analytics.html": {
@@ -360,9 +360,9 @@
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/_partials/sidebar.html": {
-    "mtime": 1791047659.3839386,
-    "seen": 1791048796.830367,
-    "ast_hash": "89a5207624d53dc023fc75ff9c13441b",
+    "mtime": 1791096307.254152,
+    "seen": 1791096457.239857,
+    "ast_hash": "718996a07cc39422697f7937cfea1bf9",
     "semantic_hash": ""
   },
   "themes/namanattri/layouts/baseof.html": {
