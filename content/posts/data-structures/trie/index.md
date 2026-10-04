@@ -1,5 +1,6 @@
 +++
 title = 'Trie'
+tags = ['data-structures', 'algorithms', 'golang']
 date = 2024-08-15T13:53:09+05:30
 description = 'Learn all about Trie, a powerful data structure for efficient string handling. Understand its structure, operations like insertion, search, and deletion, and explore practical use cases in autocomplete systems, spell checkers, and more.'
 draft = false
@@ -120,41 +121,27 @@ The diagram below repsents the state of the trie after all words ("bat", "ball",
 
 ```goat
                      root
-                      +                      
-                     / \
-                    /   \
-                   /     \
-                  /       \                         
-                 /         \                         
-                /           \                         
-               /             \                         
-              .               .
-              b               c        
-              +               +                                 
-             / \              |     
-            /   \             |     
-           /     \            |     
-          /       \           |                              
-         .         .          .
+                      +
+              .-------+-------.
+              |               |
+              b               c
+              |               |
+         .----+----.          |
+         |         |          |
          a         e          a
-         +         +          +
-        /|\       / \        / \
-       / | \     /   \      /   \
-      .  .  .   .     .    .     .
+         |         |          |
+      .--+--.   .--+--.    .--+--.
+      |  |  |   |     |    |     |
       t- l  r   l     t-   r-    l
          |  |   |     |    |     |
-         .  .   .     .    .     .
          l- k-  t-    t    t-    l-
-                      +          |
-                     / \         |
-                    .   .        .
+                    .-+-.        |
+                    |   |        |
                     e   i        e
                     |   |        |
-                    .   .        .
                     r-  n        d-
-                        |    
-                        .    
-                        g-    
+                        |
+                        g-
 ```
 
 #### Search

@@ -1,5 +1,6 @@
 +++
 title = 'Understanding the CAP Theorem: Consistency, Availability, and Partition Tolerance in Distributed Systems'
+tags = ['distributed-systems', 'system-design', 'cap-theorem']
 date = 2024-07-27T13:52:09+05:30
 description = 'Discover the CAP Theorem, which states that a distributed system can only achieve two out of three properties: Consistency, Availability, and Partition Tolerance. Learn how to balance these trade-offs with real-world examples.'
 draft = false

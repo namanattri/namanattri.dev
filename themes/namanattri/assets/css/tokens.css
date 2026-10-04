@@ -1,0 +1,27 @@
+:root {
+  /* "system" mode: follow the OS. data-theme="light|dark" overrides it. */
+  color-scheme: light dark;
+
+  --color-bg: light-dark(#faf8f5, #14110f);
+  --color-bg-sidebar: light-dark(#f1ece4, #1c1814);
+  --color-text: light-dark(#1f1d1a, #ece7df);
+  --color-muted: light-dark(#6b665e, #a39b8f);
+  --color-border: light-dark(#ddd5c9, #342d26);
+  --color-accent: light-dark(#c2410c, #fb923c);
+  --color-code-bg: light-dark(#efe9df, #221d18);
+
+  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --sidebar-width: 30%;
+  --gutter: 2rem;
+  --space: 1rem;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}

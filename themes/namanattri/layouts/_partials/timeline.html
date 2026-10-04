@@ -1,0 +1,29 @@
+{{/* Renders a list of {title, url, subtitle, period, location, logo} entries in the order given (newest first). Logos are files in the site's assets directory. */}}
+<ol class="timeline">
+  {{- range . }}
+  <li class="timeline__item">
+    {{- $title := .title }}
+    <div class="timeline__body">
+      {{- with .logo }}
+        {{- with resources.Get . }}
+          {{- with .Fit "96x96 webp" }}
+      <img class="timeline__logo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $title }}" loading="lazy">
+          {{- end }}
+        {{- else }}
+          {{- warnf "namanattri: timeline logo %q not found in assets" . }}
+        {{- end }}
+      {{- end }}
+      <div class="timeline__text">
+        <h3 class="timeline__title">{{ with .url }}<a href="{{ . }}"{{ if hasPrefix . "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ $title }}</a>{{ else }}{{ $title }}{{ end }}</h3>
+        {{- with .subtitle }}
+        <p class="timeline__subtitle">{{ . }}</p>
+        {{- end }}
+        <p class="timeline__meta">
+          {{- with .period }}<span>{{ . }}</span>{{ end }}
+          {{- with .location }}<span>{{ . }}</span>{{ end -}}
+        </p>
+      </div>
+    </div>
+  </li>
+  {{- end }}
+</ol>

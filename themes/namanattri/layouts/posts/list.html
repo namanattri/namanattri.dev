@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <div class="page">
+    <header class="page__header">
+      {{ partial "breadcrumb.html" . }}
+      <h1>{{ .Title }}</h1>
+    </header>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    {{ partial "tag-filter.html" . }}
+    <p class="tag-filter__status" data-tag-status role="status" hidden
+      data-one="{{ i18n "filterResultsOne" }}" data-many="{{ i18n "filterResultsMany" }}" data-empty="{{ i18n "filterEmpty" }}"></p>
+    {{ partial "post-list.html" (dict "page" . "pages" .RegularPagesRecursive) }}
+  </div>
+{{ end }}

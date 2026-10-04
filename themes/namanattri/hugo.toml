@@ -1,0 +1,10 @@
+# Theme defaults. Sites override any of these in their own hugo.toml.
+[module]
+  [module.hugoVersion]
+    min = '0.158.0'
+
+[params]
+  # Load MathJax. Can also be set per page in front matter.
+  math = false
+  # Google tag ID (for example "G-XXXXXXXXXX"). Empty disables analytics.
+  googleTag = ''

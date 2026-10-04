@@ -1,0 +1,14 @@
+{{- with resources.Get "js/main.js" -}}
+  {{- $options := dict "minify" hugo.IsProduction "target" "es2020" "targetPath" "js/theme.js" -}}
+  {{- with . | js.Build $options -}}
+    {{- if hugo.IsProduction -}}
+      {{- with . | fingerprint -}}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+      {{- end -}}
+    {{- else -}}
+<script src="{{ .RelPermalink }}" defer></script>
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- errorf "namanattri: missing script %q" "js/main.js" -}}
+{{- end -}}

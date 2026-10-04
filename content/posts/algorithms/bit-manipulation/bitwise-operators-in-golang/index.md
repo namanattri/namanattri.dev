@@ -1,5 +1,6 @@
 +++
 title = 'Mastering Bitwise Operators in Golang: A Comprehensive Guide with Examples'
+tags = ['golang', 'algorithms', 'bit-manipulation']
 date = 2024-08-16T00:00:00+05:30
 description = 'Learn about bitwise operators in Golang with detailed explanations and examples. Master the use of AND, OR, XOR, NOT, left shift, and right shift operators to manipulate data at the bit level.'
 draft = false

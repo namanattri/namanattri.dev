@@ -1,0 +1,14 @@
+{{- /*
+  Whole years since params.author.careerStart, with a trailing "+" (for example "13+").
+  Computed when the site is built, so it stays current as long as the site is rebuilt.
+*/ -}}
+{{- with site.Params.author.careerStart -}}
+  {{- $start := time.AsTime . -}}
+  {{- $years := sub now.Year $start.Year -}}
+  {{- if lt (int now.Month) (int $start.Month) -}}
+    {{- $years = sub $years 1 -}}
+  {{- end -}}
+  {{- $years }}+
+{{- else -}}
+  {{- warnf "experience-years: set params.author.careerStart in the site config" -}}
+{{- end -}}

@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <article class="page">
+    <header class="page__header">
+      <h1>{{ .Title }}</h1>
+    </header>
+    <div class="prose">{{ .Content }}</div>
+
+    <div class="about-boxes">
+      {{ with .Params.education }}
+      <section class="box" aria-labelledby="education-heading">
+        <h2 id="education-heading" class="box__title">{{ i18n "education" }}</h2>
+        {{ partial "timeline.html" . }}
+      </section>
+      {{ end }}
+      {{ with .Params.experience }}
+      <section class="box" aria-labelledby="experience-heading">
+        <h2 id="experience-heading" class="box__title">{{ i18n "workExperience" }}</h2>
+        {{ partial "timeline.html" . }}
+      </section>
+      {{ end }}
+      {{ with .Params.skills }}
+      <section class="box box--wide" aria-labelledby="skills-heading">
+        <h2 id="skills-heading" class="box__title">{{ i18n "skills" }}</h2>
+        {{ partial "skills.html" . }}
+      </section>
+      {{ end }}
+      {{ $posts := first 5 (where site.RegularPages "Section" "in" site.Params.mainSections) }}
+      {{ with $posts }}
+      {{ $items := slice }}
+      {{ range . }}
+        {{ $items = $items | append (dict "title" .LinkTitle "url" .RelPermalink "subtitle" (.Description | truncate 120) "period" (.Date | time.Format ":date_medium")) }}
+      {{ end }}
+      <section class="box box--wide" aria-labelledby="recent-posts-heading">
+        <h2 id="recent-posts-heading" class="box__title">{{ i18n "recentPosts" }}</h2>
+        {{ partial "timeline.html" $items }}
+      </section>
+      {{ end }}
+    </div>
+  </article>
+{{ end }}

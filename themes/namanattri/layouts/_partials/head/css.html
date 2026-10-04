@@ -1,0 +1,18 @@
+{{- $files := slice "css/tokens.css" "css/base.css" "css/layout.css" "css/components.css" "css/prose.css" "css/syntax.css" "css/timeline.css" "css/tags.css" -}}
+{{- $sources := slice -}}
+{{- range $files -}}
+  {{- with resources.Get . -}}
+    {{- $sources = $sources | append . -}}
+  {{- else -}}
+    {{- errorf "namanattri: missing stylesheet %q" . -}}
+  {{- end -}}
+{{- end -}}
+{{- with resources.Concat "css/theme.css" $sources -}}
+  {{- if hugo.IsProduction -}}
+    {{- with . | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+    {{- end -}}
+  {{- else -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- end -}}
+{{- end -}}

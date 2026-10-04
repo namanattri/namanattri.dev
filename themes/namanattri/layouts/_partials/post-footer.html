@@ -1,0 +1,17 @@
+{{/* Author card at the end of a post; links to the home page. */}}
+{{- $author := site.Params.author -}}
+<footer class="post__author">
+  <a class="author-card" href="{{ "/" | relURL }}" rel="author">
+    {{- with $author.image -}}
+      {{- with resources.Get . -}}
+        {{- with .Fill "96x96 top webp" }}
+    <img class="author-card__photo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" loading="lazy">
+        {{- end }}
+      {{- end }}
+    {{- end }}
+    <span class="author-card__text">
+      <span class="author-card__label">{{ i18n "writtenBy" }}</span>
+      <span class="author-card__name">{{ $author.name | default site.Title }}</span>
+    </span>
+  </a>
+</footer>

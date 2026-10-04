@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ partial "func/document-title.html" . }}</title>
+<script>document.documentElement.classList.add('js')</script>
+{{ partial "head/theme-init.html" . }}
+{{ partial "head/seo.html" . }}
+{{ if eq .Kind "404" }}<meta name="robots" content="noindex">{{ end }}
+{{ with site.Home.OutputFormats.Get "RSS" }}
+<link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ site.Title }}">
+{{ end }}
+<link rel="sitemap" type="application/xml" href="{{ "sitemap.xml" | relURL }}">
+{{ partial "head/favicon.html" . }}
+{{ partial "head/css.html" . }}
+{{ partial "head/js.html" . }}
+{{ if .Param "math" }}{{ partialCached "head/math.html" . }}{{ end }}
+{{ partial "head/analytics.html" . }}
+{{ partial "head/custom.html" . }}

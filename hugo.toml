@@ -1,16 +1,71 @@
 baseURL = 'https://namanattri.dev/'
 enableRobotsTXT = true
-languageCode = 'en-us'
+locale = 'en-US'
 title = 'Naman Attri'
-theme = 'ananke'
+theme = 'namanattri'
+# Last-modified dates for sitemap and structured data come from git history.
+enableGitInfo = true
+
+[frontmatter]
+  lastmod = [':git', 'lastmod', ':fileModTime', ':default']
+
+# Posts are related by shared tags (and a little by date).
+[related]
+  includeNewer = true
+  threshold = 30
+  toLower = true
+  [[related.indices]]
+    name = 'tags'
+    weight = 100
+  [[related.indices]]
+    name = 'date'
+    weight = 10
+
+# The home page also emits /index.json, a post index the tag filter uses.
+[outputs]
+  home = ['html', 'rss', 'json']
+
 [markup]
+  [markup.highlight]
+    # Class-based output so syntax colours can follow the light/dark theme (assets/css/syntax.css).
+    noClasses = false
   [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Posts embed their own HTML and <style> blocks.
+      unsafe = true
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
         enable = true
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)']]
+
 [params]
+  description = "Distributed systems engineer building reliable backend and blockchain infrastructure."
+  mainSections = ['posts']
   math = true
-  googletag = true
+  googleTag = 'G-K12F1YKP9F'
+  [params.author]
+    name = 'Naman Attri'
+    # Resolved from the site's assets directory.
+    image = 'images/author.png'
+    # Start of the career. Drives the "13+ years" figure in the intro, which updates at each build.
+    careerStart = '2013-02-01'
+
+  # All four icons always show; unset ones link to the network's home page.
+  [params.social]
+    linkedin = 'https://www.linkedin.com/in/naman-attri'
+    github = 'https://github.com/namanattri'
+    x = 'https://x.com/namanattri_dev'
+    instagram = 'https://www.instagram.com/namanattri.dev/'
+    youtube = 'https://www.youtube.com/@NamanAttri-dev'
+
+[[menus.main]]
+  name = 'Home'
+  pageRef = '/'
+  weight = 10
+
+[[menus.main]]
+  name = 'Blog'
+  pageRef = '/posts'
+  weight = 20

@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <div class="page">
+    <header class="page__header">
+      {{ partial "breadcrumb.html" . }}
+      <h1>{{ .Title }}</h1>
+    </header>
+    {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+    <ul class="tags tags--cloud">
+      {{- range .Data.Terms.ByCount }}
+      <li><a class="tag" href="{{ .Page.RelPermalink }}" rel="tag">{{ .Page.Data.Term }} <span class="tag__count">{{ .Count }}</span></a></li>
+      {{- end }}
+    </ul>
+  </div>
+{{ end }}

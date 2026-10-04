@@ -1,0 +1,153 @@
+/* About page: education and work experience boxes with vertical timelines. */
+.about-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-block-start: 2rem;
+}
+
+.box {
+  padding: 1.25rem 1.5rem;
+  background: var(--color-bg-sidebar);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.box__title {
+  margin: 0 0 1.25rem;
+  font-size: 1.25rem;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-inline-start: 2px solid var(--color-border);
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 1.5rem 1.5rem;
+}
+
+.timeline__item:last-child {
+  padding-block-end: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0.4rem;
+  inset-inline-start: calc(-0.4rem - 1px);
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--color-bg-sidebar);
+  border: 2px solid var(--color-muted);
+  border-radius: 50%;
+}
+
+/* The most recent entry is highlighted. */
+/* ...and pulses softly, like the active link in the sidebar (nav-pulse is in components.css). */
+.timeline__item:first-child::before {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  animation: nav-pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline__item:first-child::before {
+    animation: none;
+  }
+}
+
+.timeline__body {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.timeline__text {
+  min-width: 0;
+}
+
+/* Logos sit on white so they stay legible in dark mode. */
+.timeline__logo {
+  flex: none;
+  width: 3rem;
+  height: 3rem;
+  padding: 3px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.timeline__title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.timeline__subtitle {
+  margin: 0.15rem 0 0;
+}
+
+.timeline__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 64rem) {
+  .about-boxes {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Skills */
+.box--wide {
+  grid-column: 1 / -1;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.8rem 0.35rem 0.55rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.skills__icon {
+  display: grid;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.skills__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.timeline__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.timeline__title a:hover {
+  color: var(--color-accent);
+}

@@ -1,5 +1,6 @@
 +++
 title = 'Monotonic Stack'
+tags = ['data-structures', 'algorithms', 'golang']
 date = 2024-08-15T13:52:09+05:30
 description = 'Learn about monotonic functions and monotonic stacks, their importance in programming, and how to implement them with Go. Discover step-by-step explanations and code examples for constructing both increasing and decreasing monotonic stacks.'
 draft = false

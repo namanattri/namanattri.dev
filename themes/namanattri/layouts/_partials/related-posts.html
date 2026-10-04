@@ -1,0 +1,12 @@
+{{/* Links to posts that share tags with this one. */}}
+{{- $related := (site.RegularPages.Related .) | first 4 -}}
+{{- with $related -}}
+<aside class="related" aria-labelledby="related-heading-{{ $.File.UniqueID }}">
+  <h2 class="related__title" id="related-heading-{{ $.File.UniqueID }}">{{ i18n "relatedPosts" }}</h2>
+  <ul class="related__list">
+    {{- range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time></li>
+    {{- end }}
+  </ul>
+</aside>
+{{- end -}}

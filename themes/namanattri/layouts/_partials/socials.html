@@ -1,0 +1,15 @@
+{{/* Every network is always shown. Links default to the network's home page until the site sets params.social.<name>. */}}
+{{- $defaults := dict "linkedin" "https://www.linkedin.com" "github" "https://github.com" "x" "https://x.com" "instagram" "https://www.instagram.com" "youtube" "https://www.youtube.com" -}}
+{{- $social := site.Params.social | default dict -}}
+<ul class="socials">
+  {{- range slice "linkedin" "github" "x" "instagram" "youtube" }}
+    {{- $name := . }}
+  <li>
+    <a class="socials__link socials__link--{{ $name }}" href="{{ index $social $name | default (index $defaults $name) }}" target="_blank" rel="me noopener noreferrer" aria-label="{{ i18n (printf "social_%s" $name) }}">
+      {{- with resources.Get (printf "icons/%s.svg" $name) -}}
+        {{- .Content | replaceRE `<title>[^<]*</title>` "" | replaceRE `role="img"` `aria-hidden="true" focusable="false"` | safeHTML -}}
+      {{- end -}}
+    </a>
+  </li>
+  {{- end }}
+</ul>

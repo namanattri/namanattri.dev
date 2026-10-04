@@ -1,0 +1,18 @@
+{{/* Renders {name, icon, color} entries as icon chips. Icons are SVG files in the site's assets directory. */}}
+<ul class="skills">
+  {{- range . }}
+  {{- $skill := . }}
+  <li class="skills__item">
+    {{- with .icon }}
+      {{- with resources.Get . }}
+    <span class="skills__icon"{{ with $skill.color }} style="color: {{ . | safeCSS }}"{{ end }} aria-hidden="true">
+      {{- .Content | replaceRE `<!--.*?-->` "" | replaceRE `<title>[^<]*</title>` "" | replaceRE `<svg` `<svg focusable="false"` | safeHTML -}}
+    </span>
+      {{- else }}
+        {{- warnf "namanattri: skill icon %q not found in assets" . }}
+      {{- end }}
+    {{- end }}
+    <span>{{ .name }}</span>
+  </li>
+  {{- end }}
+</ul>

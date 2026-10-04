@@ -1,0 +1,129 @@
+[home]
+other = "Home"
+
+[skipToContent]
+other = "Skip to content"
+
+[breadcrumb]
+other = "Breadcrumb"
+
+[mainNavigation]
+other = "Main"
+
+[loading]
+other = "Loading…"
+
+[madeWith]
+other = "Made with ♥ by {{ .Name }}"
+
+[readingTime]
+one = "1 min read"
+other = "{{ .Count }} min read"
+
+[olderPosts]
+other = "Older posts"
+
+[newerPosts]
+other = "Newer posts"
+
+[olderPost]
+other = "Older post"
+
+[newerPost]
+other = "Newer post"
+
+[pagination]
+other = "Pagination"
+
+[postNavigation]
+other = "Post navigation"
+
+[notFoundTitle]
+other = "Page not found"
+
+[notFoundText]
+other = "The page you are looking for does not exist."
+
+[backToHome]
+other = "Back to home"
+
+[social_linkedin]
+other = "LinkedIn"
+
+[social_github]
+other = "GitHub"
+
+[social_instagram]
+other = "Instagram"
+
+[social_youtube]
+other = "YouTube"
+
+[themeLabel]
+other = "Color theme"
+
+[themeLight]
+other = "Light"
+
+[themeDark]
+other = "Dark"
+
+[themeSystem]
+other = "System"
+
+[social_x]
+other = "X"
+
+[sidebarCollapse]
+other = "Collapse sidebar"
+
+[sidebarExpand]
+other = "Expand sidebar"
+
+[education]
+other = "Education"
+
+[workExperience]
+other = "Work Experience"
+
+[skills]
+other = "Skills"
+
+[recentPosts]
+other = "Recent Posts"
+
+[tags]
+other = "Tags"
+
+[filterByTag]
+other = "Filter by tag"
+
+[clearFilter]
+other = "Clear filter"
+
+[relatedPosts]
+other = "Related posts"
+
+[writtenBy]
+other = "Written by"
+
+[filterResultsOne]
+other = "1 post"
+
+[filterResultsMany]
+other = "%count% posts"
+
+[filterEmpty]
+other = "No posts match these tags."
+
+[wrapLines]
+other = "wrap"
+
+[feed]
+other = "feed"
+
+[sitemap]
+other = "sitemap"
+
+[siteFeeds]
+other = "Site feeds"

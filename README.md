@@ -1,5 +1,17 @@
 # Quick Start Commands
 
+## Commit workflow
+
+The project-local Codex skills `$suggest-commit`, `$commit`, and `$commit-n-push` (also available in Claude as slash skills) use Commitizen messages. Install the command-line tools if needed, then enable the tracked pre-commit hook once per clone:
+
+```sh
+uv tool install commitizen
+uv tool install graphifyy
+git config core.hooksPath .githooks
+```
+
+The commit skills run `graphify update .` before staging, then review and stage intended tracked and untracked files, including Graphify output. The hook runs it again before every commit, including direct Git commits, and stops the commit if the update fails.
+
 Start hugo development server
 
 ```sh
@@ -19,11 +31,19 @@ hugo server --buildDrafts
 hugo server -D
 ```
 
-Publish the site
+Production build (the same one CI runs)
 
 ```sh
-hugo
+task build
 ```
+
+Deploy to production (from `main` only)
+
+```sh
+task deploy
+```
+
+`task deploy` needs the GitHub CLI (`gh`), a clean working tree and the `main` branch checked out. It pushes `main`, which runs the Pages workflow, and waits for the result. If `main` is already pushed it starts a redeploy instead. Other branches can't deploy, because the repository's `github-pages` environment only allows `main`.
 
 # Basic Usage
 

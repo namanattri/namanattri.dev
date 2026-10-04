@@ -1,5 +1,6 @@
 +++
 title = 'Issue with CSS Not Loading for a Hugo Website Deployed with GitHub Pages'
+tags = ['hugo', 'github-pages', 'web-development']
 date = 2024-07-18T15:38:30+05:30
 description = 'Learn how to resolve the common issue of CSS not loading for Hugo websites deployed on GitHub Pages. Follow this step-by-step guide to fix the base URL configuration and ensure your Hugo site looks great.'
 draft = false

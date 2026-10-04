@@ -1,0 +1,14 @@
+{{- /*
+  Every fenced code block: syntax highlighted (plain text when no language is
+  given), numbered like an editor, with a bar holding the language and a
+  wrap toggle. Blocks without a language get the same look as the rest.
+*/ -}}
+{{- $lang := .Type | default "text" -}}
+{{- $options := dict "lineNos" true "lineNumbersInTable" false "noClasses" false -}}
+<div class="code-block" data-code-block>
+  <div class="code-block__bar">
+    <span class="code-block__lang">{{ $lang }}</span>
+    <button class="code-block__wrap" type="button" aria-pressed="false" data-code-wrap>{{ i18n "wrapLines" }}</button>
+  </div>
+  {{ transform.Highlight .Inner $lang $options }}
+</div>

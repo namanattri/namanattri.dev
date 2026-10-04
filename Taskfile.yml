@@ -1,0 +1,43 @@
+version: '3'
+
+vars:
+  BRANCH:
+    sh: git branch --show-current
+  WORKFLOW: hugo.yaml
+
+tasks:
+  dev:
+    desc: Launch site locally with drafts (http://localhost:1313)
+    cmds:
+      - hugo server --buildDrafts
+
+  build:
+    desc: Production build into ./public (the same build the deploy workflow runs)
+    env:
+      HUGO_ENV: production
+      HUGO_ENVIRONMENT: production
+    cmds:
+      - hugo --gc --minify
+
+  deploy:
+    desc: Deploy to production - pushes main, which runs the Pages workflow, and waits for it
+    preconditions:
+      - sh: command -v gh >/dev/null
+        msg: The GitHub CLI (gh) is required - https://cli.github.com
+      - sh: test "{{.BRANCH}}" = "main"
+        msg: Production deploys come from main only. Merge your branch into main first.
+      - sh: test -z "$(git status --porcelain)"
+        msg: Uncommitted changes. Commit first - the workflow builds what is pushed, not your working tree.
+    cmds:
+      - |
+        if [ "$(git ls-remote origin refs/heads/main | cut -f1)" = "$(git rev-parse HEAD)" ]; then
+          # Nothing new to push, so start a redeploy of main by hand.
+          gh workflow run {{.WORKFLOW}} --ref main
+          event=workflow_dispatch
+        else
+          git push origin HEAD:refs/heads/main
+          event=push
+        fi
+        sleep 6
+        run_id=$(gh run list --workflow {{.WORKFLOW}} --branch main --event "$event" --limit 1 --json databaseId --jq '.[0].databaseId')
+        gh run watch "$run_id" --exit-status

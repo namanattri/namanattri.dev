@@ -1,0 +1,45 @@
+{{- $page := . -}}
+{{- $author := site.Params.author -}}
+<aside class="sidebar" id="sidebar">
+  {{ partial "sidebar-toggle.html" (dict "kind" "collapse") }}
+  <div class="sidebar__main">
+  <div class="sidebar__intro">
+    {{- with $author.image -}}
+      {{- with resources.Get . -}}
+        {{- with .Resize "480x webp" -}}
+    <a class="sidebar__photo-link" href="{{ "/" | relURL }}">
+      <img class="sidebar__photo" src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="{{ $author.name }}">
+    </a>
+        {{- end -}}
+      {{- else -}}
+        {{- warnf "namanattri: author image %q not found in assets" . -}}
+      {{- end -}}
+    {{- end }}
+    <p class="sidebar__name"><a href="{{ "/" | relURL }}">{{ $author.name | default site.Title }}</a></p>
+    {{ with site.Params.description }}<p class="sidebar__description">{{ . }}</p>{{ end }}
+    <nav class="sidebar__nav" aria-label="{{ i18n "mainNavigation" }}">
+      <ul>
+        {{- range site.Menus.main -}}
+          {{- $current := "" -}}
+          {{- if $page.IsMenuCurrent "main" . -}}
+            {{- $current = "page" -}}
+          {{- else if $page.HasMenuCurrent "main" . -}}
+            {{- $current = "true" -}}
+          {{- end }}
+        <li><a href="{{ .URL }}"{{ with $current }} aria-current="{{ . }}"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+  </div>
+  </div>
+  <footer class="sidebar__footer">
+    {{ partial "socials.html" . }}
+    <nav class="sidebar__links" aria-label="{{ i18n "siteFeeds" }}">
+      {{- with site.Home.OutputFormats.Get "RSS" }}
+      <a href="{{ .RelPermalink }}" type="{{ .MediaType.Type }}">{{ i18n "feed" }}</a>
+      {{- end }}
+      <a href="{{ "sitemap.xml" | relURL }}" type="application/xml">{{ i18n "sitemap" }}</a>
+    </nav>
+    <p>{{ i18n "madeWith" (dict "Name" ($author.name | default site.Title)) }}</p>
+  </footer>
+</aside>

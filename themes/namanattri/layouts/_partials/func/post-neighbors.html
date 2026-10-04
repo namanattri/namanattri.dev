@@ -1,0 +1,8 @@
+{{/*
+  Returns the neighbouring posts of a post across the whole top-level section,
+  ordered by the section's default sort (newest first):
+    newer: the post published after this one (nil for the newest post)
+    older: the post published before this one (nil for the oldest post)
+*/}}
+{{- $posts := .FirstSection.RegularPagesRecursive -}}
+{{- return dict "newer" ($posts.Next .) "older" ($posts.Prev .) -}}

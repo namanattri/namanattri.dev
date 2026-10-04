@@ -1,0 +1,17 @@
+{{ define "main" }}
+  {{ $neighbors := partial "func/post-neighbors.html" . }}
+  <div class="post-stream" data-post-stream>
+    {{/* Both markers always exist: posts that scroll far out of view are removed and must stay reloadable. */}}
+    <div class="post-stream__sentinel" data-sentinel="newer"></div>
+
+    {{ partial "post.html" . }}
+
+    <div class="post-stream__sentinel" data-sentinel="older">{{ partial "loader.html" . }}</div>
+
+    {{/* Plain links keep the post sequence crawlable and usable without JavaScript. */}}
+    <nav class="post-pager" aria-label="{{ i18n "postNavigation" }}" data-pager>
+      {{ with $neighbors.newer }}<a rel="prev" href="{{ .RelPermalink }}">&larr; {{ i18n "newerPost" }}: {{ .LinkTitle }}</a>{{ end }}
+      {{ with $neighbors.older }}<a rel="next" href="{{ .RelPermalink }}">{{ i18n "olderPost" }}: {{ .LinkTitle }} &rarr;</a>{{ end }}
+    </nav>
+  </div>
+{{ end }}
