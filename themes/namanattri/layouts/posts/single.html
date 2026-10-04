@@ -1,8 +1,8 @@
 {{ define "main" }}
   {{ $neighbors := partial "func/post-neighbors.html" . }}
   <div class="post-stream" data-post-stream>
-    {{/* Both sentinels always exist: posts that scroll far out of view are removed and must stay reloadable. */}}
-    <div class="post-stream__sentinel" data-sentinel="newer">{{ partial "loader.html" . }}</div>
+    {{/* Both markers always exist: posts that scroll far out of view are removed and must stay reloadable. */}}
+    <div class="post-stream__sentinel" data-sentinel="newer"></div>
 
     {{ partial "post.html" . }}
 

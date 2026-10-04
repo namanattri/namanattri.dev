@@ -17,7 +17,7 @@ theme = 'namanattri'
           inline = [['\(', '\)']]
 
 [params]
-  description = "Backend engineer who turns hard problems into simple, dependable systems. My work spans blockchain, DevOps, cloud and Gen & Agentic AI, and I write down what I learn along the way."
+  description = "Distributed systems engineer building reliable backend and blockchain infrastructure."
   mainSections = ['posts']
   math = true
   googleTag = 'G-K12F1YKP9F'
@@ -30,15 +30,15 @@ theme = 'namanattri'
 
   # All four icons always show; unset ones link to the network's home page.
   [params.social]
+    linkedin = 'https://www.linkedin.com/in/naman-attri'
     github = 'https://github.com/namanattri'
-    # linkedin = ''
-    # x = ''
-    # instagram = ''
-    # youtube = ''
+    x = 'https://x.com/namanattri_dev'
+    instagram = 'https://www.instagram.com/namanattri.dev/'
+    youtube = 'https://www.youtube.com/@NamanAttri-dev'
 
 [[menus.main]]
-  name = 'About'
-  pageRef = '/about'
+  name = 'Home'
+  pageRef = '/'
   weight = 10
 
 [[menus.main]]

@@ -1,5 +1,5 @@
 ---
-title: "Crash Course on Logarithms 📘"
+title: "Crash Course on Logarithms"
 date: 2025-10-07T00:00:00+05:30
 author: "Naman Attri"
 tags: ["mathematics", "crash-course", "logarithm", "education"]
@@ -25,14 +25,14 @@ th {
 }
 </style>
 
-# 🚀 Crash Course on Logarithms
+# Crash Course on Logarithms
 
 Logarithms are one of the most useful mathematical tools — from calculating algorithmic complexity to dealing with exponential growth in real life.  
 In this quick crash course, you’ll understand what logarithms are, how they work, and how to apply them.
 
 ---
 
-## 🧩 What is a Logarithm?
+## What is a Logarithm?
 
 A **logarithm** answers the question:  
 > “To what power must I raise this base to get that number?”
@@ -51,7 +51,7 @@ Formally:
 
 ---
 
-## 🔢 Common Logarithm Bases
+## Common Logarithm Bases
 
 | Base | Name | Example |
 |------|------|----------|
@@ -59,11 +59,11 @@ Formally:
 | 2 | Binary Logarithm | log₂(32) = 5 |
 | e (≈2.718) | Natural Logarithm (ln) | ln(e²) = 2 |
 
-> 💡 Tip: In programming and algorithms, `log` often means `log₂`.
+> Tip: In programming and algorithms, `log` often means `log₂`.
 
 ---
 
-## 🧠 Why Do We Use Logarithms?
+## Why Do We Use Logarithms?
 
 1. **Simplify exponential growth:** Convert multiplication into addition.  
    e.g., \(\log(ab) = \log(a) + \log(b)\)
@@ -73,7 +73,7 @@ Formally:
 
 ---
 
-## ⚙️ Logarithm Properties (Must-Know)
+## Logarithm Properties (Must-Know)
 
 | Property | Formula | Example |
 |-----------|----------|----------|
@@ -84,7 +84,7 @@ Formally:
 
 ---
 
-## ⚡ Quick Practice
+## Quick Practice
 
 Try these:
 
@@ -99,7 +99,7 @@ Try these:
 
 ---
 
-## 💻 Logarithms in Programming
+## Logarithms in Programming
 
 | Language | Function | Example |
 |-----------|-----------|----------|
@@ -110,7 +110,7 @@ Try these:
 
 ---
 
-## 📈 Real-World Applications
+## Real-World Applications
 
 - **Algorithms:** Binary search, tree depth, sorting complexities.  
 - **Finance:** Compound interest & time to double money.  
@@ -120,7 +120,7 @@ Try these:
 
 ---
 
-## 🔍 Intuitive Analogy
+## Intuitive Analogy
 
 Think of logarithms like **counting how many times you multiply the base** to reach a number.
 
@@ -137,7 +137,7 @@ So, **log₂(16) = 4**, because you multiply 2 four times to reach 16.
 
 ---
 
-## 🧮 Logarithmic Scales Simplify the Universe
+## Logarithmic Scales Simplify the Universe
 
 | Phenomenon | Scale | Example |
 |-------------|--------|----------|
@@ -148,19 +148,19 @@ So, **log₂(16) = 4**, because you multiply 2 four times to reach 16.
 
 ---
 
-## 🏁 Conclusion
+## Conclusion
 
 Logarithms **turn multiplication into addition, division into subtraction, and powers into multipliers**.  
 They are everywhere — from coding algorithms to understanding the world’s natural scales.
 
-So next time you see `O(log n)`, just smile 😄 — you now know what that really means.
+So next time you see `O(log n)`, just smile — you now know what that really means.
 
 ---
 
-✅ **Takeaway**  
+**Takeaway**  
 > A logarithm tells you *how many times you multiply the base to get a number.*
 
 ---
 
-🧠 *Written by [Naman Attri](https://namanattri.dev)*  
-Built with ❤️ and curiosity for lifelong learners.
+*Written by [Naman Attri](https://namanattri.dev)*  
+Built with love and curiosity for lifelong learners.

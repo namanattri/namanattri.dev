@@ -26,8 +26,8 @@ theme = 'namanattri'
     image = 'images/author.png'   # a file in the site's assets directory
 
 [[menus.main]]
-  name = 'About'
-  pageRef = '/about'
+  name = 'Home'
+  pageRef = '/'
   weight = 10
 
 [[menus.main]]

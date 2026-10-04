@@ -135,8 +135,11 @@
   height: 100%;
 }
 
-.skills__more {
-  margin: 1rem 0 0;
-  color: var(--color-muted);
-  font-size: 0.9rem;
+.timeline__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.timeline__title a:hover {
+  color: var(--color-accent);
 }

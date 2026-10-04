@@ -1,4 +1,4 @@
-{{/* Renders a list of {title, subtitle, period, location, logo} entries in the order given (newest first). Logos are files in the site's assets directory. */}}
+{{/* Renders a list of {title, url, subtitle, period, location, logo} entries in the order given (newest first). Logos are files in the site's assets directory. */}}
 <ol class="timeline">
   {{- range . }}
   <li class="timeline__item">
@@ -14,7 +14,7 @@
         {{- end }}
       {{- end }}
       <div class="timeline__text">
-        <h3 class="timeline__title">{{ .title }}</h3>
+        <h3 class="timeline__title">{{ with .url }}<a href="{{ . }}">{{ $title }}</a>{{ else }}{{ $title }}{{ end }}</h3>
         {{- with .subtitle }}
         <p class="timeline__subtitle">{{ . }}</p>
         {{- end }}

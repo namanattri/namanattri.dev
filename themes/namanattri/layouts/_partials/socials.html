@@ -5,7 +5,7 @@
   {{- range slice "linkedin" "github" "x" "instagram" "youtube" }}
     {{- $name := . }}
   <li>
-    <a class="socials__link socials__link--{{ $name }}" href="{{ index $social $name | default (index $defaults $name) }}" rel="me noopener" aria-label="{{ i18n (printf "social_%s" $name) }}">
+    <a class="socials__link socials__link--{{ $name }}" href="{{ index $social $name | default (index $defaults $name) }}" target="_blank" rel="me noopener noreferrer" aria-label="{{ i18n (printf "social_%s" $name) }}">
       {{- with resources.Get (printf "icons/%s.svg" $name) -}}
         {{- .Content | replaceRE `<title>[^<]*</title>` "" | replaceRE `role="img"` `aria-hidden="true" focusable="false"` | safeHTML -}}
       {{- end -}}

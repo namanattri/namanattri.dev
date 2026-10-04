@@ -1,45 +1,48 @@
 const STORAGE_KEY = 'theme';
+const CYCLE = ['system', 'light', 'dark'];
 
 function storedTheme() {
   try {
-    return localStorage.getItem(STORAGE_KEY);
+    const value = localStorage.getItem(STORAGE_KEY);
+    return value === 'light' || value === 'dark' ? value : 'system';
   } catch {
-    return null;
+    return 'system';
   }
 }
 
-/** Light, dark or system (no override). The choice persists in localStorage. */
-export function initThemeToggle(toggle) {
+/**
+ * A single button that cycles system, light and dark. "System" removes the
+ * override so the OS preference applies. The choice persists in localStorage.
+ */
+export function initThemeToggle(button) {
   const root = document.documentElement;
-  const buttons = toggle.querySelectorAll('[data-theme-choice]');
+  let mode = storedTheme();
 
-  function apply(choice) {
-    if (choice === 'light' || choice === 'dark') {
-      root.dataset.theme = choice;
-    } else {
-      choice = 'system';
+  function apply(next) {
+    mode = next;
+    if (mode === 'system') {
       delete root.dataset.theme;
+    } else {
+      root.dataset.theme = mode;
     }
-    buttons.forEach((button) =>
-      button.setAttribute('aria-pressed', String(button.dataset.themeChoice === choice)),
-    );
-    return choice;
+    const label = `${button.dataset.label}: ${button.dataset[`label${mode[0].toUpperCase()}${mode.slice(1)}`]}`;
+    button.dataset.mode = mode;
+    button.setAttribute('aria-label', label);
+    button.title = label;
   }
 
-  apply(storedTheme());
+  apply(mode);
 
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const choice = apply(button.dataset.themeChoice);
-      try {
-        if (choice === 'system') {
-          localStorage.removeItem(STORAGE_KEY);
-        } else {
-          localStorage.setItem(STORAGE_KEY, choice);
-        }
-      } catch {
-        // Storage can be unavailable (private mode); the choice still applies for this visit.
+  button.addEventListener('click', () => {
+    apply(CYCLE[(CYCLE.indexOf(mode) + 1) % CYCLE.length]);
+    try {
+      if (mode === 'system') {
+        localStorage.removeItem(STORAGE_KEY);
+      } else {
+        localStorage.setItem(STORAGE_KEY, mode);
       }
-    });
+    } catch {
+      // Storage can be unavailable (private mode); the choice still applies for this visit.
+    }
   });
 }

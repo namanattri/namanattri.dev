@@ -85,3 +85,16 @@
     line-height: 1.7;
   }
 }
+
+/* GoAT diagrams render at natural size so their text matches the prose. */
+.prose .goat {
+  overflow-x: auto;
+  margin-block: 0 1.1rem;
+}
+
+.prose .goat svg {
+  width: calc(var(--goat-width) * 1.12);
+  max-width: none;
+  height: auto;
+  font-size: 13.3px;
+}

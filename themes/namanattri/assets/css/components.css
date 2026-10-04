@@ -40,6 +40,38 @@
   line-height: 1.55;
 }
 
+/* Terminal feel: a prompt before the text and a blinking block cursor after it.
+   Both are decorative pseudo-elements, so the text itself is unchanged. */
+.sidebar__description::before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-inline-end: 0.35em;
+  vertical-align: -0.05em;
+  background: var(--color-accent);
+  /* A rounded chevron drawn as a mask so it takes the accent colour. */
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 4l9 8-9 8'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.sidebar__description::after {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 1.1em;
+  margin-inline-start: 0.2em;
+  vertical-align: text-bottom;
+  background: currentColor;
+  opacity: 0.75;
+  animation: cursor-blink 1.1s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 .sidebar__nav ul {
   display: flex;
   flex-direction: column;
@@ -51,17 +83,48 @@
 }
 
 .sidebar__nav a {
+  position: relative;
   padding-block: 0.25rem;
   color: var(--color-text);
   font-weight: 600;
   text-decoration: none;
-  border-block-end: 2px solid transparent;
+  text-transform: lowercase;
 }
 
 .sidebar__nav a:hover,
 .sidebar__nav a[aria-current] {
   color: var(--color-accent);
-  border-block-end-color: var(--color-accent);
+}
+
+/* The current page gets a softly pulsing dot beside its name. */
+.sidebar__nav a[aria-current]::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: calc(100% + 0.6rem);
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-block-start: -0.25rem;
+  background: var(--color-accent);
+  border-radius: 50%;
+  animation: nav-pulse 2s ease-in-out infinite;
+}
+
+@keyframes nav-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent) 55%, transparent);
+    opacity: 1;
+  }
+
+  70% {
+    box-shadow: 0 0 0 0.45rem transparent;
+    opacity: 0.55;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+    opacity: 1;
+  }
 }
 
 /* Live experience clock: same type as the description so it stays quiet. */
@@ -98,48 +161,36 @@
   margin: 0;
 }
 
-/* Theme switcher */
+/* Theme switcher: one button that cycles system, light and dark. */
 .theme-toggle {
   position: fixed;
   top: 0.75rem;
   right: var(--gutter);
   z-index: 5;
   display: none;
-  padding: 2px;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-}
-
-.js .theme-toggle {
-  display: flex;
-}
-
-.theme-toggle button {
-  display: grid;
   place-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0;
   color: var(--color-muted);
-  background: none;
-  border: 0;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   cursor: pointer;
 }
 
-.theme-toggle button:hover {
+.js .theme-toggle {
+  display: grid;
+}
+
+.theme-toggle:hover {
   color: var(--color-text);
 }
 
-.theme-toggle button[aria-pressed="true"] {
-  color: var(--color-bg);
-  background: var(--color-accent);
-}
-
 .theme-toggle svg {
-  width: 1rem;
-  height: 1rem;
+  display: none;
+  width: 1.1rem;
+  height: 1.1rem;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
@@ -147,12 +198,19 @@
   stroke-linejoin: round;
 }
 
+/* Show the icon for the current mode. */
+.theme-toggle[data-mode="system"] .theme-toggle__icon--system,
+.theme-toggle[data-mode="light"] .theme-toggle__icon--light,
+.theme-toggle[data-mode="dark"] .theme-toggle__icon--dark {
+  display: block;
+}
+
 /* Sidebar collapse / expand */
 .sidebar-toggle {
   display: none;
   place-items: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0;
   color: var(--color-muted);
   background: none;
@@ -280,12 +338,27 @@
     position: absolute;
   }
 
+  .page__header,
+  .post__header {
+    padding-inline-end: 0;
+  }
+
   .sidebar-toggle {
     display: none !important;
   }
 }
 
 /* Page headers */
+.page__header,
+.post__header {
+  /* Leave room for the fixed theme button. */
+  padding-inline-end: 2.75rem;
+}
+
+.page__header > :first-child {
+  margin-top: 0;
+}
+
 .page__header h1,
 .post__title {
   margin: 0.5rem 0 0.75rem;
@@ -376,13 +449,15 @@
 }
 
 /* Posts */
+/* The divider hangs below a post, never above it, so a post added above the
+   reader cannot push the post being read. */
 .post {
   padding-block-end: 3rem;
 }
 
-.post + .post {
-  padding-block-start: 3rem;
-  border-block-start: 1px solid var(--color-border);
+.post:not(:last-of-type) {
+  margin-block-end: 3rem;
+  border-block-end: 1px solid var(--color-border);
 }
 
 .post--enter {
@@ -392,7 +467,6 @@
 @keyframes post-enter {
   from {
     opacity: 0;
-    transform: translateY(0.75rem);
   }
 }
 
@@ -419,6 +493,11 @@
 @media (prefers-reduced-motion: reduce) {
   .loader__spinner {
     animation-duration: 2.4s;
+  }
+
+  .sidebar__description::after,
+  .sidebar__nav a[aria-current]::before {
+    animation: none;
   }
 
   .post--enter {

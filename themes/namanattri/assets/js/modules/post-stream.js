@@ -1,66 +1,132 @@
 import { fetchDocument, resolveRelativeUrls } from './fetch-document.js';
 import { typeset } from './typeset.js';
 
+/** Quiet period with no scrolling before a post is inserted above the reader. */
+const IDLE_MS = 150;
+const ACTIVITY_EVENTS = ['scroll', 'wheel', 'touchmove', 'keydown'];
+
 /** Moves the page without animation, whatever scroll-behavior the site sets. */
 function scrollByInstant(delta) {
   window.scrollTo({ top: window.scrollY + delta, behavior: 'instant' });
 }
 
-const USER_INPUT_EVENTS = ['wheel', 'touchstart', 'keydown', 'pointerdown'];
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
  * Turns a single post page into an endless stream. Scrolling past the end
- * loads the next older post, scrolling up past the start loads the next newer
- * post, and the address bar follows whichever post is in view. Every post
- * stays a real, crawlable URL that renders on its own.
+ * loads the next older post. The next newer post is fetched ahead of time and
+ * slipped in above the reader while scrolling is idle, so content never moves
+ * under the reader's eyes. The address bar follows whichever post is in view.
+ * Every post stays a real, crawlable URL that renders on its own.
  */
 export function initPostStream(stream) {
   const posts = () => stream.querySelectorAll('[data-post]');
+  const olderSentinel = stream.querySelector('[data-sentinel="older"]');
+  const newerSentinel = stream.querySelector('[data-sentinel="newer"]');
+  const olderLoader = olderSentinel.querySelector('.loader');
+  // Browsers with scroll anchoring keep the view still when content above grows.
+  const nativeAnchoring = CSS.supports('overflow-anchor', 'auto');
+
   let activePost = posts()[0];
+  let loadingOlder = false;
+  let loadingNewer = false;
+  let lastActivity = 0;
 
-  const directions = {
-    older: { sentinel: stream.querySelector('[data-sentinel="older"]'), loading: false },
-    newer: { sentinel: stream.querySelector('[data-sentinel="newer"]'), loading: false },
-  };
-
-  function edgePost(direction) {
+  const edgePost = (direction) => {
     const all = posts();
     return direction === 'older' ? all[all.length - 1] : all[0];
+  };
+
+  async function fetchPost(url) {
+    const doc = await fetchDocument(url);
+    const post = doc.querySelector('[data-post]');
+    if (!post) {
+      throw new Error(`No post found at ${url}`);
+    }
+    resolveRelativeUrls(post, url);
+    return post;
   }
 
-  async function load(direction) {
-    const state = directions[direction];
-    const url = edgePost(direction).dataset[direction];
-    if (!url || state.loading) {
+  function fail(direction, error) {
+    console.error(error);
+    // Stop retrying this direction; the plain pager links remain available.
+    stream.querySelector('[data-pager]')?.classList.add('is-error');
+    edgePost(direction).dataset[direction] = '';
+  }
+
+  async function loadOlder() {
+    const url = edgePost('older').dataset.older;
+    if (!url || loadingOlder) {
       return;
     }
-    state.loading = true;
-    const loader = state.sentinel.querySelector('.loader');
-    loader.hidden = false;
-
+    loadingOlder = true;
+    olderLoader.hidden = false;
     try {
-      const doc = await fetchDocument(url);
-      const post = doc.querySelector('[data-post]');
-      if (!post) {
-        throw new Error(`No post found at ${url}`);
-      }
-      resolveRelativeUrls(post, url);
+      const post = await fetchPost(url);
       post.classList.add('post--enter');
-      insert(direction, post);
+      olderSentinel.before(post);
       typeset(post);
     } catch (error) {
-      console.error(error);
-      // Stop retrying this direction; the plain pager links remain available.
-      stream.querySelector('[data-pager]')?.classList.add('is-error');
-      edgePost(direction).dataset[direction] = '';
+      fail('older', error);
     } finally {
-      state.loading = false;
-      loader.hidden = true;
+      loadingOlder = false;
+      olderLoader.hidden = true;
     }
-
     // Re-observe so a sentinel that is still in view loads the following post.
-    observers[direction].unobserve(state.sentinel);
-    observers[direction].observe(state.sentinel);
+    olderObserver.unobserve(olderSentinel);
+    olderObserver.observe(olderSentinel);
+  }
+
+  /** Waits until the reader has stopped scrolling. */
+  async function untilIdle() {
+    while (performance.now() - lastActivity < IDLE_MS) {
+      await sleep(50);
+    }
+  }
+
+  /** Keeps a newer post loaded above the active one, ready before it is needed. */
+  async function ensureNewer() {
+    const first = posts()[0];
+    const url = first.dataset.newer;
+    if (!url || first !== activePost || loadingNewer) {
+      return;
+    }
+    loadingNewer = true;
+    try {
+      const post = await fetchPost(url);
+      await untilIdle();
+      prepend(post);
+      typeset(post);
+    } catch (error) {
+      fail('newer', error);
+    } finally {
+      loadingNewer = false;
+    }
+  }
+
+  function prepend(post) {
+    // Keep the post that was in view at the same screen position.
+    const anchor = posts()[0];
+    const before = anchor.getBoundingClientRect().top;
+    newerSentinel.after(post);
+    scrollByInstant(anchor.getBoundingClientRect().top - before);
+    if (!nativeAnchoring) {
+      keepStillWhileGrowing(post);
+    }
+  }
+
+  /** Fallback for browsers without scroll anchoring: images loading in a post above the reader. */
+  function keepStillWhileGrowing(post) {
+    let height = post.offsetHeight;
+    const observer = new ResizeObserver(() => {
+      const delta = post.offsetHeight - height;
+      height = post.offsetHeight;
+      const isAbove = post.compareDocumentPosition(activePost) & Node.DOCUMENT_POSITION_FOLLOWING;
+      if (delta && isAbove) {
+        scrollByInstant(delta);
+      }
+    });
+    observer.observe(post);
   }
 
   /**
@@ -79,47 +145,15 @@ export function initPostStream(stream) {
     scrollByInstant(activePost.getBoundingClientRect().top - before);
   }
 
-  function insert(direction, post) {
-    if (direction === 'older') {
-      directions.older.sentinel.before(post);
-      return;
-    }
-    // Keep the post that was in view at the same screen position.
-    const anchor = posts()[0];
-    const before = anchor.getBoundingClientRect().top;
-    directions.newer.sentinel.after(post);
-    directions.newer.sentinel.querySelector('.loader').hidden = true;
-    scrollByInstant(anchor.getBoundingClientRect().top - before);
-  }
-
-  const observers = {};
-  for (const direction of Object.keys(directions)) {
-    const { sentinel } = directions[direction];
-    observers[direction] = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          load(direction);
-        }
-      },
-      {
-        rootMargin: direction === 'older' ? '0px 0px 400px 0px' : '0px',
-      },
-    );
-  }
-
-  observers.older.observe(directions.older.sentinel);
-
-  // The newer sentinel sits at the very top, so it is visible on arrival.
-  // Only start watching it once the reader scrolls, to keep the opened post in place.
-  const arm = () => {
-    USER_INPUT_EVENTS.forEach((type) => window.removeEventListener(type, arm));
-    window.removeEventListener('scroll', arm);
-    observers.newer.observe(directions.newer.sentinel);
-  };
-  USER_INPUT_EVENTS.forEach((type) =>
-    window.addEventListener(type, arm, { passive: true }),
+  const olderObserver = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        loadOlder();
+      }
+    },
+    { rootMargin: '0px 0px 400px 0px' },
   );
-  window.addEventListener('scroll', arm, { passive: true });
+  olderObserver.observe(olderSentinel);
 
   // Keep the address bar and title in sync with the post being read.
   let framePending = false;
@@ -134,6 +168,7 @@ export function initPostStream(stream) {
           history.replaceState(history.state, '', post.dataset.url);
           document.title = post.dataset.title;
           prune();
+          ensureNewer();
         }
         return;
       }
@@ -150,4 +185,9 @@ export function initPostStream(stream) {
     },
     { passive: true },
   );
+  ACTIVITY_EVENTS.forEach((type) =>
+    window.addEventListener(type, () => (lastActivity = performance.now()), { passive: true }),
+  );
+
+  ensureNewer();
 }

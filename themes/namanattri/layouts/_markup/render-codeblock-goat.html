@@ -1,0 +1,8 @@
+{{/*
+  GoAT ASCII diagrams. The SVG is sized to its natural width (--goat-width) so
+  its text matches the surrounding prose instead of stretching to the column.
+*/}}
+{{- $result := diagrams.Goat .Inner -}}
+<div class="goat svg-container" style="--goat-width: {{ $result.Width }}px">
+  {{- $result.Wrapped -}}
+</div>
