@@ -66,9 +66,9 @@
     "semantic_hash": "9378bd03d56baaf78bd738ab3848f142"
   },
   ".github/workflows/hugo.yaml": {
-    "mtime": 1791097282.1817071,
-    "seen": 1791097354.6765592,
-    "ast_hash": "cefd1c6bd96b9ae0ba85dae83d21ebb4",
+    "mtime": 1791100060.3015182,
+    "seen": 1791100262.696021,
+    "ast_hash": "5f5fc470236e3e91570c97d5e82ecb44",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
@@ -78,9 +78,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1791042877.988252,
-    "seen": 1791042884.673687,
-    "ast_hash": "d219591226bb14664414021364d8a0dd",
+    "mtime": 1791100213.137453,
+    "seen": 1791100262.696023,
+    "ast_hash": "2f35f7746aeb3aad0b651497184f09a8",
     "semantic_hash": ""
   },
   "archetypes/default.md": {
@@ -216,9 +216,9 @@
     "semantic_hash": ""
   },
   "Taskfile.yml": {
-    "mtime": 1791043389.7049255,
-    "seen": 1791043736.782347,
-    "ast_hash": "0351e6f595b36847ed0d19f0bc1520fc",
+    "mtime": 1791100213.137103,
+    "seen": 1791100262.6960242,
+    "ast_hash": "0e5a1d79fdc474a36aa111a5659048d5",
     "semantic_hash": ""
   },
   "themes/namanattri/assets/js/main.js": {

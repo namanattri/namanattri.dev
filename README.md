@@ -31,11 +31,19 @@ hugo server --buildDrafts
 hugo server -D
 ```
 
-Publish the site
+Production build (the same one CI runs)
 
 ```sh
-hugo
+task build
 ```
+
+Deploy to production (from `main` only)
+
+```sh
+task deploy
+```
+
+`task deploy` needs the GitHub CLI (`gh`), a clean working tree and the `main` branch checked out. It pushes `main`, which runs the Pages workflow, and waits for the result. If `main` is already pushed it starts a redeploy instead. Other branches can't deploy, because the repository's `github-pages` environment only allows `main`.
 
 # Basic Usage
 
